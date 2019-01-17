@@ -1,6 +1,6 @@
 ---
 title: "Assignment 1: Reproducibility, Workflow, Version Control"
-author: "Student Name"
+author: "Njeri Kara"
 output: pdf_document
 geometry: margin=2.54cm
 ---
@@ -30,17 +30,17 @@ The completed exercise is due on Thursday, 17 January, 2018 before class begins.
 ### Question
 Why are reproducible practices becoming the norm in data analytics?
 
-> Answer: 
+> Answer: Reproducible data analysis ensures that someone can later produce the same outcomes from the same data and analysis. It is an accountability measure and it allows data scientists to review their analysis process at a later time and get the same result.
 
 ### Question
 What are your previous experiences with data analytics, R, and Git? Include both formal and informal training.
 
-> Answer: 
+> Answer: My experience with R is in the Applied Statitics course (ENV 710) I took in fall 2018. I have no prior expereince with Git
 
 ### Question
 Are there any components of the course about which you feel confident?
 
-> Answer: 
+> Answer: I feel confident that I will be able to pick up 
 
 ### Question
 Are there any components of the course about which you feel apprehensive?
