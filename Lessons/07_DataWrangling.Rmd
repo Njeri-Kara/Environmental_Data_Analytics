@@ -1,5 +1,5 @@
 ---
-title: "6: Data Exploration"
+title: "7: Data Wrangling"
 author: "Environmental Data Analytics | Kateri Salk"
 date: "Spring 2019"
 output: pdf_document
@@ -114,6 +114,7 @@ class(NTL.phys.data$year4)
 
 ```
 Question: Why don't we filter using row numbers?
+
 > ANSWER: 
 
 ### Arrange
