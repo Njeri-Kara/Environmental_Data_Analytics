@@ -92,17 +92,17 @@ USGS.flow.data$datetime <- as.Date(USGS.flow.data$datetime, format = "%m/%d/%y")
 Note that for every date prior to 1969, R has assigned the date in the 2000s rather than the 1900s. This can be fixed with an `ifelse` statement inside a function. Run through the code below and write what is happening in the comment above each line.
 
 ```{r}
-# 
+# formatting the date and time values to the format year/month/day
 USGS.flow.data$datetime <- format(USGS.flow.data$datetime, "%y%m%d")
 
-#
+#creating a function that specifies that if d is greater than 181231 (%y%m%d - format) then date should be 19 and if not then it should be 20; and then print d
 create.early.dates <- (function(d) {
        paste0(ifelse(d > 181231,"19","20"),d)
        })
-#
+#running the created function with d as datetime for the dataset USGS.flow.data
 USGS.flow.data$datetime <- create.early.dates(USGS.flow.data$datetime)
 
-#
+# formating the created datetime as a date
 USGS.flow.data$datetime <- as.Date(USGS.flow.data$datetime, format = "%Y%m%d") 
 
 ```
@@ -117,12 +117,17 @@ summary(USGS.flow.data$gage.height.mean)
 ```
 Question: What types of research questions might make it favorable to remove NAs from a dataset, and what types of research questions might make it favorable to retain NAs in the dataset?
 
-> Answer: 
+> Answer: NAs could represent meaningful codes e.g -9 for I don't know and are not actual value inputs
 
 ```{r}
+#To remove the entire row with any variable that has an NA
 USGS.flow.data.complete <- na.omit(USGS.flow.data)
+#Check how you can omit rows with NA in particular collumns!!!!!!??????
+
 dim(USGS.flow.data)
-dim(USGS.flow.data.complete)
+dim(USGS.flow.data.complete) 
+
+#complete.cases lets you know the number of rows are complete - without NA
 
 mean(USGS.flow.data.complete$discharge.mean)
 sd(USGS.flow.data.complete$discharge.mean)
@@ -142,7 +147,7 @@ Visualize count data for categorical variables.
 
 ```{r, fig.height = 3, fig.width = 4}
 ggplot(USGS.flow.data.complete, aes(x = discharge.mean.approval)) +
-  geom_bar()
+  geom_bar() # works well for categorical data
 ```
 
 ### Histogram (function: geom_histogram)
@@ -150,24 +155,24 @@ ggplot(USGS.flow.data.complete, aes(x = discharge.mean.approval)) +
 Visualize distributions of values for continuous numerical variables. What is happening in each line of code? Insert a comment above each line.
 
 ```{r, fig.height = 3, fig.width = 4}
-#
+#ploting a count histogram of the data
 ggplot(USGS.flow.data.complete) +
   geom_histogram(aes(x = discharge.mean))
 
-#
+#plotting the histogram with a set binwidth of 10
 ggplot(USGS.flow.data.complete) +
   geom_histogram(aes(x = discharge.mean), binwidth = 10)
 
-#
+#plotting the histogram specifying the number of bins that we want to have - 20 bins
 ggplot(USGS.flow.data.complete) +
   geom_histogram(aes(x = discharge.mean), bins = 20)
 
-#
+#Plotting a histogram with a binwidth of 10 and an x axis range of 0 - 500
 ggplot(USGS.flow.data.complete, aes(x = discharge.mean)) +
   geom_histogram(binwidth = 10) + 
   scale_x_continuous(limits = c(0, 500))
   
-#
+#Plotting a histogram of gage.height mean
 ggplot(USGS.flow.data.complete) +
   geom_histogram(aes(x = gage.height.mean))
 
@@ -177,16 +182,18 @@ ggplot(USGS.flow.data.complete) +
 An alternate to a histogram is a frequency polygon graph (distributions of values for continuous numerical variables). Instead of displaying bars,  counts of continuous variables are displayed as lines. This is advantageous if you want to display multiple variables or categories of variables at once.
 
 ```{r, fig.height = 3, fig.width = 4}
-#
+#Plotting multiple frequency polygons of different gauge height variables - mean, min and max
 ggplot(USGS.flow.data.complete) +
-  geom_freqpoly(aes(x = gage.height.mean), bins = 50) +
-  geom_freqpoly(aes(x = gage.height.min), bins = 50, color = "blue") +
-  geom_freqpoly(aes(x = gage.height.max), bins = 50, color = "red") +
-  scale_x_continuous(limits = c(0, 10))
+  geom_freqpoly(aes(x = gage.height.mean), bins = 50) + # creating a frequency line for the mean of gage height
+  geom_freqpoly(aes(x = gage.height.min), bins = 50, color = "blue") + # creating a frequency line for the min
+  geom_freqpoly(aes(x = gage.height.max), bins = 50, color = "red") +  # creating a frequency line for the max
+  scale_x_continuous(limits = c(0, 10)) # seting an x axis range of 0 - 10
+# for plotting multiple frequency plolygons, it's important for the variables to have a similar range
 
-#
+
+#plotting multiple frequency polygons of the gauge mean, divided by the categorical variable "gage.height.mean.approval"
 ggplot(USGS.flow.data.complete) +
-  geom_freqpoly(aes(x = gage.height.mean, color = gage.height.mean.approval), bins = 50) +
+  geom_freqpoly(aes(x = gage.height.mean, color = gage.height.mean.approval), bins = 50) + #colour the line based on the approval type
   scale_x_continuous(limits = c(0, 10)) +
   theme(legend.position = "top")
 
@@ -206,17 +213,18 @@ A box-and-whisker plot is yet another alternative to histograms (distributions o
 An alternate option is a violin plot, which displays density distributions, somewhat like a hybrid of the box-and-whiskers and the frequency polygon plot.
 
 ```{r, fig.height = 3, fig.width = 4}
-#
+#box plot of the gage.height.mean.approval based on gage.height.mean
 ggplot(USGS.flow.data.complete) +
   geom_boxplot(aes(x = gage.height.mean.approval, y = gage.height.mean))
 
-#
+#box plot of gage.height.mean divided into groups of gage.height.mean = 1 plotted against discharge.mean
 ggplot(USGS.flow.data.complete) +
   geom_boxplot(aes(x = gage.height.mean, y = discharge.mean, group = cut_width(gage.height.mean, 1)))
 
 #
 ggplot(USGS.flow.data.complete) +
-  geom_violin(aes(x = gage.height.mean.approval, y = gage.height.mean), draw_quantiles = c(0.25, 0.5, 0.75))
+  geom_violin(aes(x = gage.height.mean.approval, y = gage.height.mean), draw_quantiles = c(0.25, 0.5, 0.75))# the quantiles specified are indicated as the lines
+#outliers are not points but are the skinny lines at the top
 ```
 
 Question: what are the pros and cons of each type of frequency graph (histogram, frequency polygon, box-and whisker, violin)?
