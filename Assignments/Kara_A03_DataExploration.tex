@@ -1,0 +1,687 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=2.54cm]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Assignment 3: Data Exploration},
+            pdfauthor={Njeri Kara},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Assignment 3: Data Exploration}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Njeri Kara}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+    \date{}
+    \predate{}\postdate{}
+  
+
+\begin{document}
+\maketitle
+
+\subsection{OVERVIEW}\label{overview}
+
+This exercise accompanies the lessons in Environmental Data Analytics
+(ENV872L) on data exploration.
+
+\subsection{Directions}\label{directions}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Change ``Student Name'' on line 3 (above) with your name.
+\item
+  Use the lesson as a guide. It contains code that can be modified to
+  complete the assignment.
+\item
+  Work through the steps, \textbf{creating code and output} that fulfill
+  each instruction.
+\item
+  Be sure to \textbf{answer the questions} in this assignment document.
+  Space for your answers is provided in this document and is indicated
+  by the ``\textgreater{}'' character. If you need a second paragraph be
+  sure to start the first line with ``\textgreater{}''. You should
+  notice that the answer is highlighted in green by RStudio.
+\item
+  When you have completed the assignment, \textbf{Knit} the text and
+  code into a single PDF file. You will need to have the correct
+  software installed to do this (see Software Installation Guide) Press
+  the \texttt{Knit} button in the RStudio scripting panel. This will
+  save the PDF output in your Assignments folder.
+\item
+  After Knitting, please submit the completed exercise (PDF file) to the
+  dropbox in Sakai. Please add your last name into the file name (e.g.,
+  ``Salk\_A02\_DataExploration.pdf'') prior to submission.
+\end{enumerate}
+
+The completed exercise is due on Thursday, 31 January, 2019 before class
+begins.
+
+\subsection{1) Set up your R session}\label{set-up-your-r-session}
+
+Check your working directory, load necessary packages (tidyverse), and
+upload the North Temperate Lakes long term monitoring dataset for the
+light, temperature, and oxygen data for three lakes (file name:
+NTL-LTER\_Lake\_ChemistryPhysics\_Raw.csv). Type your code into the R
+chunk below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Setting the working directory}
+\KeywordTok{setwd}\NormalTok{(}\StringTok{"C:/Users/jerik/OneDrive/Documents/Spring 2019 Semenster/Environmental Data Analytics/EDA_R_Work/EDA"}\NormalTok{)}
+\CommentTok{#Confirming that it is the correct working directory}
+\KeywordTok{getwd}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "C:/Users/jerik/OneDrive/Documents/Spring 2019 Semenster/Environmental Data Analytics/EDA_R_Work/EDA"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Loading necessary packages}
+\KeywordTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## -- Attaching packages --------------------------------------------------------------------------------- tidyverse 1.2.1 --
+\end{verbatim}
+
+\begin{verbatim}
+## v ggplot2 3.0.0     v purrr   0.2.5
+## v tibble  1.4.2     v dplyr   0.7.6
+## v tidyr   0.8.2     v stringr 1.3.1
+## v readr   1.1.1     v forcats 0.3.0
+\end{verbatim}
+
+\begin{verbatim}
+## -- Conflicts ------------------------------------------------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Uploading the North Temperate Lakes long term monitoring dataset}
+\NormalTok{North.Temp.Lakes.data <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"./Data/Raw/NTL-LTER_Lake_ChemistryPhysics_Raw.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{2) Learn about your system}\label{learn-about-your-system}
+
+Read about your dataset in the NTL-LTER README file. What are three
+salient pieces of information you gained from reading this file?
+
+\begin{quote}
+ANSWER:
+\end{quote}
+
+\begin{quote}
+The naming conventions and files format section gives details of the
+information that can be derived from the data file name. The data file
+is from the database NTL-LTER, the data described is of lakes, details
+include chemisty and physics, it is the raw data and it is in csv
+format.
+\end{quote}
+
+\begin{quote}
+The data was accessed, 2018-12-06
+\end{quote}
+
+\begin{quote}
+The data was assembled by Kateri Salk from the North Temperate Lakes
+Long Term Ecological Research website and Kateri Salk can be contacted
+at \href{mailto:kateri.salk@duke.edu}{\nolinkurl{kateri.salk@duke.edu}}
+for additional information and support.
+\end{quote}
+
+\subsection{3) Obtain basic summaries of your
+data}\label{obtain-basic-summaries-of-your-data}
+
+Write R commands to display the following information:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  dimensions of the dataset
+\item
+  class of the dataset
+\item
+  first 8 rows of the dataset
+\item
+  class of the variables lakename, sampledate, depth, and temperature
+\item
+  summary of lakename, depth, and temperature
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# 1 - Dimensions of the dataset}
+\KeywordTok{dim}\NormalTok{(North.Temp.Lakes.data) }\CommentTok{#shows the number of rows and columns in the dataset}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 38614    11
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# 2 - Class of the dataset}
+\KeywordTok{class}\NormalTok{(North.Temp.Lakes.data) }\CommentTok{#type of dataset - data.frame}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "data.frame"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# 3 - First eight rows of the dataset}
+\KeywordTok{head}\NormalTok{(North.Temp.Lakes.data,}\DecValTok{8}\NormalTok{) }\CommentTok{#shows first eight rows of the dataset}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   lakeid  lakename year4 daynum sampledate depth temperature_C
+## 1      L Paul Lake  1984    148    5/27/84  0.00          14.5
+## 2      L Paul Lake  1984    148    5/27/84  0.25            NA
+## 3      L Paul Lake  1984    148    5/27/84  0.50            NA
+## 4      L Paul Lake  1984    148    5/27/84  0.75            NA
+## 5      L Paul Lake  1984    148    5/27/84  1.00          14.5
+## 6      L Paul Lake  1984    148    5/27/84  1.50            NA
+## 7      L Paul Lake  1984    148    5/27/84  2.00          14.2
+## 8      L Paul Lake  1984    148    5/27/84  3.00          11.0
+##   dissolvedOxygen irradianceWater irradianceDeck comments
+## 1             9.5            1750           1620     <NA>
+## 2              NA            1550           1620     <NA>
+## 3              NA            1150           1620     <NA>
+## 4              NA             975           1620     <NA>
+## 5             8.8             870           1620     <NA>
+## 6              NA             610           1620     <NA>
+## 7             8.6             420           1620     <NA>
+## 8            11.5             220           1620     <NA>
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# 4}
+\KeywordTok{class}\NormalTok{(North.Temp.Lakes.data}\OperatorTok{$}\NormalTok{lakename) }\CommentTok{#class of the variable lakename - factor}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "factor"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{(North.Temp.Lakes.data}\OperatorTok{$}\NormalTok{sampledate) }\CommentTok{#class of the variable sampledate - factor}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "factor"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{(North.Temp.Lakes.data}\OperatorTok{$}\NormalTok{depth) }\CommentTok{#class of the variable depth - numeric}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "numeric"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{(North.Temp.Lakes.data}\OperatorTok{$}\NormalTok{temperature_C) }\CommentTok{#class of the variable temperature_C - numeric}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "numeric"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# 5}
+\KeywordTok{summary}\NormalTok{(North.Temp.Lakes.data}\OperatorTok{$}\NormalTok{lakename) }\CommentTok{#summary of the variable lakename}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Central Long Lake     Crampton Lake    East Long Lake  Hummingbird Lake 
+##               539              1234              3905               430 
+##         Paul Lake        Peter Lake      Tuesday Lake         Ward Lake 
+##             10325             11288              6107               598 
+##    West Long Lake 
+##              4188
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{summary}\NormalTok{(North.Temp.Lakes.data}\OperatorTok{$}\NormalTok{depth) }\CommentTok{#summary of the variable depth}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    0.00    1.50    4.00    4.39    6.50   20.00
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{summary}\NormalTok{(North.Temp.Lakes.data}\OperatorTok{$}\NormalTok{temperature_C) }\CommentTok{#summary of the variable temerature_C}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+##    0.30    5.30    9.30   11.81   18.70   34.10    3858
+\end{verbatim}
+
+Change sampledate to class = date. After doing this, write an R command
+to display that the class of sammpledate is indeed date. Write another R
+command to show the first 10 rows of the date column.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Checked the North.Temp.Lakes.data dataset to confirm the format of the factor variable sample date }
+\CommentTok{#is mm/dd/yy}
+
+\CommentTok{#Changing the sampledate factor variable to a date variable with the format mm/dd/yy}
+\NormalTok{North.Temp.Lakes.data}\OperatorTok{$}\NormalTok{sampledate <-}\StringTok{ }\KeywordTok{as.Date}\NormalTok{(North.Temp.Lakes.data}\OperatorTok{$}\NormalTok{sampledate, }\DataTypeTok{format =} \StringTok{"%m/%d/%y"}\NormalTok{)}
+
+\CommentTok{#Confirming that the sampledate variable is a date}
+\KeywordTok{class}\NormalTok{(North.Temp.Lakes.data}\OperatorTok{$}\NormalTok{sampledate) }\CommentTok{#new class - Date}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Date"
+\end{verbatim}
+
+Question: Do you want to remove NAs from this dataset? Why or why not?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#summary of all the variables in the dataset to see how many NAs are in each variable has}
+\KeywordTok{summary}\NormalTok{(North.Temp.Lakes.data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      lakeid                lakename         year4          daynum     
+##  R      :11288   Peter Lake    :11288   Min.   :1984   Min.   : 55.0  
+##  L      :10325   Paul Lake     :10325   1st Qu.:1991   1st Qu.:166.0  
+##  T      : 6107   Tuesday Lake  : 6107   Median :1997   Median :194.0  
+##  W      : 4188   West Long Lake: 4188   Mean   :1999   Mean   :194.3  
+##  E      : 3905   East Long Lake: 3905   3rd Qu.:2006   3rd Qu.:222.0  
+##  M      : 1234   Crampton Lake : 1234   Max.   :2016   Max.   :307.0  
+##  (Other): 1567   (Other)       : 1567                                 
+##    sampledate             depth       temperature_C   dissolvedOxygen 
+##  Min.   :1984-05-27   Min.   : 0.00   Min.   : 0.30   Min.   :  0.00  
+##  1st Qu.:1991-08-08   1st Qu.: 1.50   1st Qu.: 5.30   1st Qu.:  0.30  
+##  Median :1997-07-28   Median : 4.00   Median : 9.30   Median :  5.60  
+##  Mean   :1999-02-05   Mean   : 4.39   Mean   :11.81   Mean   :  4.97  
+##  3rd Qu.:2006-06-06   3rd Qu.: 6.50   3rd Qu.:18.70   3rd Qu.:  8.40  
+##  Max.   :2016-08-17   Max.   :20.00   Max.   :34.10   Max.   :802.00  
+##                                       NA's   :3858    NA's   :4039    
+##  irradianceWater     irradianceDeck  
+##  Min.   :   -0.337   Min.   :   1.5  
+##  1st Qu.:   14.000   1st Qu.: 353.0  
+##  Median :   65.000   Median : 747.0  
+##  Mean   :  210.242   Mean   : 720.5  
+##  3rd Qu.:  265.000   3rd Qu.:1042.0  
+##  Max.   :24108.000   Max.   :8532.0  
+##  NA's   :14287       NA's   :15419   
+##                               comments    
+##  DO Probe bad - Doesn't go to zero:  206  
+##  DO taken with Jones Lab Meter    :  162  
+##  NA's                             :38246  
+##                                           
+##                                           
+##                                           
+## 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Removing rows in the dataset with an NA in the temperature_C variable}
+\NormalTok{North.Temp.Lakes.data.no.temp.NAs <-}\StringTok{ }\NormalTok{North.Temp.Lakes.data[}\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(North.Temp.Lakes.data}\OperatorTok{$}\NormalTok{temperature_C), ]}
+\CommentTok{#confirming all the rows with an NA in the temperature_C variable have been removed}
+\KeywordTok{summary}\NormalTok{(North.Temp.Lakes.data.no.temp.NAs}\OperatorTok{$}\NormalTok{temperature_C) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    0.30    5.30    9.30   11.81   18.70   34.10
+\end{verbatim}
+
+\begin{quote}
+ANSWER:
+\end{quote}
+
+\begin{quote}
+I do not want to remove all the NAs in the dataset. This is because
+variables such as comments, irradianceWater and irradianceDeck have a
+large proporation of NAs compared to the total number of observations.
+If they are to be removed, the dataset rows would significantly reduce
+probably impacting data analysis outcomes.
+\end{quote}
+
+\begin{quote}
+I do however want to remove the rows with NAs in the temperature\_C
+variable. These rows are just about 10\% of the total observations and
+since temperature\_C is used in all the subsequent plots of question 4,
+it may be beneficial for the temperature\_C variable not to have any
+missing values.
+\end{quote}
+
+\subsection{4) Explore your data
+graphically}\label{explore-your-data-graphically}
+
+Write R commands to display graphs depicting:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Bar chart of temperature counts for each lake
+\item
+  Histogram of count distributions of temperature (all temp measurements
+  together)
+\item
+  Change histogram from 2 to have a different number or width of bins
+\item
+  Frequency polygon of temperature for each lake. Choose different
+  colors for each lake.
+\item
+  Boxplot of temperature for each lake
+\item
+  Boxplot of temperature based on depth, with depth divided into 0.25 m
+  increments
+\item
+  Scatterplot of temperature by depth
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# 1. Bar chart of temperature counts for each lake}
+\CommentTok{#The North.Temp.Lakes.data.no.temp.NAs is going to be used because it has only the observations(rows) }
+\CommentTok{#with a temperature value. It can therefore be used to plot the number of temperature readings, }
+\CommentTok{#temperature count, for each lake}
+\KeywordTok{ggplot}\NormalTok{(North.Temp.Lakes.data.no.temp.NAs, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\NormalTok{lakename)) }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_bar}\NormalTok{() }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Bar chart of temperature counts for each lake"}\NormalTok{) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{plot.title =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{hjust =} \FloatTok{0.5}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{xlab}\NormalTok{(}\StringTok{"Lakes"}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Temperature Count"}\NormalTok{) }\CommentTok{#Bar chart with title and labeled x and y axis}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Kara_A03_DataExploration_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# 2. Histogram of count distributions of temperature}
+\KeywordTok{ggplot}\NormalTok{(North.Temp.Lakes.data.no.temp.NAs) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_histogram}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ temperature_C)) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Histogram of count distribution of temperature"}\NormalTok{) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{plot.title =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{hjust =} \FloatTok{0.5}\NormalTok{)) }\CommentTok{#histogram with a title}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+\end{verbatim}
+
+\includegraphics{Kara_A03_DataExploration_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# 3. Histogram from 2 with a different number of bins}
+\KeywordTok{ggplot}\NormalTok{(North.Temp.Lakes.data.no.temp.NAs, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ temperature_C)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_histogram}\NormalTok{(}\DataTypeTok{binwidth =} \DecValTok{1}\NormalTok{) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Histogram of count distributions of temperature with binwidths of 1"}\NormalTok{) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{plot.title =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{hjust =} \FloatTok{0.5}\NormalTok{)) }\CommentTok{#histogram with a binwidth of 1 and a title}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Kara_A03_DataExploration_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# 4. Frequency polygon of temperature for each lake with different colours}
+\KeywordTok{ggplot}\NormalTok{(North.Temp.Lakes.data.no.temp.NAs) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_freqpoly}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ temperature_C, }\DataTypeTok{color =}\NormalTok{ lakename), }\DataTypeTok{bins =} \DecValTok{60}\NormalTok{) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{legend.position =} \StringTok{"bottom"}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Frequency polygon of temperature for each lake"}\NormalTok{) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{plot.title =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{hjust =} \FloatTok{0.5}\NormalTok{)) }\CommentTok{#colour of each line is based on the lakename}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Kara_A03_DataExploration_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#including a legend of the lake colours and a plot title}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# 5. Boxplot of temperature for each lake}
+\KeywordTok{ggplot}\NormalTok{(North.Temp.Lakes.data.no.temp.NAs) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_boxplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ lakename, }\DataTypeTok{y =}\NormalTok{ temperature_C))}\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Boxplot of temperature for each lake"}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{plot.title =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{hjust =} \FloatTok{0.5}\NormalTok{)) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{xlab}\NormalTok{(}\StringTok{"Lake"}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Temperature_C"}\NormalTok{) }\CommentTok{#including a title and axis labels}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Kara_A03_DataExploration_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# 6. Boxplot of temperature based on depth, with depth divided into 0.25 m increments}
+\KeywordTok{ggplot}\NormalTok{(North.Temp.Lakes.data.no.temp.NAs) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_boxplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ depth, }\DataTypeTok{y =}\NormalTok{ temperature_C, }\DataTypeTok{group =} \KeywordTok{cut_width}\NormalTok{(depth, }\FloatTok{0.25}\NormalTok{))) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Boxplot of temperature based on depth"}\NormalTok{) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{plot.title =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{hjust =} \FloatTok{0.5}\NormalTok{)) }\OperatorTok{+}\StringTok{ }\KeywordTok{xlab}\NormalTok{(}\StringTok{"Depth"}\NormalTok{) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Temperature_C"}\NormalTok{) }\CommentTok{#uncluding a plot title and axis labels}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Kara_A03_DataExploration_files/figure-latex/unnamed-chunk-9-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# 7. Scatterplot of temperature by depth}
+\KeywordTok{ggplot}\NormalTok{(North.Temp.Lakes.data.no.temp.NAs) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_point}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ depth, }\DataTypeTok{y =}\NormalTok{ temperature_C)) }\OperatorTok{+}\StringTok{ }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Scatterplot of temperature by depth"}\NormalTok{) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{plot.title =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{hjust =} \FloatTok{0.5}\NormalTok{)) }\OperatorTok{+}\StringTok{ }\KeywordTok{xlab}\NormalTok{(}\StringTok{"Depth"}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Temperature_C"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Kara_A03_DataExploration_files/figure-latex/unnamed-chunk-10-1.pdf}
+\#\# 5) Form questions for further data analysis
+
+What did you find out about your data from the basic summaries and
+graphs you made? Describe in 4-6 sentences.
+
+\begin{quote}
+ANSWER:
+\end{quote}
+
+\begin{quote}
+From the summary of the main dataset I found that only the last 5
+variables - temperature\_C,dissolvedOxygen
+irradianceWater,irradianceDeck and comments - have missing values and
+temperature\_C was missing the least number of variables (3858). I
+therfore decided to carry out by subsequent analysis of temperature with
+a subset of the dataframe that only had observations with temperature\_c
+values.
+\end{quote}
+
+\begin{quote}
+The histogram and frequency polygons revealed that the temerature data
+has a positively skewed distribution. This is consitent with the
+temperature's summary statistics because its median is less than its
+mean.
+\end{quote}
+
+\begin{quote}
+The Bar chart and frequency polygon of temperature counts dissaggregate
+the temperature count data by lakes clearly showing that Peter Lake has
+the highest number of temperature observations followed by Paul lake and
+that the most common temperature reading is approximately 5.
+\end{quote}
+
+\begin{quote}
+The box plot provides a visual break down of the summary statistics of
+temperature by lake. It shows for example that the max temperature
+reading of 34 was taken at the East Long Lake. It also shows that the
+median value of the temperature readings is mainly determinded by
+readings from Peter and Paul lakes
+\end{quote}
+
+\begin{quote}
+The scatterplot and boxplot of temperature based on depth reveal that
+the range and number of temperature readings reduces with increasing
+depth.
+\end{quote}
+
+What are 3 further questions you might ask as you move forward with
+analysis of this dataset?
+
+\begin{quote}
+ANSWER 1: The number of temperature readings taken every year from 1984
+to 2016 and the histortical trend of this temperature data collection by
+year.
+\end{quote}
+
+\begin{quote}
+ANSWER 2: The change in depth observations as years progressed from 1984
+to 2016
+\end{quote}
+
+\begin{quote}
+ANSWER 3: The relationship between obseration depth and the lake the
+observation is taken from.
+\end{quote}
+
+
+\end{document}
