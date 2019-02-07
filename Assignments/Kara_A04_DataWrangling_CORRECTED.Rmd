@@ -1,0 +1,238 @@
+---
+title: "Assignment 4: Data Wrangling"
+author: "Njeri Kara"
+output: pdf_document
+geometry: margin=2.54cm
+editor_options: 
+  chunk_output_type: console
+---
+
+## OVERVIEW
+
+This exercise accompanies the lessons in Environmental Data Analytics (ENV872L) on data wrangling. 
+
+## Directions
+1. Change "Student Name" on line 3 (above) with your name.
+2. Use the lesson as a guide. It contains code that can be modified to complete the assignment.
+3. Work through the steps, **creating code and output** that fulfill each instruction.
+4. Be sure to **answer the questions** in this assignment document.
+Space for your answers is provided in this document and is indicated by the ">" character.
+If you need a second paragraph be sure to start the first line with ">".
+You should notice that the answer is highlighted in green by RStudio. 
+6. When you have completed the assignment, **Knit** the text and code into a single PDF file.
+You will need to have the correct software installed to do this (see Software Installation Guide)
+Press the `Knit` button in the RStudio scripting panel.
+This will save the PDF output in your Assignments folder.
+8. After Knitting, please submit the completed exercise (PDF file) to the dropbox in Sakai. Please add your last name into the file name (e.g., "Salk_A04_DataWrangling.pdf") prior to submission.
+
+The completed exercise is due on Thursday, 7 February, 2019 before class begins.
+
+## Set up your session 
+1. Check your working directory, load the `tidyverse` package, and upload all four raw data files associated with the EPA Air dataset. See the README file for the EPA air datasets for more information (especially if you have not worked with air quality data previously). 
+
+2. Generate a few lines of code to get to know your datasets (basic data summaries, etc.).
+
+```{r}
+#1
+#Setting the working directory
+setwd("C:/Users/jerik/OneDrive/Documents/Spring 2019 Semenster/Environmental Data Analytics/EDA_R_Work/EDA")
+#Confirming that it is the correct working directory
+getwd()
+
+#Loading necessary packages
+library(tidyverse)
+library(lubridate)
+library(knitr)
+
+#Uploading the four raw datafiles associated with EPA Air dataset.
+NC.03.2017.raw.data <- read.csv("./Data/Raw/EPAair_O3_NC2017_raw.csv")
+NC.03.2018.raw.data <- read.csv("./Data/Raw/EPAair_O3_NC2018_raw.csv")
+NC.PM25.2017.raw.data <- read.csv("./Data/Raw/EPAair_PM25_NC2017_raw.csv")
+NC.PM25.2018.raw.data <- read.csv("./Data/Raw/EPAair_PM25_NC2018_raw.csv")
+
+#2
+#Getting to know NC.03.2017 data
+dim(NC.03.2017.raw.data) #shows number of rows and columns in the dataset
+str(NC.03.2017.raw.data) #shows the names and class of each variable and a sample of its values
+head(NC.03.2017.raw.data) #shows the first six observations in the dataset
+summary(NC.03.2017.raw.data$Daily.Max.8.hour.Ozone.Concentration) #summary stats of 03 concentration
+
+#Getting to know NC.03.2018 data
+dim(NC.03.2018.raw.data) #shows number of rows and columns in the dataset
+str(NC.03.2018.raw.data) #shows the names and class of each variable and a sample of its values
+head(NC.03.2018.raw.data) #shows the first six observations in the dataset
+#summary stats of daily 03 concentration
+summary(NC.03.2018.raw.data$Daily.Max.8.hour.Ozone.Concentration) 
+
+#Getting to know NC.PM25.2017 data
+dim(NC.PM25.2017.raw.data) #shows number of rows and columns in the dataset
+str(NC.PM25.2017.raw.data) #shows the names and class of each variable and a sample of its values
+head(NC.PM25.2017.raw.data) #shows the first six observations in the dataset
+#summary stats of daily PM25 concentation
+summary(NC.PM25.2017.raw.data$Daily.Mean.PM2.5.Concentration) 
+
+#Getting to know NC.PM25.2018 data
+dim(NC.PM25.2018.raw.data) #shows number of rows and columns in the dataset
+str(NC.PM25.2018.raw.data) #shows the names and class of each variable and a sample of its values
+head(NC.PM25.2018.raw.data) #shows the first six observations in the dataset
+#summary stats of daily PM25 concentation
+summary(NC.PM25.2018.raw.data$Daily.Mean.PM2.5.Concentration) 
+```
+
+## Wrangle individual datasets to create processed files.
+3. Change date to date
+4. Select the following columns: Date, DAILY_AQI_VALUE, Site.Name, AQS_PARAMETER_DESC, COUNTY, SITE_LATITUDE, SITE_LONGITUDE
+5. For the PM2.5 datasets, fill all cells in AQS_PARAMETER_DESC with "PM2.5" (all cells in this column should be identical).
+6. Save all four processed datasets in the Processed folder.
+
+```{r}
+#3
+#Changing date variable of NC.03.2017 data to date format
+NC.03.2017.raw.data$Date <- as.Date(NC.03.2017.raw.data$Date, format = "%m/%d/%y")
+class(NC.03.2017.raw.data$Date) #confirming date change
+
+#Changing date variable of NC.03.2018 data to date format
+NC.03.2018.raw.data$Date <- as.Date(NC.03.2018.raw.data$Date, format = "%m/%d/%y")
+class(NC.03.2018.raw.data$Date) #confirming date change
+
+#Changing date variable of NC.PM25.2017 data to date format
+NC.PM25.2017.raw.data$Date <- as.Date(NC.PM25.2017.raw.data$Date, format = "%m/%d/%y")
+class(NC.PM25.2017.raw.data$Date) #confirming date change
+
+#Changing date variable of NC.PM25.2018 data to date format
+NC.PM25.2018.raw.data$Date <- as.Date(NC.PM25.2018.raw.data$Date, format = "%m/%d/%y")
+class(NC.PM25.2018.raw.data$Date) #confirming date change
+
+#4
+#selecting specific columns in the NC.03.2017 data
+NC.03.2017.proccessed.v1 <- select(NC.03.2017.raw.data, "Date", "DAILY_AQI_VALUE", 
+                                   "Site.Name", "AQS_PARAMETER_DESC", 
+                                   "COUNTY", "SITE_LATITUDE", "SITE_LONGITUDE")
+
+#selecting specific columns in the NC.03.2018 data
+NC.03.2018.proccessed.v1 <- select(NC.03.2018.raw.data, "Date", "DAILY_AQI_VALUE", 
+                                   "Site.Name", "AQS_PARAMETER_DESC", 
+                                   "COUNTY", "SITE_LATITUDE", "SITE_LONGITUDE")
+
+#selecting specific columns in the NC.PM25.2017 data
+NC.PM25.2017.proccessed.v1 <- select(NC.PM25.2017.raw.data, "Date", "DAILY_AQI_VALUE", 
+                                     "Site.Name", "AQS_PARAMETER_DESC", 
+                                     "COUNTY", "SITE_LATITUDE", "SITE_LONGITUDE")
+
+#selecting specific columns in the NC.PM25.2018 data
+NC.PM25.2018.proccessed.v1 <- select(NC.PM25.2018.raw.data, "Date", "DAILY_AQI_VALUE", 
+                                     "Site.Name", "AQS_PARAMETER_DESC", "COUNTY", 
+                                     "SITE_LATITUDE", "SITE_LONGITUDE")
+
+#5
+#filling all cells in dataset NC.PM25.2017.proccessed.v1, variable AQS_PARAMETER_DESC with "PM2.5"
+NC.PM25.2017.proccessed.v2 <- mutate(NC.PM25.2017.proccessed.v1,AQS_PARAMETER_DESC = "PM2.5")
+
+#filling all cells in dataset NC.PM25.2018.proccessed.v1, variable AQS_PARAMETER_DESC with "PM2.5"
+NC.PM25.2018.proccessed.v2 <- mutate(NC.PM25.2018.proccessed.v1,AQS_PARAMETER_DESC = "PM2.5")
+
+#6
+#Saving NC.03.2017.proccessed.v1 in processed data folder
+write.csv(NC.03.2017.proccessed.v1, row.names = FALSE, file = "./Data/Processed/NC.03.2017.proccessed.v1.csv")
+
+#Saving NC.03.2018.proccessed.v1 in processed data folder
+write.csv(NC.03.2018.proccessed.v1, row.names = FALSE, file = "./Data/Processed/NC.03.2018.proccessed.v1.csv")
+
+#Saving NC.PM25.2017.proccessed.v2 in processed data folder
+write.csv(NC.PM25.2017.proccessed.v2, row.names = FALSE, file = "./Data/Processed/NC.PM25.2017.proccessed.v2.csv")
+
+#Saving NC.PM25.2018.proccessed.v2 in processed data folder
+write.csv(NC.PM25.2018.proccessed.v2, row.names = FALSE, file = "./Data/Processed/NC.PM25.2018.proccessed.v2.csv")
+
+```
+
+
+## Combine datasets
+7. Combine the four datasets with `rbind`. Make sure your column names are identical prior to running this code. 
+8. Wrangle your new dataset with a pipe function (%>%) so that it fills the following conditions: 
+
+* Sites: Blackstone, Bryson City, Triple Oak
+* Add columns for "Month" and "Year" by parsing your "Date" column (hint: `separate` function or `lubridate` package)
+
+9. Spread your datasets such that AQI values for ozone and PM2.5 are in separate columns. Each location on a specific date should now occupy only one row.
+10. Call up the dimensions of your new tidy dataset.
+11. Save your processed dataset with the following file name: "EPAair_O3_PM25_NC1718_Processed.csv"
+
+```{r}
+#7
+#Ensuring all column names are identical
+colnames(NC.03.2017.proccessed.v1)
+colnames(NC.03.2018.proccessed.v1)
+colnames(NC.PM25.2017.proccessed.v2)
+colnames(NC.PM25.2018.proccessed.v2)
+
+#Combining all datasets using rbind
+NC.03.PM25.2017.2018.data <- rbind(NC.03.2017.proccessed.v1,NC.03.2018.proccessed.v1,NC.PM25.2017.proccessed.v2,NC.PM25.2018.proccessed.v2)
+
+#8 #Wrangling dataset
+#displaying the different factor levels of Site.name
+levels(NC.03.PM25.2017.2018.data$Site.Name) 
+
+
+NC.03.PM25.2017.2018.data.v1 <- NC.03.PM25.2017.2018.data %>%
+  #filtering out data from sites Blackstone, Bryson City, Triple Oak
+  filter(Site.Name=="Blackstone"|Site.Name=="Bryson City"|Site.Name=="Triple Oak") %>%  
+  mutate(Month = month(Date)) %>% #including a month column
+  mutate(Year = year(Date)) #including a year column
+ 
+
+#9
+#spreading dataset to include 2 columns for DAILY_AQI_VALUEs,broken down by AQS_PARAMETER_DESC factors Ozone and PM 2.5.
+NC.03.PM25.2017.2018.data.v2 <- NC.03.PM25.2017.2018.data.v1 %>%
+  spread(AQS_PARAMETER_DESC,DAILY_AQI_VALUE) %>% 
+  rename(Ozone_Daily_AQI=Ozone,PM2.5_Daily_AQI=PM2.5) #renaming columns to more descriptive data label
+
+#10
+#Dimensions of the new dataset
+dim(NC.03.PM25.2017.2018.data.v2)
+
+#11
+#saving the dataset in the processed folder
+write.csv(NC.03.PM25.2017.2018.data.v2, row.names = FALSE, file = "./Data/Processed/EPAair_O3_PM25_NC1718_Processed.csv")
+
+```
+
+
+## Generate summary tables
+12. Use the split-apply-combine strategy to generate two new data frames: 
+a. A summary table of mean AQI values for O3 and PM2.5 by month
+b. A summary table of the mean, minimum, and maximum AQI values of O3 and PM2.5 for each site
+13. Display the data frames.
+
+```{r}
+#12a 
+#summary table of mean AQI values for O3 and PM2.5 by month
+NC.03.PM25.2017.2018.data.month.summ <- 
+  NC.03.PM25.2017.2018.data.v2 %>%
+  group_by(Month) %>%
+  summarise(mean.AQI.O3 = mean(Ozone_Daily_AQI,na.rm=TRUE),
+            mean.AQI.PM2.5 = mean(PM2.5_Daily_AQI,na.rm=TRUE))
+            #na.rm=TRUE excludes NA values in the mean computation
+          
+#12b
+#summary table of mean, minimum, and maximum AQI values of O3 and PM2.5 for each site
+NC.03.PM25.2017.2018.data.site.summ <- 
+  NC.03.PM25.2017.2018.data.v2 %>%
+  group_by(Site.Name) %>%
+  summarise(mean.AQI.O3 = mean(Ozone_Daily_AQI,na.rm=TRUE),
+            mean.AQI.PM2.5 = mean(PM2.5_Daily_AQI,na.rm=TRUE),
+            min.AQI.O3 = min(Ozone_Daily_AQI,na.rm=TRUE),
+            min.AQI.PM2.5 = min(PM2.5_Daily_AQI,na.rm=TRUE),
+             max.AQI.O3 = max(Ozone_Daily_AQI,na.rm=TRUE),
+            max.AQI.PM2.5 = max(PM2.5_Daily_AQI,na.rm=TRUE))
+           #na.rm=TRUE excludes NA values in the mean computation
+
+#13
+#Displaying the summary table of mean AQI values for O3 and PM2.5 by month
+kable(NC.03.PM25.2017.2018.data.month.summ, caption = "Summary table of mean AQI values by month")
+
+#Displaying the summary table of mean, minimum, and maximum AQI values of O3 and PM2.5 for each site
+kable(NC.03.PM25.2017.2018.data.site.summ, caption = "Summary table of mean,min and max AQI values by site")
+
+```
+
