@@ -1,0 +1,572 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=2.54cm]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Assignment 5: Data Visualization},
+            pdfauthor={Njeri Kara},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Assignment 5: Data Visualization}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Njeri Kara}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+    \date{}
+    \predate{}\postdate{}
+  
+
+\begin{document}
+\maketitle
+
+\subsection{OVERVIEW}\label{overview}
+
+This exercise accompanies the lessons in Environmental Data Analytics
+(ENV872L) on data wrangling.
+
+\subsection{Directions}\label{directions}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Change ``Student Name'' on line 3 (above) with your name.
+\item
+  Use the lesson as a guide. It contains code that can be modified to
+  complete the assignment.
+\item
+  Work through the steps, \textbf{creating code and output} that fulfill
+  each instruction.
+\item
+  Be sure to \textbf{answer the questions} in this assignment document.
+  Space for your answers is provided in this document and is indicated
+  by the ``\textgreater{}'' character. If you need a second paragraph be
+  sure to start the first line with ``\textgreater{}''. You should
+  notice that the answer is highlighted in green by RStudio.
+\item
+  When you have completed the assignment, \textbf{Knit} the text and
+  code into a single PDF file. You will need to have the correct
+  software installed to do this (see Software Installation Guide) Press
+  the \texttt{Knit} button in the RStudio scripting panel. This will
+  save the PDF output in your Assignments folder.
+\item
+  After Knitting, please submit the completed exercise (PDF file) to the
+  dropbox in Sakai. Please add your last name into the file name (e.g.,
+  ``Salk\_A04\_DataWrangling.pdf'') prior to submission.
+\end{enumerate}
+
+The completed exercise is due on Tuesday, 19 February, 2019 before class
+begins.
+
+\subsection{Set up your session}\label{set-up-your-session}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Set up your session. Upload the NTL-LTER processed data files for
+  chemistry/physics for Peter and Paul Lakes (tidy and gathered), the
+  USGS stream gauge dataset, and the EPA Ecotox dataset for
+  Neonicotinoids.
+\item
+  Make sure R is reading dates as date format, not something else (hint:
+  remember that dates were an issue for the USGS gauge data).
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#1}
+\CommentTok{#Setting the working directory}
+\KeywordTok{setwd}\NormalTok{(}\StringTok{"C:/Users/jerik/OneDrive/Documents/Spring 2019 Semenster/Environmental Data Analytics/EDA_R_Work/EDA"}\NormalTok{)}
+\CommentTok{#Confirming that it is the correct working directory}
+\KeywordTok{getwd}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "C:/Users/jerik/OneDrive/Documents/Spring 2019 Semenster/Environmental Data Analytics/EDA_R_Work/EDA"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Loading necessary packages}
+\KeywordTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## -- Attaching packages -------------------------------------------- tidyverse 1.2.1 --
+\end{verbatim}
+
+\begin{verbatim}
+## v ggplot2 3.0.0     v purrr   0.2.5
+## v tibble  1.4.2     v dplyr   0.7.6
+## v tidyr   0.8.2     v stringr 1.3.1
+## v readr   1.1.1     v forcats 0.3.0
+\end{verbatim}
+
+\begin{verbatim}
+## -- Conflicts ----------------------------------------------- tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(lubridate)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'lubridate'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:base':
+## 
+##     date
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(knitr)}
+\KeywordTok{library}\NormalTok{(gridExtra)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'gridExtra'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:dplyr':
+## 
+##     combine
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Uploading the required dataset.}
+\NormalTok{NTL.Nutrients.PP.gathered.process.D <-}
+\StringTok{  }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"./Data/Processed/NTL-LTER_Lake_Nutrients_PeterPaulGathered_Processed.csv"}\NormalTok{)}
+
+\NormalTok{NTL.Nutrients.PP.process.D <-}
+\StringTok{  }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"./Data/Processed/NTL-LTER_Lake_Nutrients_PeterPaul_Processed.csv"}\NormalTok{)}
+
+\NormalTok{ECOTOX.Neonicotinoids.Mortality.raw.D <-}\StringTok{ }
+\StringTok{  }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"./Data/Raw/ECOTOX_Neonicotinoids_Mortality_raw.csv"}\NormalTok{)}
+
+\NormalTok{USGS.Flow.raw.D <-}\StringTok{ }
+\StringTok{  }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"./Data/Raw/USGS_Site02085000_Flow_Raw.csv"}\NormalTok{)}
+
+\CommentTok{#Exploring the datasets to determine data columns and format}
+\NormalTok{str}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## function (object, ...) 
+## UseMethod("str")
+## <bytecode: 0x0000000018579020>
+## <environment: namespace:utils>
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#2}
+\CommentTok{#Exploring the datasets to determine data columns and format; }
+\CommentTok{#changing date variable to date format}
+\KeywordTok{str}\NormalTok{(NTL.Nutrients.PP.process.D)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    2770 obs. of  13 variables:
+##  $ lakeid    : Factor w/ 2 levels "L","R": 1 1 1 1 1 1 2 2 2 2 ...
+##  $ lakename  : Factor w/ 2 levels "Paul Lake","Peter Lake": 1 1 1 1 1 1 2 2 2 2 ...
+##  $ year4     : int  1991 1991 1991 1991 1991 1991 1991 1991 1991 1991 ...
+##  $ daynum    : int  140 140 140 140 140 140 140 140 140 140 ...
+##  $ sampledate: Factor w/ 778 levels "1991-05-20","1991-05-27",..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ depth_id  : int  1 2 3 4 5 6 1 2 3 4 ...
+##  $ depth     : num  0 0.85 1.75 3 4 6 0 1 2.25 3.5 ...
+##  $ tn_ug     : num  538 285 399 453 363 583 352 356 364 582 ...
+##  $ tp_ug     : num  25 14 14 14 13 37 11 15 28 14 ...
+##  $ nh34      : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ no23      : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ po4       : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ comments  : logi  NA NA NA NA NA NA ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{NTL.Nutrients.PP.process.D}\OperatorTok{$}\NormalTok{sampledate <-}\StringTok{ }\KeywordTok{as.Date}\NormalTok{(NTL.Nutrients.PP.process.D}\OperatorTok{$}\NormalTok{sampledate, }\DataTypeTok{format =} \StringTok{"%Y-%m-%d"}\NormalTok{)}
+
+\KeywordTok{str}\NormalTok{(NTL.Nutrients.PP.gathered.process.D)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    7997 obs. of  7 variables:
+##  $ lakename     : Factor w/ 2 levels "Paul Lake","Peter Lake": 1 1 1 1 1 1 2 2 2 2 ...
+##  $ daynum       : int  140 140 140 140 140 140 140 140 140 140 ...
+##  $ year4        : int  1991 1991 1991 1991 1991 1991 1991 1991 1991 1991 ...
+##  $ sampledate   : Factor w/ 778 levels "1991-05-20","1991-05-27",..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ depth        : num  0 0.85 1.75 3 4 6 0 1 2.25 3.5 ...
+##  $ nutrient     : Factor w/ 5 levels "nh34","no23",..: 4 4 4 4 4 4 4 4 4 4 ...
+##  $ concentration: num  538 285 399 453 363 583 352 356 364 582 ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{NTL.Nutrients.PP.gathered.process.D}\OperatorTok{$}\NormalTok{sampledate <-}\StringTok{ }\KeywordTok{as.Date}\NormalTok{(NTL.Nutrients.PP.gathered.process.D}\OperatorTok{$}\NormalTok{sampledate, }\DataTypeTok{format =} \StringTok{"%Y-%m-%d"}\NormalTok{)}
+
+
+\KeywordTok{str}\NormalTok{(USGS.Flow.raw.D)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    33216 obs. of  15 variables:
+##  $ agency_cd             : Factor w/ 1 level "USGS": 1 1 1 1 1 1 1 1 1 1 ...
+##  $ site_no               : int  2085000 2085000 2085000 2085000 2085000 2085000 2085000 2085000 2085000 2085000 ...
+##  $ datetime              : Factor w/ 33216 levels "1/1/00","1/1/01",..: 20 1021 2022 2295 2386 2477 2568 2659 2750 111 ...
+##  $ X165986_00060_00001   : num  74 61 56 54 48 47 44 41 44 57 ...
+##  $ X165986_00060_00001_cd: Factor w/ 4 levels "","A","A:e","P": 2 2 2 2 2 2 2 2 2 2 ...
+##  $ X165987_00060_00002   : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ X165987_00060_00002_cd: Factor w/ 3 levels "","A","P": 1 1 1 1 1 1 1 1 1 1 ...
+##  $ X84936_00060_00003    : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ X84936_00060_00003_cd : Factor w/ 3 levels "","A","P": 1 1 1 1 1 1 1 1 1 1 ...
+##  $ X84937_00065_00001    : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ X84937_00065_00001_cd : Factor w/ 3 levels "","A","P": 1 1 1 1 1 1 1 1 1 1 ...
+##  $ X84938_00065_00002    : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ X84938_00065_00002_cd : Factor w/ 3 levels "","A","P": 1 1 1 1 1 1 1 1 1 1 ...
+##  $ X84939_00065_00003    : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ X84939_00065_00003_cd : Factor w/ 3 levels "","A","P": 1 1 1 1 1 1 1 1 1 1 ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Changing the class of the datetime variable to date}
+\NormalTok{USGS.Flow.raw.D}\OperatorTok{$}\NormalTok{datetime <-}\StringTok{ }\KeywordTok{as.Date}\NormalTok{(USGS.Flow.raw.D}\OperatorTok{$}\NormalTok{datetime, }\DataTypeTok{format =} \StringTok{"%m/%d/%y"}\NormalTok{)}
+\CommentTok{#changing the date format to be consistent with the other datasets}
+\NormalTok{USGS.Flow.raw.D}\OperatorTok{$}\NormalTok{datetime <-}\StringTok{ }\KeywordTok{format}\NormalTok{(USGS.Flow.raw.D}\OperatorTok{$}\NormalTok{datetime, }\StringTok{"%y%m%d"}\NormalTok{)}
+\CommentTok{#correcting error in }
+\CommentTok{#creating a function that specifies that if d is greater than 181231 (%y%m%d - format) then date should be 19 and if not then it should be 20; and then print d}
+\NormalTok{date.correction.func <-}\StringTok{ }\NormalTok{(}\ControlFlowTok{function}\NormalTok{(d) \{}
+       \KeywordTok{paste0}\NormalTok{(}\KeywordTok{ifelse}\NormalTok{(d }\OperatorTok{>}\StringTok{ }\DecValTok{181231}\NormalTok{,}\StringTok{"19"}\NormalTok{,}\StringTok{"20"}\NormalTok{),d)}
+\NormalTok{       \})}
+\CommentTok{#running the created function with d as datetime for the dataset USGS.flow.data}
+\NormalTok{USGS.Flow.raw.D}\OperatorTok{$}\NormalTok{datetime <-}\StringTok{ }\KeywordTok{date.correction.func}\NormalTok{(USGS.Flow.raw.D}\OperatorTok{$}\NormalTok{datetime)}
+
+\CommentTok{# formating the created datetime as a date}
+\NormalTok{USGS.Flow.raw.D}\OperatorTok{$}\NormalTok{datetime <-}\StringTok{ }\KeywordTok{as.Date}\NormalTok{(USGS.Flow.raw.D}\OperatorTok{$}\NormalTok{datetime, }\DataTypeTok{format =} \StringTok{"%Y%m%d"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Define your theme}\label{define-your-theme}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Build a theme and set it as your default theme.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#3}
+\CommentTok{#building a theme}
+\NormalTok{NK.theme <-}\StringTok{ }\KeywordTok{theme_light}\NormalTok{(}\DataTypeTok{base_size =} \DecValTok{12}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{plot.background =} \KeywordTok{element_rect}\NormalTok{(}\DataTypeTok{fill =} \StringTok{"grey97"}\NormalTok{),}\DataTypeTok{panel.grid.major =}\KeywordTok{element_line}\NormalTok{(}\DataTypeTok{linetype =} \StringTok{"dotted"}\NormalTok{),}\DataTypeTok{panel.grid.minor =} \KeywordTok{element_line}\NormalTok{(}\DataTypeTok{linetype =} \StringTok{"dotted"}\NormalTok{), }\DataTypeTok{text=}\KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size =} \DecValTok{14}\NormalTok{, }\DataTypeTok{color =} \StringTok{"black"}\NormalTok{, }\DataTypeTok{face =} \StringTok{"bold"}\NormalTok{),}\DataTypeTok{axis.text =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{color =} \StringTok{"grey40"}\NormalTok{), }\DataTypeTok{legend.position =} \StringTok{"right"}\NormalTok{,}\DataTypeTok{legend.text =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{color =} \StringTok{"grey40"}\NormalTok{))}
+
+\CommentTok{#setting it as my default theme}
+\KeywordTok{theme_set}\NormalTok{(NK.theme)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Create graphs}\label{create-graphs}
+
+For numbers 4-7, create graphs that follow best practices for data
+visualization. To make your graphs ``pretty,'' ensure your theme, color
+palettes, axes, and legends are edited to your liking.
+
+Hint: a good way to build graphs is to make them ugly first and then
+create more code to make them pretty.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  {[}NTL-LTER{]} Plot total phosphorus by phosphate, with separate
+  aesthetics for Peter and Paul lakes. Add a line of best fit and color
+  it black.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#4}
+\NormalTok{NTL.LTER.Plot.Q4 <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(NTL.Nutrients.PP.process.D, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ tp_ug, }\DataTypeTok{y =}\NormalTok{ po4, }\DataTypeTok{color =}\NormalTok{ lakename)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_point}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_smooth}\NormalTok{(}\DataTypeTok{method =}\NormalTok{ lm, }\DataTypeTok{color =} \StringTok{"black"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{scale_color_manual}\NormalTok{(}\DataTypeTok{values =} \KeywordTok{c}\NormalTok{(}\StringTok{"#f1a340"}\NormalTok{, }\StringTok{"#998ec3"}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylim}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{45}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Q4. Plot of total phosphorus by phosphate"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{xlab}\NormalTok{(}\StringTok{"Total phosphorous (\textbackslash{}U003BCg/L)"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\KeywordTok{expression}\NormalTok{(}\StringTok{"Phosphate ( PO"}\NormalTok{[}\DecValTok{4}\NormalTok{]}\OperatorTok{*}\StringTok{ " )"}\NormalTok{))}
+
+\KeywordTok{print}\NormalTok{(NTL.LTER.Plot.Q4)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Removed 1708 rows containing non-finite values (stat_smooth).
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 1708 rows containing missing values (geom_point).
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 2 rows containing missing values (geom_smooth).
+\end{verbatim}
+
+\includegraphics{A05_DataVisualization_NK_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  {[}NTL-LTER{]} Plot nutrients by date for Peter Lake, with separate
+  colors for each depth. Facet your graph by the nutrient type.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#5}
+\CommentTok{#geting a subset of data for only peter lake}
+\NormalTok{NTL.LTER.Peter.Q5.data <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(NTL.Nutrients.PP.gathered.process.D, lakename }\OperatorTok{==}\StringTok{"Peter Lake"}\NormalTok{)}
+\CommentTok{#ploting peter lake data}
+\NormalTok{NTL.LTER.Peter.plot.Q5  <-}
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{(NTL.LTER.Peter.Q5.data, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ sampledate, }\DataTypeTok{y =}\NormalTok{ concentration , }\DataTypeTok{colour =}\NormalTok{ depth, }\DataTypeTok{fill =}\NormalTok{ depth)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_point}\NormalTok{(}\DataTypeTok{size =} \DecValTok{2}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{facet_wrap}\NormalTok{(}\KeywordTok{vars}\NormalTok{(nutrient), }\DataTypeTok{nrow =} \DecValTok{5}\NormalTok{, }\DataTypeTok{scales =} \StringTok{"free_y"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{strip.background =} \KeywordTok{element_rect}\NormalTok{(}\DataTypeTok{fill =} \StringTok{"black"}\NormalTok{), }\DataTypeTok{strip.text =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{color =} \StringTok{"white"}\NormalTok{)) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Q5. Plots by nutrients by date for Peter Lake"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{xlab}\NormalTok{(}\StringTok{"Date (years)"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Nutrient concentration"}\NormalTok{)}
+
+\KeywordTok{print}\NormalTok{(NTL.LTER.Peter.plot.Q5)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{A05_DataVisualization_NK_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  {[}USGS gauge{]} Plot discharge by date. Create two plots, one with
+  the points connected with geom\_line and one with the points connected
+  with geom\_smooth (hint: do not use method = ``lm''). Place these
+  graphs on the same plot (hint: ggarrange or something similar)
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#6}
+\CommentTok{#plot with geom_line}
+\NormalTok{USGS.plot.Q6.line <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(USGS.Flow.raw.D, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ datetime, }\DataTypeTok{y =}\NormalTok{X165986_00060_}\DecValTok{00001}\NormalTok{)) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{geom_line}\NormalTok{(}\DataTypeTok{color =} \StringTok{"darkblue"}\NormalTok{) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Q6a. Geom_line plot of discharge by date"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{xlab}\NormalTok{(}\StringTok{"Date (years)"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Discharge"}\NormalTok{) }
+
+\CommentTok{#plot with geom_smooth}
+\NormalTok{USGS.plot.Q6.smooth <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(USGS.Flow.raw.D, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ datetime, }\DataTypeTok{y =}\NormalTok{X165986_00060_}\DecValTok{00001}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_smooth}\NormalTok{(}\DataTypeTok{color =} \StringTok{"darkblue"}\NormalTok{) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Q6b. Geom_smooth plot of discharge by date"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{xlab}\NormalTok{(}\StringTok{"Date (years)"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Discharge"}\NormalTok{)}
+
+\CommentTok{#placing both graphs on the same plot}
+\KeywordTok{grid.arrange}\NormalTok{(USGS.plot.Q6.line, USGS.plot.Q6.smooth)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `geom_smooth()` using method = 'gam' and formula 'y ~ s(x, bs = "cs")'
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 5113 rows containing non-finite values (stat_smooth).
+\end{verbatim}
+
+\includegraphics{A05_DataVisualization_NK_files/figure-latex/unnamed-chunk-5-1.pdf}
+Question: How do these two types of lines affect your interpretation of
+the data?
+
+\begin{quote}
+Answer: Yes. The geom\_line plot shows significant fluctuations in data
+across the years.The data range appears to be from 0 to about 5,000. It
+also clearly shows missing data in 1980. Data across years does not seam
+to have a distinguishable trend.
+\end{quote}
+
+\begin{quote}
+The geom\_smooth plot on the other hand does show as much variation in
+data. The data range appears to be from about 25 to 125. It also does
+not show any indication of missing data and it change in data across
+years appears to have a trend.
+\end{quote}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  {[}ECOTOX Neonicotinoids{]} Plot the concentration, divided by
+  chemical name. Choose a geom that accurately portrays the distribution
+  of data points.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#7}
+\CommentTok{#selectring subset of data for concentrations in mg/L}
+\NormalTok{Ecotox.plot.Q7 <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(ECOTOX.Neonicotinoids.Mortality.raw.D, Conc..Units..Std. }\OperatorTok{==}\StringTok{"AI mg/L"}\NormalTok{)}
+
+\CommentTok{#plotting graph}
+\NormalTok{Ecotox.plot.Q7 <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(ECOTOX.Neonicotinoids.Mortality.raw.D, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ Chemical.Name, }\DataTypeTok{y =}\NormalTok{ Conc..Mean..Std.)) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{geom_boxplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{color =}\NormalTok{ Chemical.Name)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylim}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{750}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{coord_flip}\NormalTok{() }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{legend.position =} \StringTok{"none"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Q7. Plot of concentration by chemical name"}\NormalTok{) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{xlab}\NormalTok{(}\StringTok{"Chemical name"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Concentration"}\NormalTok{)}
+
+\KeywordTok{print}\NormalTok{(Ecotox.plot.Q7)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Removed 77 rows containing non-finite values (stat_boxplot).
+\end{verbatim}
+
+\includegraphics{A05_DataVisualization_NK_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+
+\end{document}

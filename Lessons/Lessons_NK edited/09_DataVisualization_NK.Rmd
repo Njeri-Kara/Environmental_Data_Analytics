@@ -153,9 +153,10 @@ print(tempvsdepth)
 
 NvsP <-
   ggplot(PeterPaul.chem.nutrients, aes(x = tp_ug, y = tn_ug, color = depth)) +
-  geom_point() #+
-  #geom_smooth(method = lm) +
-  #geom_abline(aes(slope = 16, intercept = 0))
+  geom_point() +
+  #its important to specify that it is a linear line that we want (method =lm)
+  geom_smooth(method = lm) +
+  geom_abline(aes(slope = 16, intercept = 0), lty = 2) #adding a dotted line line to the plot 
 print(NvsP)
 
 # Exercise: Plot relationships between air quality measurements
@@ -163,8 +164,11 @@ print(NvsP)
 # 1. 
 # Plot AQI values for ozone by PM2.5, colored by site. 
 # Add a line of best fit for the linear regression of these variables.
-
-  
+AQI.plot <- 
+  ggplot(EPAair, aes(x=PM2.5_Daily_AQI, y=Ozone_Daily_AQI, color = Site.Name)) +
+   geom_point() +
+  geom_smooth(method = lm)
+print(AQI.plot)
 ```
 
 ### Plotting continuous vs. categorical variables
@@ -178,36 +182,41 @@ PeterPaul.nutrient.summaries <- PeterPaul.nutrients.gathered %>%
 
 Nutrientplot <- 
   ggplot(PeterPaul.nutrients.gathered) +
-  geom_bar(aes(x = lakename, y = concentration, fill = as.factor(nutrient)), # why did we use fill?
-           position = "dodge", stat = "summary", fun.y = "mean")             # what's happening here?
+  geom_bar(aes(x = lakename, y = concentration, fill = as.factor(nutrient)), # why did we use fill? - so that the inside of the bar chart would be colour coded and not just the outline
+           position = "dodge", stat = "summary", fun.y = "mean")             # what's happening here? - stat- summaposition dodge ensures the bars are separated out and not stacked on each other. fun.y mean esures the value we are ploting is the mean of the data
 print(Nutrientplot)
+
+#a bar chart requires a function defining the stat it is using,
+#stat =summary requires plot to compute the summary statistics for the variables we want to plot
+#stats=identity is used when the variable has one value and you can point the plot to that one valuemakes. In the example below this is the mean computed in the summaries dataset. 
 
 Nutrientplot2 <- 
   ggplot(PeterPaul.nutrient.summaries, aes(x = lakename, y = mean, fill = as.factor(nutrient))) + #
   geom_bar(stat = "identity", position = "dodge") + # what does the stat command do?
-  geom_errorbar(aes(ymin = mean-sd, ymax = mean+sd), # how do we specify error bars?
+  geom_errorbar(aes(ymin = mean-sd, ymax = mean+sd), # how do we specify error bars? - we specify the minimum of the error bar and the maximum to show standar deviation range
                  position = "dodge")
 print(Nutrientplot2)
 
 # Are there more effective ways to produce summary stats for categories?
-
+#many things in data analytics are moving away from bars with error bars because you can more efficiently display summary stats
+#Better alternatives are below
 # Box and whiskers plot
 Nutrientplot3 <-
   ggplot(PeterPaul.nutrients.gathered, aes(x = lakename, y = concentration)) +
-  geom_boxplot(aes(color = nutrient)) # Why didn't we use "fill"?
+  geom_boxplot(aes(color = nutrient)) # Why didn't we use "fill"? fill colors the inside of the box but it leaves the outline as black
 print(Nutrientplot3)
 
 # Dot plot
 Nutrientplot4 <-
   ggplot(PeterPaul.nutrients.gathered, aes(x = lakename, y = concentration)) +
   geom_dotplot(aes(color = nutrient), binaxis = "y", binwidth = 1, 
-               stackdir = "center", position = "dodge") #
+               stackdir = "center", position = "dodge") #wide spots of the dot plot show points with several points. useful for showing density of particular points
 print(Nutrientplot4)
 
 # Violin plot
 Nutrientplot5 <-
   ggplot(PeterPaul.nutrients.gathered, aes(x = lakename, y = concentration)) +
-  geom_violin(aes(color = nutrient)) #
+  geom_violin(aes(color = nutrient)) #similar to a dot plot but is a line that represents the distribution of the points
 print(Nutrientplot5)
 
 # Frequency polygons
@@ -219,7 +228,7 @@ Nutrientplot6 <-
   geom_freqpoly(aes(x = nh34), color = "darkgray") +
   geom_freqpoly(aes(x = no23), color = "gray") +
   geom_freqpoly(aes(x = po4), color = "blue") 
-print(Nutrientplot6)
+print(Nutrientplot6) #it is important to specify the color because default is black and all lines will be ploted with black
 
 # Using a gathered dataset
 Nutrientplot7 <-   
@@ -232,7 +241,17 @@ print(Nutrientplot7)
 # 1. 
 # Create a bar chart plus standard deviation error bars for PM2.5, divided by year. 
 # Create separate bars for each site. 
+EPAairsummary <- EPAair %>%
+  group_by(Site.Name, Year) %>%
+  summarise(sd = (sd(PM2.5_Daily_AQI, na.rm = TRUE)),
+            mean = mean(PM2.5_Daily_AQI, na.rm = TRUE))
 
+plot1 <- 
+  ggplot(EPAairsummary, aes(x = as.factor(Year), y =mean, fill = as.factor(Site.Name))) + #
+  geom_bar(stat = "identity", position = "dodge") + # what does the stat command do?
+  geom_errorbar(aes(ymin = mean-sd, ymax = mean+sd), # how do we specify error bars? - we specify the minimum of the error bar and the maximum to show standar deviation range
+                 position = "dodge")
+print(plot1)
 # 2. 
 # Create a new plot that better depicts the distribution of PM2.5 concentrations. 
 # Divide your graph by year and site.

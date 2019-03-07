@@ -1,0 +1,194 @@
+---
+title: "Assignment 5: Data Visualization"
+author: "Njeri Kara"
+output: pdf_document
+geometry: margin=2.54cm
+editor_options: 
+  chunk_output_type: console
+---
+
+## OVERVIEW
+
+This exercise accompanies the lessons in Environmental Data Analytics (ENV872L) on data wrangling. 
+
+## Directions
+1. Change "Student Name" on line 3 (above) with your name.
+2. Use the lesson as a guide. It contains code that can be modified to complete the assignment.
+3. Work through the steps, **creating code and output** that fulfill each instruction.
+4. Be sure to **answer the questions** in this assignment document.
+Space for your answers is provided in this document and is indicated by the ">" character.
+If you need a second paragraph be sure to start the first line with ">".
+You should notice that the answer is highlighted in green by RStudio. 
+6. When you have completed the assignment, **Knit** the text and code into a single PDF file.
+You will need to have the correct software installed to do this (see Software Installation Guide)
+Press the `Knit` button in the RStudio scripting panel.
+This will save the PDF output in your Assignments folder.
+8. After Knitting, please submit the completed exercise (PDF file) to the dropbox in Sakai. Please add your last name into the file name (e.g., "Salk_A04_DataWrangling.pdf") prior to submission.
+
+The completed exercise is due on Tuesday, 19 February, 2019 before class begins.
+
+## Set up your session 
+1. Set up your session. Upload the NTL-LTER processed data files for chemistry/physics for Peter and Paul Lakes (tidy and gathered), the USGS stream gauge dataset, and the EPA Ecotox dataset for Neonicotinoids. 
+
+2. Make sure R is reading dates as date format, not something else (hint: remember that dates were an issue for the USGS gauge data).
+
+```{r}
+#1
+#Setting the working directory
+setwd("C:/Users/jerik/OneDrive/Documents/Spring 2019 Semenster/Environmental Data Analytics/EDA_R_Work/EDA")
+#Confirming that it is the correct working directory
+getwd()
+
+#Loading necessary packages
+library(tidyverse)
+library(lubridate)
+library(knitr)
+library(gridExtra)
+
+#Uploading the required dataset.
+NTL.Nutrients.PP.gathered.process.D <-
+  read.csv("./Data/Processed/NTL-LTER_Lake_Nutrients_PeterPaulGathered_Processed.csv")
+
+NTL.Nutrients.PP.process.D <-
+  read.csv("./Data/Processed/NTL-LTER_Lake_Nutrients_PeterPaul_Processed.csv")
+
+ECOTOX.Neonicotinoids.Mortality.raw.D <- 
+  read.csv("./Data/Raw/ECOTOX_Neonicotinoids_Mortality_raw.csv")
+
+USGS.Flow.raw.D <- 
+  read.csv("./Data/Raw/USGS_Site02085000_Flow_Raw.csv")
+
+#Exploring the datasets to determine data columns and format
+str
+
+#2
+#Exploring the datasets to determine data columns and format; 
+#changing date variable to date format
+str(NTL.Nutrients.PP.process.D)
+NTL.Nutrients.PP.process.D$sampledate <- as.Date(NTL.Nutrients.PP.process.D$sampledate, format = "%Y-%m-%d")
+
+str(NTL.Nutrients.PP.gathered.process.D)
+NTL.Nutrients.PP.gathered.process.D$sampledate <- as.Date(NTL.Nutrients.PP.gathered.process.D$sampledate, format = "%Y-%m-%d")
+
+
+str(USGS.Flow.raw.D)
+#Changing the class of the datetime variable to date
+USGS.Flow.raw.D$datetime <- as.Date(USGS.Flow.raw.D$datetime, format = "%m/%d/%y")
+#changing the date format to be consistent with the other datasets
+USGS.Flow.raw.D$datetime <- format(USGS.Flow.raw.D$datetime, "%y%m%d")
+#correcting error in 
+#creating a function that specifies that if d is greater than 181231 (%y%m%d - format) then date should be 19 and if not then it should be 20; and then print d
+date.correction.func <- (function(d) {
+       paste0(ifelse(d > 181231,"19","20"),d)
+       })
+#running the created function with d as datetime for the dataset USGS.flow.data
+USGS.Flow.raw.D$datetime <- date.correction.func(USGS.Flow.raw.D$datetime)
+
+# formating the created datetime as a date
+USGS.Flow.raw.D$datetime <- as.Date(USGS.Flow.raw.D$datetime, format = "%Y%m%d")
+```
+
+## Define your theme
+3. Build a theme and set it as your default theme.
+
+```{r}
+#3
+#building a theme
+NK.theme <- theme_light(base_size = 12) +
+  theme(plot.background = element_rect(fill = "grey97"),panel.grid.major =element_line(linetype = "dotted"),panel.grid.minor = element_line(linetype = "dotted"), text=element_text(size = 14, color = "black", face = "bold"),axis.text = element_text(color = "grey40"), legend.position = "right",legend.text = element_text(color = "grey40"))
+
+#setting it as my default theme
+theme_set(NK.theme)
+```
+
+## Create graphs
+For numbers 4-7, create graphs that follow best practices for data visualization. To make your graphs "pretty," ensure your theme, color palettes, axes, and legends are edited to your liking.
+
+Hint: a good way to build graphs is to make them ugly first and then create more code to make them pretty.
+
+4. [NTL-LTER] Plot total phosphorus by phosphate, with separate aesthetics for Peter and Paul lakes. Add a line of best fit and color it black.
+
+```{r, fig.height = 5, fig.width = 7}
+#4
+NTL.LTER.Plot.Q4 <- ggplot(NTL.Nutrients.PP.process.D, aes(x = tp_ug, y = po4, color = lakename)) +
+  geom_point() +
+  geom_smooth(method = lm, color = "black") +
+  scale_color_manual(values = c("#f1a340", "#998ec3")) +
+  ylim(c(0,45)) +
+  ggtitle("Q4. Plot of total phosphorus by phosphate") +
+  xlab("Total phosphorous (\U003BCg/L)") +
+  ylab(expression("Phosphate ( PO"[4]* " )"))
+
+print(NTL.LTER.Plot.Q4)
+```
+
+
+5. [NTL-LTER] Plot nutrients by date for Peter Lake, with separate colors for each depth. Facet your graph by the nutrient type.
+
+```{r, fig.height = 10, fig.width = 7}
+#5
+#geting a subset of data for only peter lake
+NTL.LTER.Peter.Q5.data <- subset(NTL.Nutrients.PP.gathered.process.D, lakename =="Peter Lake")
+#ploting peter lake data
+NTL.LTER.Peter.plot.Q5  <-
+  ggplot(NTL.LTER.Peter.Q5.data, aes(x = sampledate, y = concentration , colour = depth, fill = depth)) +
+  geom_point(size = 2) +
+  facet_wrap(vars(nutrient), nrow = 5, scales = "free_y") +
+  theme(strip.background = element_rect(fill = "black"), strip.text = element_text(color = "white")) + 
+  scale_color_distiller(palette = "Reds") +
+  ggtitle("Q5. Plots by nutrients by date for Peter Lake") +
+  xlab("Date (years)") +
+  ylab("Nutrient concentration")
+
+print(NTL.LTER.Peter.plot.Q5)
+```
+
+
+6. [USGS gauge] Plot discharge by date. Create two plots, one with the points connected with geom_line and one with the points connected with geom_smooth (hint: do not use method = "lm"). Place these graphs on the same plot (hint: ggarrange or something similar)
+
+```{r, fig.height = 6, fig.width = 7}
+#6
+#plot with geom_line
+USGS.plot.Q6.line <- ggplot(USGS.Flow.raw.D, aes(x = datetime, y =X165986_00060_00001)) + 
+  geom_line(color = "darkblue") + 
+  ggtitle("Q6a. Geom_line plot of discharge by date") +
+  xlab("Date (years)") +
+  ylab("Discharge") 
+
+#plot with geom_smooth
+USGS.plot.Q6.smooth <- ggplot(USGS.Flow.raw.D, aes(x = datetime, y =X165986_00060_00001)) +
+  geom_smooth(color = "darkblue") + 
+  ggtitle("Q6b. Geom_smooth plot of discharge by date") +
+  xlab("Date (years)") +
+  ylab("Discharge")
+
+#placing both graphs on the same plot
+grid.arrange(USGS.plot.Q6.line, USGS.plot.Q6.smooth)
+```
+Question: How do these two types of lines affect your interpretation of the data?
+
+> Answer: Yes. The geom_line plot shows significant fluctuations in data across the years.The data range appears to be from 0 to about 5,000. It also clearly shows missing data in 1980. Data across years does not seam to have a distinguishable trend.
+
+> The geom_smooth plot on the other hand does show as much variation in data. The data range appears to be from about 25 to 125. It also does not show any indication of missing data and it change in data across years appears to have a trend. 
+
+7. [ECOTOX Neonicotinoids] Plot the concentration, divided by chemical name. Choose a geom that accurately portrays the distribution of data points.
+
+```{r, fig.height = 8, fig.width = 7}
+#7
+#selectring subset of data for concentrations in mg/L
+Ecotox.plot.Q7 <- subset(ECOTOX.Neonicotinoids.Mortality.raw.D, Conc..Units..Std. =="AI mg/L")
+
+#plotting graph
+Ecotox.plot.Q7 <- ggplot(ECOTOX.Neonicotinoids.Mortality.raw.D, aes(x = Chemical.Name, y = Conc..Mean..Std.)) + 
+  geom_boxplot(aes(color = Chemical.Name)) +
+  ylim(c(0,750)) +
+  coord_flip() + 
+  theme(legend.position = "none") +
+  ggtitle("Q7. Plot of concentration by chemical name") + 
+  xlab("Chemical name") +
+  ylab("Concentration")
+
+print(Ecotox.plot.Q7)
+```
+
+
