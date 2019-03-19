@@ -92,7 +92,6 @@ TempTest.auto <- lme(data = PeterPaul.summertemp,
 TempTest.auto
 # The random effects output tells us we have a 1.588 std variation between temperatures in one week among all of the weeks
 ACF(TempTest.auto)
-
 ```
 This model structure should look familiar, with a typical linear model structure and dataframe defined. The addition here is that we have defined Week as a random variable. Essentially, we are interested not in the specific effects of each week but in the variability among weeks, so we have defined it as a random effect (essentially coming from a larger distribution of seasonal variability). The ~1 statement indicates that each week has its own intercept in the model. From here, we want to take the first order correlation to specify our autocorrelation structure. From the ACF output, we take the 2nd value (the innermost group level) to define the degree of autocorrelation. This number will always fall between 0 and 1. Notice that there is a fairly large degree of autocorrelation in our variables.
 
@@ -131,7 +130,9 @@ cld(TempTest.posthoc, alpha = 0.05, Letters = letters, adjust = "tukey")
 ggplot(PeterPaul.summertemp, aes(x = sampledate, y = temperature_C, color = lakename)) +
   geom_point() +
   scale_color_manual(values = c("#7fcdbb", "#253494")) +
-  geom_abline(intercept = 20.47, slope = 0.0001)
+  geom_abline(intercept = 20.47, slope = 0.0001) 
+
+  #scale_x_continuous(breaks = seq(min(PeterPaul.summertemp$sampledate), max(PeterPaul.summertemp$sampledate), by =2 )
 ```
 
 Question: How would you interpret the collective results of your mixed effects model in the context of the study question?

@@ -1,0 +1,232 @@
+---
+title: "Assignment 8: Time Series Analysis"
+author: "Njeri Kara"
+output: pdf_document
+geometry: margin=2.54cm
+editor_options: 
+  chunk_output_type: console
+---
+
+## OVERVIEW
+
+This exercise accompanies the lessons in Environmental Data Analytics (ENV872L) on time series analysis.
+
+## Directions
+1. Change "Student Name" on line 3 (above) with your name.
+2. Use the lesson as a guide. It contains code that can be modified to complete the assignment.
+3. Work through the steps, **creating code and output** that fulfill each instruction.
+4. Be sure to **answer the questions** in this assignment document.
+Space for your answers is provided in this document and is indicated by the ">" character.
+If you need a second paragraph be sure to start the first line with ">".
+You should notice that the answer is highlighted in green by RStudio. 
+6. When you have completed the assignment, **Knit** the text and code into a single PDF file.
+You will need to have the correct software installed to do this (see Software Installation Guide)
+Press the `Knit` button in the RStudio scripting panel.
+This will save the PDF output in your Assignments folder.
+8. After Knitting, please submit the completed exercise (PDF file) to the dropbox in Sakai. Please add your last name into the file name (e.g., "Salk_A08_TimeSeries.pdf") prior to submission.
+
+The completed exercise is due on Tuesday, 19 March, 2019 before class begins.
+
+## Brainstorm a project topic
+1. Spend 15 minutes brainstorming ideas for a project topic, and look for a dataset if you are choosing your own rather than using a class dataset. Remember your topic choices are due by the end of March, and you should post your choice ASAP to the forum on Sakai.
+
+Question: Did you do this?
+
+> ANSWER: Yes
+
+## Set up your session 
+2. Set up your session. Upload the EPA air quality raw dataset for PM2.5 in 2018, and the processed NTL-LTER dataset for nutrients in Peter and Paul lakes. Build a ggplot theme and set it as your default theme. Make sure date variables are set to a date format.
+
+```{r}
+#1
+#Setting the working directory
+setwd("C:/Users/jerik/OneDrive/Documents/Spring 2019 Semenster/Environmental Data Analytics/EDA_R_Work/EDA")
+
+#Loading necessary packages
+library(tidyverse)
+library(lubridate)
+library(nlme)
+library(lsmeans)
+library(multcompView)
+library(trend)
+library(scales)
+
+#Importing datasets
+EPA.PM25.2018.raw <- read.csv("./Data/Raw/EPAair_PM25_NC2018_raw.csv")
+NTL.Nutrients.PP.processed <-
+  read.csv("./Data/Processed/NTL-LTER_Lake_Nutrients_PeterPaul_Processed.csv")
+
+#Changing date variable of PM2.5 data to date format
+str(EPA.PM25.2018.raw)
+EPA.PM25.2018.raw$Date <- as.Date(EPA.PM25.2018.raw$Date,
+                                  format = "%m/%d/%y")
+class(EPA.PM25.2018.raw$Date) #confirming date change
+
+#Changing date variable to date format
+str(NTL.Nutrients.PP.processed)
+NTL.Nutrients.PP.processed$sampledate <- as.Date(NTL.Nutrients.PP.processed$sampledate,
+format = "%Y-%m-%d")
+class(NTL.Nutrients.PP.processed$sampledate) #confirming date change
+
+#Building a theme
+NK.theme <- theme_light(base_size = 12) +
+  theme(plot.background = element_rect(fill = "grey97"),
+        panel.grid.major =element_line(linetype = "dotted"),
+        panel.grid.minor = element_line(linetype = "dotted"), text=element_text(size = 14, 
+color = "black", face = "bold"),
+        axis.text = element_text(color = "grey40"), 
+        legend.position = "right",
+        legend.text = element_text(color = "grey40"))
+#setting it as my default theme
+theme_set(NK.theme)
+```
+
+
+## Run a hierarchical (mixed-effects) model
+
+Research question: Do PM2.5 concentrations have a significant trend in 2018?
+
+3. Run a repeated measures ANOVA, with PM2.5 concentrations as the response, Date as a fixed effect, and Site.Name as a random effect. This will allow us to extrapolate PM2.5 concentrations across North Carolina.
+
+3a. Illustrate PM2.5 concentrations by date. Do not split aesthetics by site.
+
+```{r}
+ggplot(EPA.PM25.2018.raw, aes(x = as.POSIXct(Date), y = Daily.Mean.PM2.5.Concentration)) +
+  geom_point(color='aquamarine3')+
+  xlab("Date (month/year)") +
+  ylab("PM 2.5 concentration") +
+  scale_x_datetime(date_breaks = "1 month", labels = date_format("%m/%y"))
+```
+
+3b. Insert the following line of code into your R chunk. This will eliminate duplicate measurements on single dates for each site.
+PM2.5 = PM2.5[order(PM2.5[,'Date'],-PM2.5[,'Site.ID']),]
+PM2.5 = PM2.5[!duplicated(PM2.5$Date),]
+
+```{r}
+EPA.PM25.2018.raw = EPA.PM25.2018.raw[order(EPA.PM25.2018.raw[,'Date'],
+                                            -EPA.PM25.2018.raw[,'Site.ID']),]
+EPA.PM25.2018.raw = EPA.PM25.2018.raw[!duplicated(EPA.PM25.2018.raw$Date),]
+```
+
+3c. Determine the temporal autocorrelation in your model. 
+```{r}
+# Determining temporal autocorrelation in the model
+Temp.auto <- lme(data = EPA.PM25.2018.raw,
+                     Daily.Mean.PM2.5.Concentration ~ Date, 
+                     random = ~1|Site.Name) 
+ACF(Temp.auto)
+```
+
+3d. Run a mixed effects model. 
+
+```{r}
+Test.mixed <- lme(data = EPA.PM25.2018.raw,
+                     Daily.Mean.PM2.5.Concentration ~ Date, 
+                     random = ~1|Site.Name,
+                     correlation = corAR1(form = ~ Date|Site.Name, value = 0.51383),
+                     method = "REML")
+summary(Test.mixed)
+```
+
+Is there a significant increasing or decreasing trend in PM2.5 concentrations in 2018? 
+
+> ANSWER: No there is no significant trend because the p-value is high (>0.05).
+
+3e. Run a fixed effects model with Date as the only explanatory variable. Then test whether the mixed effects model is a better fit than the fixed effect model. 
+
+```{r}
+#fixed effect model
+Test.fixed <- gls(data = EPA.PM25.2018.raw,
+                      Daily.Mean.PM2.5.Concentration ~ Date, 
+                      method = "REML")
+summary(Test.fixed)
+
+#comparing mixed effects and fixed effects models
+anova(Test.mixed, Test.fixed)
+```
+
+Which model is better?
+
+> ANSWER: The models are significantly different. The mixed effects model is better because it has a lower AIC value.
+
+
+## Run a Mann-Kendall test
+
+Research question: Is there a trend in total N surface concentrations in Peter and Paul lakes? 
+
+4. Duplicate the Mann-Kendall test we ran for total P in class, this time with total N for both lakes. Make sure to run a test for changepoints in the datasets (and run a second one if a second change point is likely). 
+
+```{r}
+# Wrangling the our dataset
+Nutrients.PP.surface <- 
+  NTL.Nutrients.PP.processed %>%
+  select(-lakeid, -depth_id, -comments) %>%
+  filter(depth == 0) %>%
+  filter(!is.na(tn_ug))
+
+#splitting by lake
+Peter.nutrients.surface <- filter(Nutrients.PP.surface, lakename == "Peter Lake")
+Paul.nutrients.surface <- filter(Nutrients.PP.surface, lakename == "Paul Lake")
+
+#Mann-Kendall test for Peter lake
+mk.test(Peter.nutrients.surface$tn_ug)
+##Mann-Kendall test for Paul lake
+mk.test(Paul.nutrients.surface$tn_ug)
+```
+
+> The first Mann-Kendall test for Peter lake has a small p-value (3.039e-13) therefore we reject the Ho hypothesis that there is no monotonic trend. The Z value is also positive therefore meaning the trend is increasing over time
+
+> The first Mann-Kendall test for Paul lake has a large p-value (0.7258) so we accept the Ho hypothesis that there is a monotonic trend. 
+
+```{r}
+#Finding out if there is a change point in the data
+#change point in Peter lake data
+pettitt.test(Peter.nutrients.surface$tn_ug)
+#change point in Paul lake data
+pettitt.test(Paul.nutrients.surface$tn_ug)
+```
+
+> The Pettitt's test for Peter Lake data has a small p-value (3.744e-10) therefore we reject the Ho hypothesis that there is no change point in the data. The test has detected a change point at observation 36.
+
+> The Pettitt's test for Paul Lake data has a large p-value (0.09624) therefore we accept the Ho hypothesis that there is no change point in the data.
+
+```{r}
+#Carrying out Mann Kendall tests of subseted Peter lake data at the change point
+mk.test(Peter.nutrients.surface$tn_ug[1:35])
+mk.test(Peter.nutrients.surface$tn_ug[36:98])
+```
+
+What are the results of this test?
+
+> ANSWER: On the first group of data, between observation 1-35, the Mann Kendall test has a large p-value (0.8203) therefore we accept the Ho hypothesis that this group of data has no significant monotonic trend.
+
+> On the second group of data, between observation 36-98 after the change point, the Mann Kendall test has a small p-value (0.001418) therefore we reject the Ho hypothesis that this group of data does not have a significant monotonic trend. The positive Z value indicates that the trend is increasing over test. 
+
+```{r}
+#Checking for a second change point in Peter Lake data
+pettitt.test(Peter.nutrients.surface$tn_ug[36:98])
+```
+
+> The pettitt test has a small p value (0.001213) therefore we reject the Ho hypothesis of the test that there is no significant change point in the data.The change point is at observation 56.
+
+```{r}
+#Carrying out Mann Kendall tests of subseted Peter lake data at the 2nd change point
+mk.test(Peter.nutrients.surface$tn_ug[36:55])
+mk.test(Peter.nutrients.surface$tn_ug[56:98])
+```
+
+> The Mann Kendall tests for both groups of data have a large p-value (0.23 and 0.6302 respectively) therefore we accept the Ho hypothesis that these groups of data have no significant monotonic trend.
+
+5. Generate a graph that illustrates the TN concentrations over time, coloring by lake and adding vertical line(s) representing changepoint(s).
+
+```{r}
+ggplot(Nutrients.PP.surface, aes(x = as.POSIXct(sampledate), y = tn_ug, color = lakename)) + 
+  geom_point() +
+  scale_color_manual(values = c("Violet Red 3", "Medium Orchid 3")) + 
+  geom_vline(xintercept = as.POSIXct("1993-06-02"), color = "Medium Orchid 3", lty = 2) +
+   geom_vline(xintercept = as.POSIXct("1994-06-22"), color = "Medium Orchid 3", lty = 2) +
+  xlab("Date (year)") +
+  ylab("Total Nitrogen (\U003BCg/L)") +
+  scale_x_datetime(date_breaks = "1 year", labels = date_format("%Y"))
+```
+
