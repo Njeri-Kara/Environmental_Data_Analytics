@@ -1,0 +1,1226 @@
+---
+title: "Time Series Analysis Project Code"
+author: "Njeri and Aishwarya"
+output: pdf_document
+geometry: margin=2.54cm
+editor_options: 
+  chunk_output_type: inline
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, eval=TRUE)
+ setwd("C:/Users/jerik/OneDrive/Documents/Spring 2019 Semenster/Time Series Analysis/TSA_R_work")
+   rm(list=ls())
+```
+
+#Setting the workspace and loading data
+```{r}
+root <- "C:/Users/jerik/OneDrive/Documents/Spring 2019 Semenster"
+root.dir <- file.path(root, "Time Series Analysis", "TSA_R_work")
+setwd(root.dir)
+
+#loading required packages
+library(forecast)
+library(tseries)
+library(Kendall)
+library(dplyr)
+library(sarima)
+library(uroot)
+library(tidyverse)
+library(trend)
+library(lubridate)
+
+#Setting up a theme for graphs
+NK.theme <- theme_light(base_size = 12) +
+  theme(panel.grid.major =element_line(linetype = "solid", colour = "grey93"),panel.grid.minor = element_line(linetype = "dotted", colour = "grey90"), text=element_text(size = 13.5, color = "black", face = "bold"),axis.text = element_text(color = "grey40"), legend.position = "right",legend.text = element_text(color = "grey40"))
+#setting it as my default theme
+theme_set(NK.theme)
+
+```
+
+##loading required packages/Ignore
+```{r echo=FALSE}
+#importing the raw data
+data.2001_2002 <- read.csv("./project_data/2001_2002_data.csv")
+data.2003_2004 <- read.csv("./project_data/2003_2004_data.csv")
+data.2005_2007 <- read.csv("./project_data/2005_2007_data.csv")
+data.2008_2009 <- read.csv("./project_data/2008_2009_data.csv")
+data.2010_2011 <- read.csv("./project_data/2010_2011_data.csv")
+data.2012 <- read.csv("./project_data/2012_data.csv")
+data.2013 <- read.csv("./project_data/2013_data.csv")
+data.2014 <- read.csv("./project_data/2014_data.csv")
+data.2015 <- read.csv("./project_data/2015_data.csv")
+data.2016 <- read.csv("./project_data/2016_data.csv")
+data.2017 <- read.csv("./project_data/2017_data.csv")
+data.2018 <- read.csv("./project_data/2018_data.csv")
+data.2019 <- read.csv("./project_data/2019_data.csv")
+
+#wrangling data to one data set by state
+#combining dataset
+data.2001_2019 <- rbind(data.2001_2002,data.2003_2004,data.2005_2007,data.2008_2009,data.2010_2011,data.2012,data.2013,data.2014,data.2015,data.2016,data.2017,data.2018,data.2019)
+```
+
+
+#Nevada data
+```{r echo=FALSE}
+#grouping data by state
+#Nevada Data
+data.NV.state <- data.2001_2019 %>%
+  filter(STATE=="NV") %>%
+  filter(TYPE.OF.PRODUCER=="Total Electric Power Industry") %>%
+  spread(ENERGY.SOURCE,GENERATION..Megawatthours.) %>%
+  mutate(Geothermal =ifelse(is.na(Geothermal),0,Geothermal)) %>%
+  mutate(Hydro = ifelse(is.na(`Hydroelectric Conventional`),0,`Hydroelectric Conventional`)) %>%
+  mutate(Other.Biomass = ifelse(is.na(`Other Biomass`),0,`Other Biomass`)) %>%
+  mutate(Solar = ifelse(is.na(`Solar Thermal and Photovoltaic`),0,`Solar Thermal and Photovoltaic`)) %>%
+  mutate(Wind = ifelse(is.na(Wind),0,Wind)) %>%
+  mutate(Wood.products = ifelse(is.na(`Wood and Wood Derived Fuels`),0,`Wood and Wood Derived Fuels`)) %>%
+  mutate(Renewable.total = Geothermal+Hydro+Other.Biomass+Solar+Wind+Wood.products) %>%
+  select(YEAR,MONTH,Geothermal,Renewable.total,Total) %>%
+  mutate(Date = make_date(YEAR,MONTH)) %>%
+  select(Date,Geothermal,Renewable.total,Total)
+
+#Converting geothermal, renewable total and total into time series
+NV.ts.data <- ts(data.NV.state[,2:4], start = c(2001,01), end=c(2019,1),frequency = 12)
+NV.geothermal <- ts(data.NV.state[,2], start = c(2001,01), end=c(2019,1),frequency = 12)
+NV.renewable <- ts(data.NV.state[,3], start = c(2001,01), end=c(2019,1),frequency = 12)
+NV.total <- ts(data.NV.state[,4], start = c(2001,01), end=c(2019,1),frequency = 12)
+
+nobs <- nrow(NV.ts.data)
+t <- 1:nobs
+
+#Geothermal plot
+ggplot(data = data.NV.state, aes(x = Date, y = (Geothermal/1000))) +
+  geom_line(color = "#00AFBB") +
+  xlab("Date") +
+  ylab("Energy Generation (GWh)") +
+  ylim(c(0,400)) +
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y")
+
+#Total renewable energy plot
+ggplot(data = data.NV.state, aes(x = Date, y = (Renewable.total/1000))) +
+  geom_line(color = "blue") +
+  xlab("Date") +
+  ylab("Energy Generation (GWh)") +
+  ylim(c(0,1150)) +
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y")
+
+#Total Energy
+ggplot(data = data.NV.state, aes(x = Date, y = (Total/1000))) +
+  geom_line(color = "coral4") +
+  xlab("Date") +
+  ylab("Energy Generation (GWh)") +
+  ylim(c(1000,5000)) +
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y")
+
+```
+
+##removing seasonal component to carry out trend and change point test
+```{r}
+#Checking for Stochastic trend of the geothermal series
+NV.geothermal.decomp <- decompose(NV.geothermal)
+deseasonal_NV.geothermal <- seasadj(NV.geothermal.decomp) 
+
+#Checking for a stochastic trend with ADF test
+adf.test(deseasonal_NV.geothermal, alternative = "stationary")
+
+
+#Checking for a stochastic trend in the renewable energy seroes
+NV.renewable.decomp <- decompose(NV.renewable)
+deseasonal_NV.renewable <- seasadj(NV.renewable.decomp) 
+#Checking for a stochastic trend with ADF test
+adf.test(deseasonal_NV.renewable, alternative = "stationary")
+
+
+#Checking for a stochastic trend in the total energy series
+NV.total.decomp <- decompose(NV.total)
+deseasonal_NV.total <- seasadj(NV.total.decomp) 
+#Checking for a stochastic trend with ADF test
+adf.test(deseasonal_NV.total, alternative = "stationary")
+#Checking for a stationary trend using the Mann Kendall Test
+MannKendall(deseasonal_NV.total)
+```
+
+>The result of the ADF test of  the geothermal  series (p=0.2248) indicates that the series has a stochastic trend, this result is similar for the total renewable energy series (p=0.3639). However, for the total energy series, the low p-value result (p=0.01) indicates that the series does not have a stochastic trend. A Mann Kendall test was therefore also carried out on the total energy series to test for a deterministic trend in the series. The result of the Mann Kendall test (p =< 2.22e-16) indicates that the series has a positive deterministic trend. 
+
+```{r}
+#analysis of first change point
+pettitt.test(deseasonal_NV.geothermal)
+pettitt.test(deseasonal_NV.renewable)
+```
+
+> Both pvalues are small therefore a change point was detected in the geothermal series in October 2009 and a changepoint in the total renewable energy series in July 2009. 
+
+```{r}
+#analysis of second change point
+pettitt.test(deseasonal_NV.geothermal[107:217])
+
+adf.test(deseasonal_NV.renewable[104:217])
+MannKendall(deseasonal_NV.renewable[104:217])
+
+adf.test(deseasonal_NV.renewable[1:104])
+MannKendall(deseasonal_NV.renewable[1:104])
+
+pettitt.test(deseasonal_NV.renewable[104:217])
+```
+
+> low p value in both series therefore there is a significant changepoint at obs 50 (156) for the geothermal series and 53 (156) for the total renewable energy series. This changepoint occured at december 2013.
+
+##removing trend component for each of the 3 groups of data - Renewables series
+###First group of data
+```{r echo=FALSE}
+#Lm 
+Nv.1.t <- 1:103
+NV.1.ren <- data.NV.state[1:103,3]
+lm.NV1 <- lm(NV.1.ren~Nv.1.t)
+summary(lm.NV1 )
+# Storing the coefficients of the model.Bio
+Beta0.NV1 <- lm.NV1$coefficients[1]
+Beta1.NV1 <- lm.NV1$coefficients[2]
+```
+
+Detrending series group 1
+```{r echo=FALSE}
+### Detrending series for Total.Biomass.Energy.Production series
+Y_detrend.NV1 <- array(0,nobs)
+for (i in 1:103){
+  Y_detrend.NV1[i]= NV.renewable[i]-(Beta0.NV1+Beta1.NV1*i)
+}
+
+Y_detrend.NV1 <- ts(Y_detrend.NV1,frequency = 12)
+
+
+par(mfrow=c(1,1))
+#plot for detrended Total.Biomass.Energy.Production series
+plot(t,NV.renewable[t],type="l", col="blue", main=" Total Biomass Energy Production series", ylab="Energy",xlab ="Time (months)",ylim=c(-150000,1500000))
+lines(t,Y_detrend.NV1[t], col="black")
+legend("topright",legend = c("Series with trend","Detrended series"),lty = c("solid","solid"), col = c("blue","black"))
+
+```
+
+###2nd group of data
+```{r echo=FALSE}
+#Lm 
+Nv.2.t <- 104:156
+NV.2.ren <- data.NV.state[104:156,3]
+lm.NV2 <- lm(NV.2.ren~Nv.2.t)
+summary(lm.NV2 )
+# Storing the coefficients of the model.Bio
+Beta0.NV2 <- lm.NV2$coefficients[1]
+Beta1.NV2 <- lm.NV2$coefficients[2]
+```
+
+Detrending series group 2
+```{r echo=FALSE}
+### Detrending series for Total.Biomass.Energy.Production series
+Y_detrend.NV2 <- array(0,nobs)
+for (i in 104:156){
+  Y_detrend.NV2[i]= NV.renewable[i]-(Beta0.NV2+Beta1.NV2*i)
+}
+
+
+Y_detrend.NV2 <- ts(Y_detrend.NV2,frequency = 12)
+
+
+par(mfrow=c(1,1))
+#plot for detrended Total.Biomass.Energy.Production series
+plot(t,NV.renewable[t],type="l", col="blue", main=" Total Biomass Energy Production series", ylab="Energy",xlab ="Time (months)",ylim=c(-100000,2050000), xlim=c(0,300))
+lines(t,Y_detrend.NV2[t], col="black")
+legend("topright",legend = c("Series with trend","Detrended series"),lty = c("solid","solid"), col = c("blue","black"))
+
+```
+
+###3rd group of data
+```{r echo=FALSE}
+#Lm 
+Nv.3.t <- 157:217
+NV.3.ren <- data.NV.state[157:217,3]
+lm.NV3 <- lm(NV.3.ren~Nv.3.t)
+summary(lm.NV3 )
+# Storing the coefficients of the model.Bio
+Beta0.NV3 <- lm.NV3$coefficients[1]
+Beta1.NV3 <- lm.NV3$coefficients[2]
+```
+
+
+### Detrending series group 3
+```{r echo=FALSE}
+### Detrending series for Total.Biomass.Energy.Production series
+Y_detrend.NV3 <- array(0,nobs)
+for (i in 157:217){
+  Y_detrend.NV3[i]= NV.renewable[i]-(Beta0.NV3+Beta1.NV3*i)
+}
+
+Y_detrend.NV3 <- ts(Y_detrend.NV3,frequency = 12)
+
+
+par(mfrow=c(1,1))
+#plot for detrended Total.Biomass.Energy.Production series
+plot(t,NV.renewable[t],type="l", col="blue", main=" Total Biomass Energy Production series", ylab="Energy",xlab ="Time (months)",ylim=c(-150000,2050000), xlim=c(0,300))
+lines(t,Y_detrend.NV3[t], col="black")
+legend("topright",legend = c("Series with trend","Detrended series"),lty = c("solid","solid"), col = c("blue","black"))
+
+```
+
+##combining the detrended series
+```{r}
+NV1 <- append(Y_detrend.NV1[1:103],Y_detrend.NV2[104:156])
+Y_detrend.NV <- append(NV1, Y_detrend.NV3[157:217])
+
+```
+
+
+##Forecasting Nevada data
+```{r}
+
+#Forecasts for whole dataset
+NV.renewable.sTS <- StructTS(NV.renewable)
+NV.renewable.forecast <- forecast(NV.renewable.sTS, h=71)
+NV.renewable.forecast
+plot(NV.renewable.forecast)
+
+NV.total.sTS <- StructTS(NV.total)
+NV.total.forecast <- forecast(NV.total.sTS, h=71)
+NV.total.forecast
+plot(NV.total.forecast)
+
+#Forecast for 1st group dataset
+NV.renewable.grp1 <- ts(NV.renewable[1:103], start = c(2001,01), end=c(2009,7),frequency = 12)
+NV.renewable.sTS <- StructTS(NV.renewable.grp1)
+NV.renewable.forecast <- forecast(NV.renewable.sTS, h=185)
+NV.renewable.forecast
+plot(NV.renewable.forecast)
+
+NV.total.grp1 <- ts(NV.total[1:103], start = c(2001,01), end=c(2009,7),frequency = 12)
+NV.total.sTS <- StructTS(NV.total.grp1)
+NV.total.forecast <- forecast(NV.total.sTS, h=114)
+NV.total.forecast
+plot(NV.total.forecast)
+```
+
+#Washington State data
+```{r echo=FALSE}
+#grouping data by state
+#Washington Data
+data.WA.state <- data.2001_2019 %>%
+  filter(STATE=="WA") %>%
+  filter(TYPE.OF.PRODUCER=="Total Electric Power Industry") %>%
+  spread(ENERGY.SOURCE,GENERATION..Megawatthours.) %>%
+  mutate(Hydro = ifelse(is.na(`Hydroelectric Conventional`),0,`Hydroelectric Conventional`)) %>%
+  mutate(Other.Biomass = ifelse(is.na(`Other Biomass`),0,`Other Biomass`)) %>%
+  mutate(Solar = ifelse(is.na(`Solar Thermal and Photovoltaic`),0,`Solar Thermal and Photovoltaic`)) %>%
+  mutate(Wind = ifelse(is.na(Wind),0,Wind)) %>%
+  mutate(Wood.products = ifelse(is.na(`Wood and Wood Derived Fuels`),0,`Wood and Wood Derived Fuels`)) %>%
+  mutate(Renewable.total = Hydro+Other.Biomass+Solar+Wind+Wood.products) %>%
+  select(YEAR,MONTH,Hydro,Renewable.total,Total) %>%
+  mutate(Date = make_date(YEAR,MONTH)) %>%
+  select(Date,Hydro,Renewable.total,Total)
+
+#CoNVerting into time series
+WA.ts.data <- ts(data.WA.state[,2:4], start = c(2001,01), end=c(2019,1),frequency = 12)
+WA.Hydro <- ts(data.WA.state[,2], start = c(2001,01), end=c(2019,1),frequency = 12)
+WA.renewable <- ts(data.WA.state[,3], start = c(2001,01), end=c(2019,1),frequency = 12)
+WA.total <- ts(data.WA.state[,4], start = c(2001,01), end=c(2019,1),frequency = 12)
+
+nobs <- nrow(WA.ts.data)
+t <- 1:nobs
+
+#Hydro plot
+ggplot(data = data.WA.state, aes(x = Date, y = (Hydro/1000))) +
+  geom_line(color = "#00AFBB") +
+  xlab("Date") +
+  ylab("Hydro Energy Generation (GWh)") +
+  ylim(c(2500,12000)) +
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y")
+
+#Total renewable energy plot
+ggplot(data = data.WA.state, aes(x = Date, y = (Renewable.total/1000))) +
+  geom_line(color = "blue") +
+  xlab("Date") +
+  ylab("Total Renewable Energy Generation (GWh)") +
+  ylim(c(2500,12000)) +
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y")
+
+#Total Energy
+ggplot(data = data.WA.state, aes(x = Date, y = (Total/1000))) +
+  geom_line(color = "coral4") +
+  xlab("Date") +
+  ylab("Total Energy Generation (GWh)") +
+  ylim(c(2500,13000)) +
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y")
+
+```
+
+##removing seasonal component to carrry out trend and change point test
+```{r}
+#Checking for Stochastic trend of the Hydro series
+WA.Hydro.decomp <- decompose(WA.Hydro)
+deseasonal_WA.Hydro <- seasadj(WA.Hydro.decomp) 
+
+#Checking for a stochastic trend with ADF test
+adf.test(deseasonal_WA.Hydro, alternative = "stationary")
+
+
+#Checking for a stochastic trend in the renewable energy seroes
+WA.renewable.decomp <- decompose(WA.renewable)
+deseasonal_WA.renewable <- seasadj(WA.renewable.decomp) 
+#Checking for a stochastic trend with ADF test
+adf.test(deseasonal_WA.renewable, alternative = "stationary")
+
+
+#Checking for a stochastic trend in the total energy series
+WA.total.decomp <- decompose(WA.total)
+deseasonal_WA.total <- seasadj(WA.total.decomp) 
+#Checking for a stochastic trend with ADF test
+adf.test(deseasonal_WA.total, alternative = "stationary")
+#Checking for a stationary trend using the Mann Kendall Test
+MannKendall(deseasonal_WA.total)
+MannKendall(deseasonal_WA.Hydro)
+MannKendall(deseasonal_WA.renewable)
+
+#Changepoint
+pettitt.test(deseasonal_WA.renewable)
+
+pettitt.test(deseasonal_WA.renewable[114:217])
+```
+
+>The result of the ADF test of  the hydro  series (p=0.01) indiNVtes that the series has no stochastic trend, this result is similar for the total renewable energy series (p=0.01). Similarly, for the total energy series, the low p-value result (p=0.01) indiNVtes that the series does not have a stochastic trend. A Mann Kendall test was therefore also NVrried out on these three to test for a deterministic trend in the series. The result of the Mann Kendall test (p =< 2.22e-16) indiNVtes that the series has a positive deterministic trend for total electricity generated and renewable electricity generated, and no deterministic trend (p = 5.7578e-05) for hydro electric power.
+
+#forecasting Renewable and total energy
+```{r}
+#Scenario 2
+#forecasts for whole dataset
+WA.s2.sTS <- StructTS(WA.renewable)
+WA.s2.forecast <- forecast(WA.s2.sTS, h=12)
+WA.s2.forecast
+plot(WA.s2.forecast, main = "WA Scenario 2 forecast", ylab = "Electricity Generation (MWh)", xlab =  "Year")
+
+
+#Comparison with total electricity series
+#Total electricity generation to find % of renewable energy
+WA.total.sTS <- StructTS(WA.total)
+WA.total.forecast <- forecast(WA.total.sTS, h=12)
+WA.total.forecast
+plot(WA.total.forecast, main = "WA Total Electricity forecast", ylab = "Electricity Generation (MWh)", xlab =  "Year")
+```
+
+
+#DC Data
+```{r echo=FALSE}
+#grouping data by state
+#Nevada Data
+
+data.DC.state <- data.2001_2019 %>%
+  filter(STATE=="DC") %>%
+  filter(TYPE.OF.PRODUCER=="Total Electric Power Industry") %>%
+  spread(ENERGY.SOURCE,GENERATION..Megawatthours.) %>%
+  mutate(Other.Biomass = ifelse(is.na(`Other Biomass`),0,`Other Biomass`)) %>%
+  mutate(Solar = ifelse(is.na(`Solar Thermal and Photovoltaic`),0,`Solar Thermal and Photovoltaic`)) %>%
+  mutate(Renewable.total = Other.Biomass+Solar) %>%
+  select(YEAR,MONTH,Other.Biomass,Renewable.total,Total) %>%
+  mutate(Date = make_date(YEAR,MONTH)) %>%
+  select(Date,Other.Biomass,Renewable.total,Total)
+
+#CoNVerting into time series
+DC.ts.data <- ts(data.DC.state[,2:4], start = c(2001,01), end=c(2019,1),frequency = 12)
+DC.Obiomass <- ts(data.DC.state[,2], start = c(2001,01), end=c(2019,1),frequency = 12)
+DC.renewable <- ts(data.DC.state[,3], start = c(2001,01), end=c(2019,1),frequency = 12)
+DC.total <- ts(data.DC.state[,4], start = c(2001,01), end=c(2019,1),frequency = 12)
+
+nobs <- nrow(DC.ts.data)
+t <- 1:nobs
+
+#Other Biomass plot
+ggplot(data = data.DC.state, aes(x = Date, y = (Other.Biomass))) +
+  geom_line(color = "darkorange", linetype = "solid") +
+  xlab("Date") +
+  ylab("Energy Generation (kWh)") +
+  labs(title = "D.C. Other Biomass energy series") +
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y")
+
+#Total renewable energy plot
+ggplot(data = data.DC.state, aes(x = Date, y = (Renewable.total))) +
+  geom_line(color = "darkgreen") +
+  xlab("Date") +
+  ylab("Energy Generation (kWh)") +
+  labs(title = "D.C. renewable energy series") +
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y")
+
+#Total Energy
+ggplot(data = data.DC.state, aes(x = Date, y = (Total))) +
+  geom_line(color = "darkred") +
+  xlab("Date") +
+  ylab("Energy Generation (kWh)") +
+  labs(title = "D.C. total energy generation series") +
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y")
+
+```
+
+##removing seasonal component to NVrry out trend and change point test
+```{r}
+#Checking for Stochastic trend of the Wind series
+DC.Obiomass.decomp <- decompose(DC.Obiomass)
+deseasonal_DC.Obiomass <- seasadj(DC.Obiomass.decomp) 
+
+#Checking for a stochastic trend with ADF test
+adf.test(deseasonal_DC.Obiomass, alternative = "stationary")
+
+
+#Checking for a stochastic trend in the renewable energy seroes
+DC.renewable.decomp <- decompose(DC.renewable)
+deseasonal_DC.renewable <- seasadj(DC.renewable.decomp) 
+#Checking for a stochastic trend with ADF test
+adf.test(deseasonal_DC.renewable, alternative = "stationary")
+
+
+#Checking for a stochastic trend in the total energy series
+DC.total.decomp <- decompose(DC.total)
+deseasonal_DC.total <- seasadj(DC.total.decomp) 
+#Checking for a stochastic trend with ADF test
+adf.test(deseasonal_DC.total, alternative = "stationary")
+#Checking for a stationary trend using the Mann Kendall Test
+MannKendall(deseasonal_DC.total)
+```
+
+>The result of the ADF test of  the other biomass  series (p=0.1517) indiNVtes that the series has a stochastic trend, this result is similar for the total renewable energy series (p=0.2229). However, for the total energy series, the low p-value result (p=0.01) indiNVtes that the series does not have a stochastic trend. A Mann Kendall test was therefore also NVrried out on the total energy series to test for a deterministic trend in the series. The result of the Mann Kendall test (p =0.091911) indiNVtes that the series does not have a positive deterministic trend. 
+
+```{r}
+#analysis of first change point
+pettitt.test(deseasonal_DC.Obiomass)
+pettitt.test(deseasonal_DC.renewable)
+```
+
+> Both pvalues are small therefore a change point was detected in the other biomass series and total renewable energy series in March 2009.
+
+```{r}
+#analysis of second change point
+pettitt.test(deseasonal_DC.Obiomass[171:217])
+pettitt.test(deseasonal_DC.renewable[171:217])
+```
+
+> low p value in both series therefore there is a signifiNVnt changepoint at obs 22 (193). This changepoint occured at March 2017.
+
+##removing trend component for each of the 3 groups of data - Renewables series
+###First group of data
+```{r echo=FALSE}
+#Lm 
+DC.1.t <- 1:171
+DC.1.ren <- data.DC.state[1:171,3]
+lm.DC1 <- lm(DC.1.ren~DC.1.t)
+summary(lm.DC1 )
+# Storing the coefficients of the model.Bio
+Beta0.DC1 <- lm.DC1$coefficients[1]
+Beta1.DC1 <- lm.DC1$coefficients[2]
+```
+
+Detrending series group 1
+```{r echo=FALSE}
+### Detrending series for Total.Biomass.Energy.Production series
+Y_detrend.DC1 <- array(0,nobs)
+for (i in 1:171){
+  Y_detrend.DC1[i]= DC.renewable[i]-(Beta0.DC1+Beta1.DC1*i)
+}
+
+Y_detrend.DC1 <- ts(Y_detrend.DC1,frequency = 12)
+
+#Plot of detrended group 1 series compared to normal series
+ggplot() + 
+  geom_line(data = DC.renewable, aes(x = t, y = DC.renewable[t]), color = "darkgreen") +
+  geom_line(data = Y_detrend.DC1, aes(x = t, y = Y_detrend.DC1[t]), color = "black") +
+  xlab('Time (months)') +
+  ylab("Energy Generation (GWh)") +
+  labs(title = "Detrended Renewable energy series from 01/2001 to 03/2015") +
+  scale_color_manual(values=c("Normal series"="darkgreen", "Detrended series"="black")) +
+  theme(legend.position=c(150,1200))
+```
+
+###2nd group of data
+```{r echo=FALSE}
+#Lm 
+DC.2.t <- 172:193
+DC.2.ren <- data.DC.state[172:193,3]
+lm.DC2 <- lm(DC.2.ren~DC.2.t)
+summary(lm.DC2 )
+# Storing the coefficients of the model.Bio
+Beta0.DC2 <- lm.DC2$coefficients[1]
+Beta1.DC2 <- lm.DC2$coefficients[2]
+```
+
+Detrending series group 2
+```{r echo=FALSE}
+### Detrending series for Total.Biomass.Energy.Production series
+Y_detrend.DC2 <- array(0,nobs)
+for (i in 172:193){
+  Y_detrend.DC2[i]= DC.renewable[i]-(Beta0.DC2+Beta1.DC2*i)
+}
+
+Y_detrend.DC2 <- ts(Y_detrend.DC2,frequency = 12)
+
+#Plot of detrended group 2 series compared to normal series
+ggplot() + 
+  geom_line(data = DC.renewable, aes(x = t, y = DC.renewable[t]), color = "darkgreen") +
+  geom_line(data = Y_detrend.DC2, aes(x = t, y = Y_detrend.DC2[t]), color = "black") +
+  xlab('Time(months)') +
+  ylab("Energy Generation (GWh)") +
+  labs(title = "Detrended Renewable energy series from 03/2015 to 01/2017") +
+  scale_color_manual(values=c("Normal series"="darkgreen", "Detrended series"="black")) +
+  theme(legend.position=c(150,1200))
+
+```
+
+###3rd group of data
+```{r echo=FALSE}
+#Lm 
+DC.3.t <- 194:217
+DC.3.ren <- data.DC.state[194:217,3]
+lm.DC3 <- lm(DC.3.ren~DC.3.t)
+summary(lm.DC3 )
+# Storing the coefficients of the model.Bio
+Beta0.DC3 <- lm.DC3$coefficients[1]
+Beta1.DC3 <- lm.DC3$coefficients[2]
+```
+
+
+### Detrending series group 3
+```{r echo=FALSE}
+### Detrending series for Total.Biomass.Energy.Production series
+Y_detrend.DC3 <- array(0,nobs)
+for (i in 194:217){
+  Y_detrend.DC3[i]= DC.renewable[i]-(Beta0.DC3+Beta1.DC3*i)
+}
+
+Y_detrend.DC3 <- ts(Y_detrend.DC3,frequency = 12)
+
+
+#Plot of detrended group 2 series compared to normal series
+ggplot() + 
+  geom_line(data = DC.renewable, aes(x = t, y = DC.renewable[t]), color = "darkgreen") +
+  geom_line(data = Y_detrend.DC3, aes(x = t, y = Y_detrend.DC3[t]), color = "black") +
+  xlab('Time (months)') +
+  ylab("Energy Generation (GWh)") +
+  labs(title = "Detrended Renewable energy series from 01/2017 to 01/2019") +
+  scale_color_manual(values=c("Normal series"="darkgreen", "Detrended series"="black"))
+```
+
+##combining the detrended series
+```{r}
+detrended.DC.a <- append(Y_detrend.DC1[1:171],Y_detrend.DC2[172:193])
+detrended.DC <- append(detrended.DC.a , Y_detrend.DC3[194:217])
+detrended.DC <- ts(detrended.DC,start = c(2001,01), end=c(2019,1),frequency = 12)
+
+#Plot of full detrended series compared to normal series
+ggplot() + 
+  geom_line(data = DC.renewable, aes(x = t, y = DC.renewable[t]), color = "darkgreen") +
+  geom_line(data = detrended.DC, aes(x = t, y = detrended.DC), color = "black") +
+  xlab('Time (months)') +
+  ylab("Energy Generation (GWh)") +
+  labs(title = "Detrended Renewable energy series from 01/2001 to 01/2019") +
+  scale_color_manual(values=c("Normal series"="darkgreen", "Detrended series"="black"))
+
+```
+
+
+##forecasting DC data
+```{r}
+
+#Scenario 1
+#forecast for 1st group dataset
+DC.renewable.grp1 <- ts(DC.renewable[1:171], start = c(2001,01), end=c(2017,01),frequency = 12)
+DC.s1.sTS <- StructTS(DC.renewable.grp1)
+DC.s1.forecast <- forecast(DC.s1.sTS, h=178)
+DC.s1.forecast
+plot(DC.s1.forecast, main = "DC Scenario 1 forecast", ylab = "Electricity Generation (MWh)", xlab = "Year")
+
+#Scenario 2
+#forecasts for whole dataset
+DC.s2.sTS <- StructTS(DC.renewable)
+DC.s2.forecast <- forecast(DC.s2.sTS, h=167)
+DC.s2.forecast
+plot(DC.s2.forecast, main = "Scenario 2 forecast", ylab = "Electricity Generation (MWh)", xlab =  "Year")
+
+#Scenario 3
+#forecast detrended data
+DC.detrended.sTS <- StructTS(detrended.DC)
+DC.detrended.forecast <- forecast(DC.detrended.sTS, h=71)
+DC.detrended.main <- DC.detrended.forecast$mean
+
+plot(DC.detrended.forecast, main = "Detrended forecast for Scenario 3", ylab = "Electricity Generation (MWh)", xlab =  "Year")
+
+#Comparison with total electricity series
+#Total electricity generation to find % of renewable energy
+DC.total.sTS <- StructTS(DC.total)
+DC.total.forecast <- forecast(DC.total.sTS, h=71)
+DC.total.forecast
+```
+
+#Adding back trend to forecast
+
+```{r}
+NV.s3 <- array(0:71)
+for (i in 1:71){
+  NV.s3[i]= NV.detrended.main[i]+(779536 + Beta1.NV3*i)
+}
+
+NV.s3 <- ts(NV.s3, start = c(2019,02), end=c(2024,12),frequency = 12)
+
+plot(NV.s3)
+
+NV.s3.total <- append(NV.renewable, NV.s3)
+NV.s3.total <- as.data.frame(NV.s3.total)
+
+ggplot() + 
+  geom_line(data = NV.s3.total, aes(x = (1:288), y = NV.s3.total/1000), color = "blue") +
+  geom_line(data = NV.renewable, aes(x = t, y = NV.renewable[t]/1000), color = "black") +
+  ylab("Energy Generation (GWh)") + xlab("Year")+
+  scale_y_continuous(limits = c(-300,1200)) +
+  labs(title = "forecasted renewable energy series for Nevada")
+```
+
+
+#Kansas Data
+
+```{r echo=FALSE}
+#grouping data by state
+#Kansas Data
+
+data.KS.state <- data.2001_2019 %>%
+  filter(STATE=="KS") %>%
+  filter(TYPE.OF.PRODUCER=="Total Electric Power Industry") %>%
+  spread(ENERGY.SOURCE,GENERATION..Megawatthours.) %>%
+  mutate(Hydro = ifelse(is.na(`Hydroelectric Conventional`),0,`Hydroelectric Conventional`)) %>%
+  mutate(Other.Biomass = ifelse(is.na(`Other Biomass`),0,`Other Biomass`)) %>%
+  mutate(Solar = ifelse(is.na(`Solar Thermal and Photovoltaic`),0,`Solar Thermal and Photovoltaic`)) %>%
+  mutate(Wind = ifelse(is.na(Wind),0,Wind)) %>%
+  mutate(Renewable.total = Hydro+Other.Biomass+Solar+Wind) %>%
+  select(YEAR,MONTH,Wind,Renewable.total,Total) %>%
+  mutate(Date = make_date(YEAR,MONTH)) %>%
+  select(Date,Wind,Renewable.total,Total)
+
+#CoNVerting into time series
+KS.ts.data <- ts(data.KS.state[,2:4], start = c(2001,01), end=c(2019,1),frequency = 12)
+KS.Wind <- ts(data.KS.state[,2], start = c(2001,01), end=c(2019,1),frequency = 12)
+KS.renewable <- ts(data.KS.state[,3], start = c(2001,01), end=c(2019,1),frequency = 12)
+KS.total <- ts(data.KS.state[,4], start = c(2001,01), end=c(2019,1),frequency = 12)
+
+nobs <- nrow(KS.ts.data)
+t <- 1:nobs
+
+#Wind plot
+ggplot(data = data.KS.state, aes(x = Date, y = (Wind/1000))) +
+  geom_line(color = "darkorange", linetype = "solid") +
+  xlab("Date") +
+  ylab("Energy Generation (GWh)") +
+  labs(title = "Kansas Wind energy series") +
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y")
+
+#Total renewable energy plot
+ggplot(data = data.KS.state, aes(x = Date, y = (Renewable.total/1000))) +
+  geom_line(color = "darkgreen") +
+  xlab("Date") +
+  ylab("Energy Generation (GWh)") +
+  labs(title = "Nevada renewable energy series") +
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y")
+
+#Total Energy
+ggplot(data = data.KS.state, aes(x = Date, y = (Total/1000))) +
+  geom_line(color = "darkred") +
+  xlab("Date") +
+  ylab("Energy Generation (GWh)") +
+  labs(title = "Nevada total energy generation series") +
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y")
+
+```
+
+##removing seasonal component to NVrry out trend and change point test
+```{r}
+#Checking for Stochastic trend of the Wind series
+KS.Wind.decomp <- decompose(KS.Wind)
+deseasonal_KS.Wind <- seasadj(KS.Wind.decomp) 
+
+#Checking for a stochastic trend with ADF test
+adf.test(deseasonal_KS.Wind, alternative = "stationary")
+
+
+#Checking for a stochastic trend in the renewable energy seroes
+KS.renewable.decomp <- decompose(KS.renewable)
+deseasonal_KS.renewable <- seasadj(KS.renewable.decomp) 
+#Checking for a stochastic trend with ADF test
+adf.test(deseasonal_KS.renewable, alternative = "stationary")
+
+
+#Checking for a stochastic trend in the total energy series
+KS.total.decomp <- decompose(KS.total)
+deseasonal_KS.total <- seasadj(KS.total.decomp) 
+#Checking for a stochastic trend with ADF test
+adf.test(deseasonal_KS.total, alternative = "stationary")
+#Checking for a stationary trend using the Mann Kendall Test
+MannKendall(deseasonal_KS.total)
+```
+
+>The result of the ADF test of  the Wind  series (p=0.7845) indiNVtes that the series has a stochastic trend, this result is similar for the total renewable energy series (p=0.7843). However, for the total energy series, the low p-value result (p=0.01) indiNVtes that the series does not have a stochastic trend. A Mann Kendall test was therefore also NVrried out on the total energy series to test for a deterministic trend in the series. The result of the Mann Kendall test (p =< 2.22e-16) indiNVtes that the series has a positive deterministic trend. 
+
+```{r}
+#analysis of first change point
+pettitt.test(deseasonal_KS.Wind)
+pettitt.test(deseasonal_KS.renewable)
+```
+
+> Both pvalues are small therefore a change point was detected in the Wind series in October 2009 and a changepoint in the total renewable energy series in June 2009. 
+
+```{r}
+#analysis of second change point
+pettitt.test(deseasonal_KS.Wind[103:217])
+pettitt.test(deseasonal_KS.renewable[103:217])
+```
+
+> low p value in both series therefore there is a signifiNVnt changepoint at obs 50 (153). This changepoint occured at September 2013.
+
+##removing trend component for each of the 3 groups of data - Renewables series
+###First group of data
+```{r echo=FALSE}
+#Lm 
+KS.1.t <- 1:103
+KS.1.ren <- data.KS.state[1:103,3]
+lm.KS1 <- lm(KS.1.ren~KS.1.t)
+summary(lm.KS1 )
+# Storing the coefficients of the model.Bio
+Beta0.KS1 <- lm.KS1$coefficients[1]
+Beta1.KS1 <- lm.KS1$coefficients[2]
+```
+
+Detrending series group 1
+```{r echo=FALSE}
+### Detrending series for Total.Biomass.Energy.Production series
+Y_detrend.KS1 <- array(0,nobs)
+for (i in 1:102){
+  Y_detrend.KS1[i]= KS.renewable[i]-(Beta0.KS1+Beta1.KS1*i)
+}
+
+Y_detrend.KS1 <- ts(Y_detrend.KS1,frequency = 12)
+
+#Plot of detrended group 1 series compared to normal series
+ggplot() + 
+  geom_line(data = KS.renewable, aes(x = t, y = KS.renewable[t]/1000), color = "darkgreen") +
+  geom_line(data = Y_detrend.KS1, aes(x = t, y = Y_detrend.KS1[t]/1000), color = "black") +
+  xlab('Time (months)') +
+  ylab("Energy Generation (GWh)") +
+  labs(title = "Detrended Renewable energy series from 01/2001 to 07/2009") +
+  scale_color_manual(values=c("Normal series"="darkgreen", "Detrended series"="black")) +
+  theme(legend.position=c(150,1200))
+```
+
+###2nd group of data
+```{r echo=FALSE}
+#Lm 
+KS.2.t <- 103:153
+KS.2.ren <- data.KS.state[103:153,3]
+lm.KS2 <- lm(KS.2.ren~KS.2.t)
+summary(lm.KS2 )
+# Storing the coefficients of the model.Bio
+Beta0.KS2 <- lm.KS2$coefficients[1]
+Beta1.KS2 <- lm.KS2$coefficients[2]
+```
+
+Detrending series group 2
+```{r echo=FALSE}
+### Detrending series for Total.Biomass.Energy.Production series
+Y_detrend.KS2 <- array(0,nobs)
+for (i in 103:153){
+  Y_detrend.KS2[i]= KS.renewable[i]-(Beta0.KS2+Beta1.KS2*i)
+}
+
+Y_detrend.KS2 <- ts(Y_detrend.KS2,frequency = 12)
+
+#Plot of detrended group 2 series compared to normal series
+ggplot() + 
+  geom_line(data = KS.renewable, aes(x = t, y = KS.renewable[t]/1000), color = "darkgreen") +
+  geom_line(data = Y_detrend.KS2, aes(x = t, y = Y_detrend.KS2[t]/1000), color = "black") +
+  xlab('Time(months)') +
+  ylab("Energy Generation (GWh)") +
+  labs(title = "Detrended Renewable energy series from 08/2009 to 12/2013") +
+  scale_color_manual(values=c("Normal series"="darkgreen", "Detrended series"="black")) +
+  theme(legend.position=c(150,1200))
+
+```
+
+###3rd group of data
+```{r echo=FALSE}
+#Lm 
+KS.3.t <- 154:217
+KS.3.ren <- data.KS.state[154:217,3]
+lm.KS3 <- lm(KS.3.ren~KS.3.t)
+summary(lm.KS3 )
+# Storing the coefficients of the model.Bio
+Beta0.KS3 <- lm.KS3$coefficients[1]
+Beta1.KS3 <- lm.KS3$coefficients[2]
+```
+
+
+### Detrending series group 3
+```{r echo=FALSE}
+### Detrending series for Total.Biomass.Energy.Production series
+Y_detrend.KS3 <- array(0,154)
+for (i in 154:217){
+  Y_detrend.KS3[i]= KS.renewable[i]-(Beta0.KS3+Beta1.KS3*i)
+}
+
+Y_detrend.KS3 <- ts(Y_detrend.KS3,frequency = 12)
+
+
+#Plot of detrended group 2 series compared to normal series
+ggplot() + 
+  geom_line(data = KS.renewable, aes(x = t, y = KS.renewable[t]/1000), color = "darkgreen") +
+  geom_line(data = Y_detrend.KS3, aes(x = t, y = Y_detrend.KS3[t]/1000), color = "black") +
+  xlab('Time (months)') +
+  ylab("Energy Generation (GWh)") +
+  labs(title = "Detrended Renewable energy series from 01/2014 to 01/2019") +
+  scale_color_manual(values=c("Normal series"="darkgreen", "Detrended series"="black"))
+```
+
+##combining the detrended series
+```{r}
+detrended.KS.a <- append(Y_detrend.KS1[1:103],Y_detrend.KS2[104:153])
+detrended.KS <- append(detrended.KS.a , Y_detrend.KS3[154:217])
+detrended.KS <- ts(detrended.KS,start = c(2001,01), end=c(2019,1),frequency = 12)
+
+#Plot of full detrended series compared to normal series
+ggplot() + 
+  geom_line(data = KS.renewable, aes(x = t, y = KS.renewable[t]/1000), color = "darkgreen") +
+  geom_line(data = detrended.KS, aes(x = t, y = detrended.KS/1000), color = "black") +
+  xlab('Time (months)') +
+  ylab("Energy Generation (GWh)") +
+  labs(title = "Detrended Renewable energy series from 01/2001 to 01/2019") +
+  scale_color_manual(values=c("Normal series"="darkgreen", "Detrended series"="black"))
+
+```
+
+
+##forecasting Kansas data
+```{r}
+
+#Scenario 1
+#forecast for 1st group dataset
+KS.renewable.grp1 <- ts(KS.renewable[1:103], start = c(2001,01), end=c(2009,6),frequency = 12)
+KS.s1.sTS <- StructTS(KS.renewable.grp1)
+KS.s1.forecast <- forecast(KS.s1.sTS, h=127)
+KS.s1.forecast
+plot(KS.s1.forecast, main = "Scenario 1 forecast", ylab = "KS Electricity Generation (MWh)", xlab = "Year")
+
+#Scenario 2
+#forecasts for whole dataset
+KS.s2.sTS <- StructTS(KS.renewable)
+KS.s2.forecast <- forecast(KS.s2.sTS, h=12)
+KS.s2.forecast
+plot(KS.s2.forecast, main = "Scenario 2 forecast", ylab = "KS Electricity Generation (MWh)", xlab =  "Year")
+
+#Scenario 3
+#forecast detrended data
+KS.detrended.sTS <- StructTS(detrended.KS)
+KS.detrended.forecast <- forecast(KS.detrended.sTS, h=12)
+KS.detrended.main <- KS.detrended.forecast$mean
+
+plot(KS.detrended.forecast, main = "KS Detrended forecast for Scenario 3", ylab = "Electricity Generation (MWh)", xlab =  "Year")
+
+#Comparison with total electricity series
+#Total electricity generation to find % of renewable energy
+KS.total.sTS <- StructTS(KS.total)
+KS.total.forecast <- forecast(KS.total.sTS, h=12)
+KS.total.forecast
+```
+
+#Adding back trend to forecast
+
+```{r}
+KS.s3 <- array(0:12)
+for (i in 1:12){
+  KS.s3[i]= KS.detrended.main[i]+(1731066 + Beta1.KS3*i)
+}
+
+KS.s3 <- ts(KS.s3, start = c(2019,02), end=c(2020,01),frequency = 12)
+
+plot(KS.s3)
+
+KS.s3.total <- append(KS.renewable, KS.s3)
+KS.s3.total <- as.data.frame(KS.s3.total)
+
+ggplot() + 
+  geom_line(data = KS.s3.total, aes(x = (1:229), y = KS.s3.total/1000), color = "blue") +
+  geom_line(data = KS.renewable, aes(x = t, y = KS.renewable[t]/1000), color = "black") +
+  ylab("Energy Generation (GWh)") + xlab("Year")+
+  labs(title = "forecasted renewable energy series for Nevada")
+```
+
+
+#CAlifornia Data
+```{r echo=FALSE}
+#grouping data by state
+#Nevada Data
+
+data.CA.state <- data.2001_2019 %>%
+  filter(STATE=="CA") %>%
+  filter(TYPE.OF.PRODUCER=="Total Electric Power Industry") %>%
+  spread(ENERGY.SOURCE,GENERATION..Megawatthours.) %>%
+  mutate(Geothermal =ifelse(is.na(Geothermal),0,Geothermal)) %>%
+  mutate(Hydro = ifelse(is.na(`Hydroelectric Conventional`),0,`Hydroelectric Conventional`)) %>%
+  mutate(Other.Biomass = ifelse(is.na(`Other Biomass`),0,`Other Biomass`)) %>%
+  mutate(Solar = ifelse(is.na(`Solar Thermal and Photovoltaic`),0,`Solar Thermal and Photovoltaic`)) %>%
+  mutate(Geothermal = ifelse(is.na(Geothermal),0,Geothermal)) %>%
+  mutate(Wood.products = ifelse(is.na(`Wood and Wood Derived Fuels`),0,`Wood and Wood Derived Fuels`)) %>%
+  mutate(Renewable.total = Geothermal+Hydro+Other.Biomass+Solar+Geothermal+Wood.products) %>%
+  select(YEAR,MONTH,Solar,Renewable.total,Total) %>%
+  mutate(Date = make_date(YEAR,MONTH)) %>%
+  select(Date,Solar,Renewable.total,Total)
+
+#CoCAerting into time series
+CA.ts.data <- ts(data.CA.state[,2:4], start = c(2001,01), end=c(2019,1),frequency = 12)
+CA.Solar <- ts(data.CA.state[,2], start = c(2001,01), end=c(2019,1),frequency = 12)
+CA.renewable <- ts(data.CA.state[,3], start = c(2001,01), end=c(2019,1),frequency = 12)
+CA.total <- ts(data.CA.state[,4], start = c(2001,01), end=c(2019,1),frequency = 12)
+
+nobs <- nrow(CA.ts.data)
+t <- 1:nobs
+
+#Solar plot
+ggplot(data = data.CA.state, aes(x = Date, y = (Solar/1000))) +
+  geom_line(color = "darkorange", linetype = "solid") +
+  xlab("Date") +
+  ylab("Energy Generation (GWh)") +
+  labs(title = "Solar Geothermal energy series") +
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y")
+
+#Total renewable energy plot
+ggplot(data = data.CA.state, aes(x = Date, y = (Renewable.total/1000))) +
+  geom_line(color = "darkgreen") +
+  xlab("Date") +
+  ylab("Energy Generation (GWh)") +
+  labs(title = "CAlifornia renewable energy series") +
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y")
+
+#Total Energy
+ggplot(data = data.CA.state, aes(x = Date, y = (Total/1000))) +
+  geom_line(color = "darkred") +
+  xlab("Date") +
+  ylab("Energy Generation (GWh)") +
+  labs(title = "CAlifornia total energy generation series") +
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y")
+
+```
+
+##removing seasonal component to CArry out trend and change point test
+```{r}
+#Checking for Stochastic trend of the Solar series
+CA.Solar.decomp <- decompose(CA.Solar)
+deseasonal_CA.Solar <- seasadj(CA.Solar.decomp) 
+
+#Checking for a stochastic trend with ADF test
+adf.test(deseasonal_CA.Solar, alternative = "stationary")
+
+
+#Checking for a stochastic trend in the renewable energy seroes
+CA.renewable.decomp <- decompose(CA.renewable)
+deseasonal_CA.renewable <- seasadj(CA.renewable.decomp) 
+#Checking for a stochastic trend with ADF test
+adf.test(deseasonal_CA.renewable, alternative = "stationary")
+
+
+#Checking for a stochastic trend in the total energy series
+CA.total.decomp <- decompose(CA.total)
+deseasonal_CA.total <- seasadj(CA.total.decomp) 
+#Checking for a stochastic trend with ADF test
+adf.test(deseasonal_CA.total, alternative = "stationary")
+#Checking for a stationary trend using the Mann Kendall Test
+MannKendall(deseasonal_CA.total)
+```
+
+>The result of the ADF test of  the Geothermal  series (p=0.7322) indiCAtes that the series has a stochastic trend, this result is similar for the total renewable energy series (p=0.2338). However, for the total energy series, the low p-value result (p=0.01) indiCAtes that the series does not have a stochastic trend. A Mann Kendall test was therefore also CArried out on the total energy series to test for a deterministic trend in the series. The result of the Mann Kendall test (p =0.31649) indiCAtes that the series doesn't have a positive deterministic trend. 
+
+```{r}
+#analysis of first change point
+pettitt.test(deseasonal_CA.Solar)
+pettitt.test(deseasonal_CA.renewable)
+```
+
+> Both pvalues are small therefore a change point was detected in the Geothermal series in October 2012 and a changepoint in the total renewable energy series in January 2016. 
+
+```{r}
+#analysis of second change point
+pettitt.test(deseasonal_CA.Solar[143:217])
+pettitt.test(deseasonal_CA.renewable[182:217])
+```
+
+> low p value in both series therefore there is a signifiCAnt changepoint at obs 39 (182) for the Solar series and 21 (203) for the total renewable energy series. This changepoint occured at November 2017.
+
+##removing trend component for each of the 3 groups of data - Renewables series
+###First group of data
+```{r echo=FALSE}
+#Lm 
+CA.1.t <- 1:181
+CA.1.ren <- data.CA.state[1:181,3]
+lm.CA1 <- lm(CA.1.ren~CA.1.t)
+summary(lm.CA1 )
+# Storing the coefficients of the model.Bio
+Beta0.CA1 <- lm.CA1$coefficients[1]
+Beta1.CA1 <- lm.CA1$coefficients[2]
+```
+
+Detrending series group 1
+```{r echo=FALSE}
+### Detrending series for Total.Biomass.Energy.Production series
+Y_detrend.CA1 <- array(0,nobs)
+for (i in 1:181){
+  Y_detrend.CA1[i]= CA.renewable[i]-(Beta0.CA1+Beta1.CA1*i)
+}
+
+Y_detrend.CA1 <- ts(Y_detrend.CA1,frequency = 12)
+
+#Plot of detrended group 1 series compared to normal series
+ggplot() + 
+  geom_line(data = CA.renewable, aes(x = t, y = CA.renewable[t]/1000), color = "darkgreen") +
+  geom_line(data = Y_detrend.CA1, aes(x = t, y = Y_detrend.CA1[t]/1000), color = "black") +
+  xlab('Time (months)') +
+  ylab("Energy Generation (GWh)") +
+  labs(title = "Detrended Renewable energy series from 01/2001 to 01/2016") +
+  scale_color_manual(values=c("Normal series"="darkgreen", "Detrended series"="black")) +
+  theme(legend.position=c(150,1200))
+```
+
+###2nd group of data
+```{r echo=FALSE}
+#Lm 
+CA.2.t <- 181:203
+CA.2.ren <- data.CA.state[181:203,3]
+lm.CA2 <- lm(CA.2.ren~CA.2.t)
+summary(lm.CA2 )
+# Storing the coefficients of the model.Bio
+Beta0.CA2 <- lm.CA2$coefficients[1]
+Beta1.CA2 <- lm.CA2$coefficients[2]
+```
+
+Detrending series group 2
+```{r echo=FALSE}
+### Detrending series for Total.Biomass.Energy.Production series
+Y_detrend.CA2 <- array(0,nobs)
+for (i in 181:203){
+  Y_detrend.CA2[i]= CA.renewable[i]-(Beta0.CA2+Beta1.CA2*i)
+}
+
+Y_detrend.CA2 <- ts(Y_detrend.CA2,frequency = 12)
+
+#Plot of detrended group 2 series compared to normal series
+ggplot() + 
+  geom_line(data = CA.renewable, aes(x = t, y = CA.renewable[t]/1000), color = "darkgreen") +
+  geom_line(data = Y_detrend.CA2, aes(x = t, y = Y_detrend.CA2[t]/1000), color = "black") +
+  xlab('Time(months)') +
+  ylab("Energy Generation (GWh)") +
+  labs(title = "Detrended Renewable energy series from 01/2016 to 11/2017") +
+  scale_color_manual(values=c("Normal series"="darkgreen", "Detrended series"="black")) +
+  theme(legend.position=c(150,1200))
+
+```
+
+###3rd group of data
+```{r echo=FALSE}
+#Lm 
+CA.3.t <- 203:217
+CA.3.ren <- data.CA.state[203:217,3]
+lm.CA3 <- lm(CA.3.ren~CA.3.t)
+summary(lm.CA3 )
+# Storing the coefficients of the model.Bio
+Beta0.CA3 <- lm.CA3$coefficients[1]
+Beta1.CA3 <- lm.CA3$coefficients[2]
+```
+
+
+### Detrending series group 3
+```{r echo=FALSE}
+### Detrending series for Total.Biomass.Energy.Production series
+Y_detrend.CA3 <- array(0,203)
+for (i in 203:217){
+  Y_detrend.CA3[i]= CA.renewable[i]-(Beta0.CA3+Beta1.CA3*i)
+}
+
+Y_detrend.CA3 <- ts(Y_detrend.CA3,frequency = 12)
+
+
+#Plot of detrended group 2 series compared to normal series
+ggplot() + 
+  geom_line(data = CA.renewable, aes(x = t, y = CA.renewable[t]/1000), color = "darkgreen") +
+  geom_line(data = Y_detrend.CA3, aes(x = t, y = Y_detrend.CA3[t]/1000), color = "black") +
+  xlab('Time (months)') +
+  ylab("Energy Generation (GWh)") +
+  labs(title = "Detrended Renewable energy series from 11/2017 to 01/2019") +
+  scale_color_manual(values=c("Normal series"="darkgreen", "Detrended series"="black"))
+```
+
+##combining the detrended series
+```{r}
+detrended.CA.a <- append(Y_detrend.CA1[1:181],Y_detrend.CA2[182:203])
+detrended.CA <- append(detrended.CA.a , Y_detrend.CA3[203:217])
+detrended.CA <- ts(detrended.CA,start = c(2001,01), end=c(2019,1),frequency = 12)
+
+#Plot of full detrended series compared to normal series
+ggplot() + 
+  geom_line(data = CA.renewable, aes(x = t, y = CA.renewable[t]/1000), color = "darkgreen") +
+  geom_line(data = detrended.CA, aes(x = t, y = detrended.CA/1000), color = "black") +
+  xlab('Time (months)') +
+  ylab("Energy Generation (GWh)") +
+  labs(title = "Detrended Renewable energy series from 01/2001 to 01/2019") +
+  scale_color_manual(values=c("Normal series"="darkgreen", "Detrended series"="black"))
+
+```
+
+
+##forecasting CAlifornia data
+```{r}
+
+#Scenario 1
+#forecast for 1st group dataset
+CA.renewable.grp1 <- ts(CA.renewable[1:181], start = c(2001,01), end=c(2016,01),frequency = 12)
+CA.s1.sTS <- StructTS(CA.renewable.grp1)
+CA.s1.forecast <- forecast(CA.s1.sTS, h=168)
+CA.s1.forecast
+plot(CA.s1.forecast, main = "CA Scenario 1 forecast", ylab = "CA Electricity Generation (MWh)", xlab = "Year", ylim=(c(0,13994341)))
+
+#Scenario 2
+#forecasts for whole dataset
+CA.s2.sTS <- StructTS(CA.renewable)
+CA.s2.forecast <- forecast(CA.s2.sTS, h=131)
+CA.s2.forecast
+plot(CA.s2.forecast, main = "CA Scenario 2 forecast", ylab = "CA Electricity Generation (MWh)", xlab =  "Year")
+
+#Scenario 3
+#forecast detrended data
+CA.detrended.sTS <- StructTS(detrended.CA)
+CA.detrended.forecast <- forecast(CA.detrended.sTS, h=131)
+CA.detrended.main <- CA.detrended.forecast$mean
+
+plot(CA.detrended.forecast, main = "CA Detrended forecast for Scenario 3", ylab = "Electricity Generation (MWh)", xlab =  "Year")
+
+#Comparison with total electricity series
+#Total electricity generation to find % of renewable energy
+CA.total.sTS <- StructTS(CA.total)
+CA.total.forecast <- forecast(CA.total.sTS, h=131)
+CA.total.forecast
+```
+
+#Adding back trend to forecast
+
+```{r}
+CA.s3 <- array(0:131)
+for (i in 1:131){
+  CA.s3[i]= CA.detrended.main[i]+(5348904  + Beta1.CA3*i)
+}
+
+CA.s3 <- ts(CA.s3, start = c(2019,02), end=c(2030,01),frequency = 12)
+
+plot(CA.s3)
+
+CA.s3.total <- append(CA.renewable, CA.s3)
+CA.s3.total <- as.data.frame(CA.s3.total)
+
+ggplot() + 
+  geom_line(data = CA.s3.total, aes(x = (1:349), y = CA.s3.total/1000), color = "blue") +
+  geom_line(data = CA.renewable, aes(x = t, y = CA.renewable[t]/1000), color = "black") +
+  ylab("Energy Generation (GWh)") + xlab("Year") +
+  labs(title = "forecasted renewable energy series for California")
+```
+  

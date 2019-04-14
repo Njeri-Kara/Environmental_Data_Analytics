@@ -9,7 +9,7 @@ ui <- fluidPage(
    titlePanel('normal distribution'),
    # normal distribution formula
    headerPanel(withMathJax('$$f(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}} e^\\frac{-(x-\\mu)^{2}}{2\\sigma^2}$$')), 
-   
+   #function withMathJax allows you to have math equations in Shiny app. Has two \ are used instead of 1
    # sidebar with slider and checkbox inputs
    sidebarLayout(
       sidebarPanel(
@@ -43,7 +43,7 @@ ui <- fluidPage(
 
 # server
 server <- function(input, output) {
-   
+#alwats start the server with this function   
    output$dist <- renderPlot({ # adjust the number of bins based on the sample size
      
      n <- input$n

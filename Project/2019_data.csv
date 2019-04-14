@@ -1,0 +1,2108 @@
+YEAR,MONTH,STATE,TYPE OF PRODUCER,ENERGY SOURCE,"GENERATION
+(Megawatthours)"
+2019,1,AK,Total Electric Power Industry,Total,616037
+2019,1,AK,Total Electric Power Industry,Coal,76740
+2019,1,AK,Total Electric Power Industry,Hydroelectric Conventional,119572
+2019,1,AK,Total Electric Power Industry,Natural Gas,340059
+2019,1,AK,Total Electric Power Industry,Other,-244
+2019,1,AK,Total Electric Power Industry,Petroleum,65687
+2019,1,AK,Total Electric Power Industry,Other Biomass,2731
+2019,1,AK,Total Electric Power Industry,Wind,11492
+2019,1,AK,Total Electric Power Industry,Wood and Wood Derived Fuels,0
+2019,1,AK,"Combined Heat and Power, Industrial Power",Total,10295
+2019,1,AK,"Combined Heat and Power, Industrial Power",Natural Gas,6411
+2019,1,AK,"Combined Heat and Power, Industrial Power",Petroleum,3742
+2019,1,AK,"Combined Heat and Power, Industrial Power",Other Biomass,142
+2019,1,AK,"Combined Heat and Power, Commercial Power",Total,29286
+2019,1,AK,"Combined Heat and Power, Commercial Power",Coal,11398
+2019,1,AK,"Combined Heat and Power, Commercial Power",Hydroelectric Conventional,14242
+2019,1,AK,"Combined Heat and Power, Commercial Power",Natural Gas,0
+2019,1,AK,"Combined Heat and Power, Commercial Power",Petroleum,1058
+2019,1,AK,"Combined Heat and Power, Commercial Power",Other Biomass,2589
+2019,1,AK,"Combined Heat and Power, Commercial Power",Wood and Wood Derived Fuels,0
+2019,1,AK,"Combined Heat and Power, Electric Power",Total,16159
+2019,1,AK,"Combined Heat and Power, Electric Power",Coal,16159
+2019,1,AK,"Combined Heat and Power, Electric Power",Petroleum,0
+2019,1,AK,"Combined Heat and Power, Electric Power",Other Biomass,0
+2019,1,AK,"Combined Heat and Power, Electric Power",Wood and Wood Derived Fuels,0
+2019,1,AK,"Electric Generators, Independent Power Producers",Total,4166
+2019,1,AK,"Electric Generators, Independent Power Producers",Wind,4166
+2019,1,AK,"Electric Generators, Electric Utilities",Total,556131
+2019,1,AK,"Electric Generators, Electric Utilities",Coal,49184
+2019,1,AK,"Electric Generators, Electric Utilities",Hydroelectric Conventional,105330
+2019,1,AK,"Electric Generators, Electric Utilities",Natural Gas,333648
+2019,1,AK,"Electric Generators, Electric Utilities",Other,-244
+2019,1,AK,"Electric Generators, Electric Utilities",Petroleum,60887
+2019,1,AK,"Electric Generators, Electric Utilities",Wind,7326
+2019,1,AL,Total Electric Power Industry,Total,12626313
+2019,1,AL,Total Electric Power Industry,Coal,3048255
+2019,1,AL,Total Electric Power Industry,Hydroelectric Conventional,1384762
+2019,1,AL,Total Electric Power Industry,Natural Gas,3863568
+2019,1,AL,Total Electric Power Industry,Nuclear,4012543
+2019,1,AL,Total Electric Power Industry,Other Gases,0
+2019,1,AL,Total Electric Power Industry,Other,0
+2019,1,AL,Total Electric Power Industry,Petroleum,3510
+2019,1,AL,Total Electric Power Industry,Solar Thermal and Photovoltaic,21405
+2019,1,AL,Total Electric Power Industry,Other Biomass,3487
+2019,1,AL,Total Electric Power Industry,Wood and Wood Derived Fuels,288783
+2019,1,AL,"Combined Heat and Power, Industrial Power",Total,393391
+2019,1,AL,"Combined Heat and Power, Industrial Power",Coal,6733
+2019,1,AL,"Combined Heat and Power, Industrial Power",Natural Gas,113934
+2019,1,AL,"Combined Heat and Power, Industrial Power",Other Gases,0
+2019,1,AL,"Combined Heat and Power, Industrial Power",Other,0
+2019,1,AL,"Combined Heat and Power, Industrial Power",Petroleum,685
+2019,1,AL,"Combined Heat and Power, Industrial Power",Other Biomass,0
+2019,1,AL,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,272039
+2019,1,AL,"Combined Heat and Power, Electric Power",Total,219735
+2019,1,AL,"Combined Heat and Power, Electric Power",Coal,0
+2019,1,AL,"Combined Heat and Power, Electric Power",Natural Gas,202992
+2019,1,AL,"Combined Heat and Power, Electric Power",Wood and Wood Derived Fuels,16743
+2019,1,AL,"Electric Generators, Independent Power Producers",Total,2146035
+2019,1,AL,"Electric Generators, Independent Power Producers",Natural Gas,2123155
+2019,1,AL,"Electric Generators, Independent Power Producers",Other,0
+2019,1,AL,"Electric Generators, Independent Power Producers",Petroleum,33
+2019,1,AL,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,19359
+2019,1,AL,"Electric Generators, Independent Power Producers",Other Biomass,3487
+2019,1,AL,"Electric Generators, Electric Utilities",Total,9867152
+2019,1,AL,"Electric Generators, Electric Utilities",Coal,3041521
+2019,1,AL,"Electric Generators, Electric Utilities",Hydroelectric Conventional,1384762
+2019,1,AL,"Electric Generators, Electric Utilities",Natural Gas,1423488
+2019,1,AL,"Electric Generators, Electric Utilities",Nuclear,4012543
+2019,1,AL,"Electric Generators, Electric Utilities",Petroleum,2791
+2019,1,AL,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,2045
+2019,1,AR,Total Electric Power Industry,Total,5835624
+2019,1,AR,Total Electric Power Industry,Coal,2749545
+2019,1,AR,Total Electric Power Industry,Pumped Storage,4741
+2019,1,AR,Total Electric Power Industry,Hydroelectric Conventional,446099
+2019,1,AR,Total Electric Power Industry,Natural Gas,1100296
+2019,1,AR,Total Electric Power Industry,Nuclear,1389566
+2019,1,AR,Total Electric Power Industry,Other,0
+2019,1,AR,Total Electric Power Industry,Petroleum,5742
+2019,1,AR,Total Electric Power Industry,Solar Thermal and Photovoltaic,10899
+2019,1,AR,Total Electric Power Industry,Other Biomass,9106
+2019,1,AR,Total Electric Power Industry,Wood and Wood Derived Fuels,119631
+2019,1,AR,"Combined Heat and Power, Industrial Power",Total,158130
+2019,1,AR,"Combined Heat and Power, Industrial Power",Coal,7023
+2019,1,AR,"Combined Heat and Power, Industrial Power",Natural Gas,31116
+2019,1,AR,"Combined Heat and Power, Industrial Power",Other,0
+2019,1,AR,"Combined Heat and Power, Industrial Power",Petroleum,361
+2019,1,AR,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,119631
+2019,1,AR,"Combined Heat and Power, Commercial Power",Total,3776
+2019,1,AR,"Combined Heat and Power, Commercial Power",Natural Gas,3294
+2019,1,AR,"Combined Heat and Power, Commercial Power",Other Biomass,482
+2019,1,AR,"Combined Heat and Power, Electric Power",Total,119336
+2019,1,AR,"Combined Heat and Power, Electric Power",Natural Gas,116127
+2019,1,AR,"Combined Heat and Power, Electric Power",Petroleum,0
+2019,1,AR,"Combined Heat and Power, Electric Power",Other Biomass,3209
+2019,1,AR,"Electric Generators, Independent Power Producers",Total,265213
+2019,1,AR,"Electric Generators, Independent Power Producers",Coal,241592
+2019,1,AR,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,4533
+2019,1,AR,"Electric Generators, Independent Power Producers",Petroleum,2867
+2019,1,AR,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,10806
+2019,1,AR,"Electric Generators, Independent Power Producers",Other Biomass,5414
+2019,1,AR,"Electric Generators, Electric Utilities",Total,5289169
+2019,1,AR,"Electric Generators, Electric Utilities",Coal,2500930
+2019,1,AR,"Electric Generators, Electric Utilities",Pumped Storage,4741
+2019,1,AR,"Electric Generators, Electric Utilities",Hydroelectric Conventional,441565
+2019,1,AR,"Electric Generators, Electric Utilities",Natural Gas,949759
+2019,1,AR,"Electric Generators, Electric Utilities",Nuclear,1389566
+2019,1,AR,"Electric Generators, Electric Utilities",Petroleum,2514
+2019,1,AR,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,93
+2019,1,AZ,Total Electric Power Industry,Total,9084502
+2019,1,AZ,Total Electric Power Industry,Coal,2337909
+2019,1,AZ,Total Electric Power Industry,Pumped Storage,-15965
+2019,1,AZ,Total Electric Power Industry,Hydroelectric Conventional,461387
+2019,1,AZ,Total Electric Power Industry,Natural Gas,2990621
+2019,1,AZ,Total Electric Power Industry,Nuclear,2978263
+2019,1,AZ,Total Electric Power Industry,Other,-250
+2019,1,AZ,Total Electric Power Industry,Petroleum,5031
+2019,1,AZ,Total Electric Power Industry,Solar Thermal and Photovoltaic,265974
+2019,1,AZ,Total Electric Power Industry,Other Biomass,3174
+2019,1,AZ,Total Electric Power Industry,Wind,44095
+2019,1,AZ,Total Electric Power Industry,Wood and Wood Derived Fuels,14262
+2019,1,AZ,"Combined Heat and Power, Commercial Power",Total,12742
+2019,1,AZ,"Combined Heat and Power, Commercial Power",Natural Gas,12362
+2019,1,AZ,"Combined Heat and Power, Commercial Power",Petroleum,2
+2019,1,AZ,"Combined Heat and Power, Commercial Power",Solar Thermal and Photovoltaic,378
+2019,1,AZ,"Combined Heat and Power, Electric Power",Total,691
+2019,1,AZ,"Combined Heat and Power, Electric Power",Natural Gas,691
+2019,1,AZ,"Combined Heat and Power, Electric Power",Petroleum,0
+2019,1,AZ,"Electric Generators, Independent Power Producers",Total,1254427
+2019,1,AZ,"Electric Generators, Independent Power Producers",Natural Gas,961528
+2019,1,AZ,"Electric Generators, Independent Power Producers",Other,-250
+2019,1,AZ,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,231618
+2019,1,AZ,"Electric Generators, Independent Power Producers",Other Biomass,3174
+2019,1,AZ,"Electric Generators, Independent Power Producers",Wind,44095
+2019,1,AZ,"Electric Generators, Independent Power Producers",Wood and Wood Derived Fuels,14262
+2019,1,AZ,"Electric Generators, Electric Utilities",Total,7816642
+2019,1,AZ,"Electric Generators, Electric Utilities",Coal,2337909
+2019,1,AZ,"Electric Generators, Electric Utilities",Pumped Storage,-15965
+2019,1,AZ,"Electric Generators, Electric Utilities",Hydroelectric Conventional,461387
+2019,1,AZ,"Electric Generators, Electric Utilities",Natural Gas,2016040
+2019,1,AZ,"Electric Generators, Electric Utilities",Nuclear,2978263
+2019,1,AZ,"Electric Generators, Electric Utilities",Other,0
+2019,1,AZ,"Electric Generators, Electric Utilities",Petroleum,5029
+2019,1,AZ,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,33979
+2019,1,AZ,"Electric Generators, Electric Utilities",Other Biomass,0
+2019,1,CA,Total Electric Power Industry,Total,14947494
+2019,1,CA,Total Electric Power Industry,Coal,26100
+2019,1,CA,Total Electric Power Industry,Geothermal,1005259
+2019,1,CA,Total Electric Power Industry,Pumped Storage,-102481
+2019,1,CA,Total Electric Power Industry,Hydroelectric Conventional,1500367
+2019,1,CA,Total Electric Power Industry,Natural Gas,7823522
+2019,1,CA,Total Electric Power Industry,Nuclear,1681619
+2019,1,CA,Total Electric Power Industry,Other Gases,90711
+2019,1,CA,Total Electric Power Industry,Other,68863
+2019,1,CA,Total Electric Power Industry,Petroleum,3214
+2019,1,CA,Total Electric Power Industry,Solar Thermal and Photovoltaic,1344631
+2019,1,CA,Total Electric Power Industry,Other Biomass,223812
+2019,1,CA,Total Electric Power Industry,Wind,1012302
+2019,1,CA,Total Electric Power Industry,Wood and Wood Derived Fuels,269576
+2019,1,CA,"Combined Heat and Power, Industrial Power",Total,1132249
+2019,1,CA,"Combined Heat and Power, Industrial Power",Coal,26100
+2019,1,CA,"Combined Heat and Power, Industrial Power",Natural Gas,894598
+2019,1,CA,"Combined Heat and Power, Industrial Power",Other Gases,90711
+2019,1,CA,"Combined Heat and Power, Industrial Power",Other,56814
+2019,1,CA,"Combined Heat and Power, Industrial Power",Petroleum,122
+2019,1,CA,"Combined Heat and Power, Industrial Power",Solar Thermal and Photovoltaic,3143
+2019,1,CA,"Combined Heat and Power, Industrial Power",Other Biomass,338
+2019,1,CA,"Combined Heat and Power, Industrial Power",Wind,209
+2019,1,CA,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,60215
+2019,1,CA,"Combined Heat and Power, Commercial Power",Total,211805
+2019,1,CA,"Combined Heat and Power, Commercial Power",Pumped Storage,0
+2019,1,CA,"Combined Heat and Power, Commercial Power",Hydroelectric Conventional,1533
+2019,1,CA,"Combined Heat and Power, Commercial Power",Natural Gas,139198
+2019,1,CA,"Combined Heat and Power, Commercial Power",Other,18
+2019,1,CA,"Combined Heat and Power, Commercial Power",Petroleum,31
+2019,1,CA,"Combined Heat and Power, Commercial Power",Solar Thermal and Photovoltaic,8622
+2019,1,CA,"Combined Heat and Power, Commercial Power",Other Biomass,61799
+2019,1,CA,"Combined Heat and Power, Commercial Power",Wind,603
+2019,1,CA,"Combined Heat and Power, Electric Power",Total,1219002
+2019,1,CA,"Combined Heat and Power, Electric Power",Coal,0
+2019,1,CA,"Combined Heat and Power, Electric Power",Natural Gas,1137110
+2019,1,CA,"Combined Heat and Power, Electric Power",Other,7445
+2019,1,CA,"Combined Heat and Power, Electric Power",Petroleum,0
+2019,1,CA,"Combined Heat and Power, Electric Power",Solar Thermal and Photovoltaic,350
+2019,1,CA,"Combined Heat and Power, Electric Power",Other Biomass,15772
+2019,1,CA,"Combined Heat and Power, Electric Power",Wood and Wood Derived Fuels,58324
+2019,1,CA,"Electric Generators, Independent Power Producers",Total,6647649
+2019,1,CA,"Electric Generators, Independent Power Producers",Geothermal,937500
+2019,1,CA,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,83493
+2019,1,CA,"Electric Generators, Independent Power Producers",Natural Gas,3046494
+2019,1,CA,"Electric Generators, Independent Power Producers",Other,4559
+2019,1,CA,"Electric Generators, Independent Power Producers",Petroleum,202
+2019,1,CA,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,1306721
+2019,1,CA,"Electric Generators, Independent Power Producers",Other Biomass,145228
+2019,1,CA,"Electric Generators, Independent Power Producers",Wind,972416
+2019,1,CA,"Electric Generators, Independent Power Producers",Wood and Wood Derived Fuels,151037
+2019,1,CA,"Electric Generators, Electric Utilities",Total,5736789
+2019,1,CA,"Electric Generators, Electric Utilities",Geothermal,67759
+2019,1,CA,"Electric Generators, Electric Utilities",Pumped Storage,-102481
+2019,1,CA,"Electric Generators, Electric Utilities",Hydroelectric Conventional,1415342
+2019,1,CA,"Electric Generators, Electric Utilities",Natural Gas,2606121
+2019,1,CA,"Electric Generators, Electric Utilities",Nuclear,1681619
+2019,1,CA,"Electric Generators, Electric Utilities",Other Gases,0
+2019,1,CA,"Electric Generators, Electric Utilities",Other,27
+2019,1,CA,"Electric Generators, Electric Utilities",Petroleum,2859
+2019,1,CA,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,25795
+2019,1,CA,"Electric Generators, Electric Utilities",Other Biomass,675
+2019,1,CA,"Electric Generators, Electric Utilities",Wind,39073
+2019,1,CO,Total Electric Power Industry,Total,5112601
+2019,1,CO,Total Electric Power Industry,Coal,2590044
+2019,1,CO,Total Electric Power Industry,Pumped Storage,-19712
+2019,1,CO,Total Electric Power Industry,Hydroelectric Conventional,140283
+2019,1,CO,Total Electric Power Industry,Natural Gas,1383496
+2019,1,CO,Total Electric Power Industry,Other,3883
+2019,1,CO,Total Electric Power Industry,Petroleum,972
+2019,1,CO,Total Electric Power Industry,Solar Thermal and Photovoltaic,60023
+2019,1,CO,Total Electric Power Industry,Other Biomass,6761
+2019,1,CO,Total Electric Power Industry,Wind,939878
+2019,1,CO,Total Electric Power Industry,Wood and Wood Derived Fuels,6973
+2019,1,CO,"Combined Heat and Power, Industrial Power",Total,7108
+2019,1,CO,"Combined Heat and Power, Industrial Power",Coal,1381
+2019,1,CO,"Combined Heat and Power, Industrial Power",Natural Gas,1716
+2019,1,CO,"Combined Heat and Power, Industrial Power",Other,3775
+2019,1,CO,"Combined Heat and Power, Industrial Power",Petroleum,11
+2019,1,CO,"Combined Heat and Power, Industrial Power",Wind,225
+2019,1,CO,"Combined Heat and Power, Commercial Power",Total,2341
+2019,1,CO,"Combined Heat and Power, Commercial Power",Hydroelectric Conventional,352
+2019,1,CO,"Combined Heat and Power, Commercial Power",Natural Gas,1119
+2019,1,CO,"Combined Heat and Power, Commercial Power",Petroleum,0
+2019,1,CO,"Combined Heat and Power, Commercial Power",Solar Thermal and Photovoltaic,869
+2019,1,CO,"Combined Heat and Power, Commercial Power",Wind,0
+2019,1,CO,"Combined Heat and Power, Electric Power",Total,18165
+2019,1,CO,"Combined Heat and Power, Electric Power",Coal,0
+2019,1,CO,"Combined Heat and Power, Electric Power",Natural Gas,15231
+2019,1,CO,"Combined Heat and Power, Electric Power",Petroleum,0
+2019,1,CO,"Combined Heat and Power, Electric Power",Other Biomass,2934
+2019,1,CO,"Electric Generators, Independent Power Producers",Total,995200
+2019,1,CO,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,17152
+2019,1,CO,"Electric Generators, Independent Power Producers",Natural Gas,153705
+2019,1,CO,"Electric Generators, Independent Power Producers",Other,141
+2019,1,CO,"Electric Generators, Independent Power Producers",Petroleum,0
+2019,1,CO,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,58836
+2019,1,CO,"Electric Generators, Independent Power Producers",Other Biomass,3827
+2019,1,CO,"Electric Generators, Independent Power Producers",Wind,754567
+2019,1,CO,"Electric Generators, Independent Power Producers",Wood and Wood Derived Fuels,6973
+2019,1,CO,"Electric Generators, Electric Utilities",Total,4089787
+2019,1,CO,"Electric Generators, Electric Utilities",Coal,2588663
+2019,1,CO,"Electric Generators, Electric Utilities",Pumped Storage,-19712
+2019,1,CO,"Electric Generators, Electric Utilities",Hydroelectric Conventional,122779
+2019,1,CO,"Electric Generators, Electric Utilities",Natural Gas,1211725
+2019,1,CO,"Electric Generators, Electric Utilities",Other,-33
+2019,1,CO,"Electric Generators, Electric Utilities",Petroleum,961
+2019,1,CO,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,318
+2019,1,CO,"Electric Generators, Electric Utilities",Wind,185086
+2019,1,CT,Total Electric Power Industry,Total,3435247
+2019,1,CT,Total Electric Power Industry,Coal,47373
+2019,1,CT,Total Electric Power Industry,Pumped Storage,9774
+2019,1,CT,Total Electric Power Industry,Hydroelectric Conventional,46417
+2019,1,CT,Total Electric Power Industry,Natural Gas,1661815
+2019,1,CT,Total Electric Power Industry,Nuclear,1556867
+2019,1,CT,Total Electric Power Industry,Other,31405
+2019,1,CT,Total Electric Power Industry,Petroleum,16907
+2019,1,CT,Total Electric Power Industry,Solar Thermal and Photovoltaic,8677
+2019,1,CT,Total Electric Power Industry,Other Biomass,34025
+2019,1,CT,Total Electric Power Industry,Wind,1052
+2019,1,CT,Total Electric Power Industry,Wood and Wood Derived Fuels,20936
+2019,1,CT,"Combined Heat and Power, Industrial Power",Total,49950
+2019,1,CT,"Combined Heat and Power, Industrial Power",Natural Gas,49814
+2019,1,CT,"Combined Heat and Power, Industrial Power",Petroleum,129
+2019,1,CT,"Combined Heat and Power, Industrial Power",Solar Thermal and Photovoltaic,7
+2019,1,CT,"Combined Heat and Power, Commercial Power",Total,34987
+2019,1,CT,"Combined Heat and Power, Commercial Power",Natural Gas,33097
+2019,1,CT,"Combined Heat and Power, Commercial Power",Petroleum,1837
+2019,1,CT,"Combined Heat and Power, Commercial Power",Solar Thermal and Photovoltaic,53
+2019,1,CT,"Combined Heat and Power, Electric Power",Total,10993
+2019,1,CT,"Combined Heat and Power, Electric Power",Natural Gas,10993
+2019,1,CT,"Combined Heat and Power, Electric Power",Petroleum,0
+2019,1,CT,"Electric Generators, Independent Power Producers",Total,3329978
+2019,1,CT,"Electric Generators, Independent Power Producers",Coal,47373
+2019,1,CT,"Electric Generators, Independent Power Producers",Pumped Storage,9774
+2019,1,CT,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,40696
+2019,1,CT,"Electric Generators, Independent Power Producers",Natural Gas,1564852
+2019,1,CT,"Electric Generators, Independent Power Producers",Nuclear,1556867
+2019,1,CT,"Electric Generators, Independent Power Producers",Other,31405
+2019,1,CT,"Electric Generators, Independent Power Producers",Petroleum,14557
+2019,1,CT,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,8440
+2019,1,CT,"Electric Generators, Independent Power Producers",Other Biomass,34025
+2019,1,CT,"Electric Generators, Independent Power Producers",Wind,1052
+2019,1,CT,"Electric Generators, Independent Power Producers",Wood and Wood Derived Fuels,20936
+2019,1,CT,"Electric Generators, Electric Utilities",Total,9340
+2019,1,CT,"Electric Generators, Electric Utilities",Hydroelectric Conventional,5720
+2019,1,CT,"Electric Generators, Electric Utilities",Natural Gas,3058
+2019,1,CT,"Electric Generators, Electric Utilities",Petroleum,384
+2019,1,CT,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,177
+2019,1,CT,"Electric Generators, Electric Utilities",Other Biomass,0
+2019,1,DC,Total Electric Power Industry,Total,9114
+2019,1,DC,Total Electric Power Industry,Natural Gas,3847
+2019,1,DC,Total Electric Power Industry,Petroleum,0
+2019,1,DC,Total Electric Power Industry,Solar Thermal and Photovoltaic,670
+2019,1,DC,Total Electric Power Industry,Other Biomass,4597
+2019,1,DC,"Combined Heat and Power, Commercial Power",Total,8444
+2019,1,DC,"Combined Heat and Power, Commercial Power",Natural Gas,3847
+2019,1,DC,"Combined Heat and Power, Commercial Power",Petroleum,0
+2019,1,DC,"Combined Heat and Power, Commercial Power",Other Biomass,4597
+2019,1,DC,"Electric Generators, Independent Power Producers",Total,670
+2019,1,DC,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,670
+2019,1,DE,Total Electric Power Industry,Total,282656
+2019,1,DE,Total Electric Power Industry,Coal,28692
+2019,1,DE,Total Electric Power Industry,Natural Gas,222888
+2019,1,DE,Total Electric Power Industry,Other Gases,13015
+2019,1,DE,Total Electric Power Industry,Petroleum,9148
+2019,1,DE,Total Electric Power Industry,Solar Thermal and Photovoltaic,3036
+2019,1,DE,Total Electric Power Industry,Other Biomass,5257
+2019,1,DE,Total Electric Power Industry,Wind,619
+2019,1,DE,"Combined Heat and Power, Industrial Power",Total,87624
+2019,1,DE,"Combined Heat and Power, Industrial Power",Natural Gas,73568
+2019,1,DE,"Combined Heat and Power, Industrial Power",Other Gases,13015
+2019,1,DE,"Combined Heat and Power, Industrial Power",Petroleum,0
+2019,1,DE,"Combined Heat and Power, Industrial Power",Other Biomass,1041
+2019,1,DE,"Combined Heat and Power, Commercial Power",Total,619
+2019,1,DE,"Combined Heat and Power, Commercial Power",Wind,619
+2019,1,DE,"Combined Heat and Power, Electric Power",Total,532
+2019,1,DE,"Combined Heat and Power, Electric Power",Coal,0
+2019,1,DE,"Combined Heat and Power, Electric Power",Natural Gas,256
+2019,1,DE,"Combined Heat and Power, Electric Power",Petroleum,276
+2019,1,DE,"Electric Generators, Independent Power Producers",Total,193279
+2019,1,DE,"Electric Generators, Independent Power Producers",Coal,28692
+2019,1,DE,"Electric Generators, Independent Power Producers",Natural Gas,149006
+2019,1,DE,"Electric Generators, Independent Power Producers",Petroleum,8687
+2019,1,DE,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,2679
+2019,1,DE,"Electric Generators, Independent Power Producers",Other Biomass,4216
+2019,1,DE,"Electric Generators, Electric Utilities",Total,601
+2019,1,DE,"Electric Generators, Electric Utilities",Natural Gas,59
+2019,1,DE,"Electric Generators, Electric Utilities",Petroleum,185
+2019,1,DE,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,357
+2019,1,FL,Total Electric Power Industry,Total,18419044
+2019,1,FL,Total Electric Power Industry,Coal,1990606
+2019,1,FL,Total Electric Power Industry,Hydroelectric Conventional,24586
+2019,1,FL,Total Electric Power Industry,Natural Gas,12527488
+2019,1,FL,Total Electric Power Industry,Nuclear,2784885
+2019,1,FL,Total Electric Power Industry,Other Gases,18
+2019,1,FL,Total Electric Power Industry,Other,281140
+2019,1,FL,Total Electric Power Industry,Petroleum,150084
+2019,1,FL,Total Electric Power Industry,Solar Thermal and Photovoltaic,235235
+2019,1,FL,Total Electric Power Industry,Other Biomass,220884
+2019,1,FL,Total Electric Power Industry,Wood and Wood Derived Fuels,204118
+2019,1,FL,"Combined Heat and Power, Industrial Power",Total,433960
+2019,1,FL,"Combined Heat and Power, Industrial Power",Coal,5040
+2019,1,FL,"Combined Heat and Power, Industrial Power",Natural Gas,140377
+2019,1,FL,"Combined Heat and Power, Industrial Power",Other Gases,18
+2019,1,FL,"Combined Heat and Power, Industrial Power",Other,141787
+2019,1,FL,"Combined Heat and Power, Industrial Power",Petroleum,1583
+2019,1,FL,"Combined Heat and Power, Industrial Power",Solar Thermal and Photovoltaic,216
+2019,1,FL,"Combined Heat and Power, Industrial Power",Other Biomass,34936
+2019,1,FL,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,110002
+2019,1,FL,"Combined Heat and Power, Commercial Power",Total,6386
+2019,1,FL,"Combined Heat and Power, Commercial Power",Natural Gas,1799
+2019,1,FL,"Combined Heat and Power, Commercial Power",Petroleum,0
+2019,1,FL,"Combined Heat and Power, Commercial Power",Solar Thermal and Photovoltaic,380
+2019,1,FL,"Combined Heat and Power, Commercial Power",Other Biomass,4207
+2019,1,FL,"Combined Heat and Power, Electric Power",Total,159861
+2019,1,FL,"Combined Heat and Power, Electric Power",Coal,0
+2019,1,FL,"Combined Heat and Power, Electric Power",Natural Gas,153564
+2019,1,FL,"Combined Heat and Power, Electric Power",Petroleum,0
+2019,1,FL,"Combined Heat and Power, Electric Power",Other Biomass,6297
+2019,1,FL,"Combined Heat and Power, Electric Power",Wood and Wood Derived Fuels,0
+2019,1,FL,"Electric Generators, Independent Power Producers",Total,525807
+2019,1,FL,"Electric Generators, Independent Power Producers",Natural Gas,158850
+2019,1,FL,"Electric Generators, Independent Power Producers",Other,139449
+2019,1,FL,"Electric Generators, Independent Power Producers",Petroleum,185
+2019,1,FL,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,30653
+2019,1,FL,"Electric Generators, Independent Power Producers",Other Biomass,168867
+2019,1,FL,"Electric Generators, Independent Power Producers",Wood and Wood Derived Fuels,27803
+2019,1,FL,"Electric Generators, Electric Utilities",Total,17293031
+2019,1,FL,"Electric Generators, Electric Utilities",Coal,1985567
+2019,1,FL,"Electric Generators, Electric Utilities",Hydroelectric Conventional,24586
+2019,1,FL,"Electric Generators, Electric Utilities",Natural Gas,12072899
+2019,1,FL,"Electric Generators, Electric Utilities",Nuclear,2784885
+2019,1,FL,"Electric Generators, Electric Utilities",Other,-96
+2019,1,FL,"Electric Generators, Electric Utilities",Petroleum,148316
+2019,1,FL,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,203986
+2019,1,FL,"Electric Generators, Electric Utilities",Other Biomass,6576
+2019,1,FL,"Electric Generators, Electric Utilities",Wood and Wood Derived Fuels,66312
+2019,1,GA,Total Electric Power Industry,Total,10412863
+2019,1,GA,Total Electric Power Industry,Coal,2003846
+2019,1,GA,Total Electric Power Industry,Pumped Storage,41235
+2019,1,GA,Total Electric Power Industry,Hydroelectric Conventional,435378
+2019,1,GA,Total Electric Power Industry,Natural Gas,4298211
+2019,1,GA,Total Electric Power Industry,Nuclear,3063076
+2019,1,GA,Total Electric Power Industry,Other,8225
+2019,1,GA,Total Electric Power Industry,Petroleum,34069
+2019,1,GA,Total Electric Power Industry,Solar Thermal and Photovoltaic,113396
+2019,1,GA,Total Electric Power Industry,Other Biomass,28572
+2019,1,GA,Total Electric Power Industry,Wood and Wood Derived Fuels,386854
+2019,1,GA,"Combined Heat and Power, Industrial Power",Total,445417
+2019,1,GA,"Combined Heat and Power, Industrial Power",Coal,17424
+2019,1,GA,"Combined Heat and Power, Industrial Power",Hydroelectric Conventional,602
+2019,1,GA,"Combined Heat and Power, Industrial Power",Natural Gas,53225
+2019,1,GA,"Combined Heat and Power, Industrial Power",Other,8225
+2019,1,GA,"Combined Heat and Power, Industrial Power",Petroleum,25827
+2019,1,GA,"Combined Heat and Power, Industrial Power",Other Biomass,2741
+2019,1,GA,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,337373
+2019,1,GA,"Combined Heat and Power, Commercial Power",Total,281
+2019,1,GA,"Combined Heat and Power, Commercial Power",Natural Gas,0
+2019,1,GA,"Combined Heat and Power, Commercial Power",Petroleum,112
+2019,1,GA,"Combined Heat and Power, Commercial Power",Solar Thermal and Photovoltaic,169
+2019,1,GA,"Combined Heat and Power, Commercial Power",Other Biomass,0
+2019,1,GA,"Combined Heat and Power, Electric Power",Total,7782
+2019,1,GA,"Combined Heat and Power, Electric Power",Natural Gas,6998
+2019,1,GA,"Combined Heat and Power, Electric Power",Petroleum,166
+2019,1,GA,"Combined Heat and Power, Electric Power",Other Biomass,618
+2019,1,GA,"Combined Heat and Power, Electric Power",Wood and Wood Derived Fuels,0
+2019,1,GA,"Electric Generators, Independent Power Producers",Total,941476
+2019,1,GA,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,2166
+2019,1,GA,"Electric Generators, Independent Power Producers",Natural Gas,769765
+2019,1,GA,"Electric Generators, Independent Power Producers",Petroleum,639
+2019,1,GA,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,94212
+2019,1,GA,"Electric Generators, Independent Power Producers",Other Biomass,25213
+2019,1,GA,"Electric Generators, Independent Power Producers",Wood and Wood Derived Fuels,49481
+2019,1,GA,"Electric Generators, Electric Utilities",Total,9017906
+2019,1,GA,"Electric Generators, Electric Utilities",Coal,1986422
+2019,1,GA,"Electric Generators, Electric Utilities",Pumped Storage,41235
+2019,1,GA,"Electric Generators, Electric Utilities",Hydroelectric Conventional,432610
+2019,1,GA,"Electric Generators, Electric Utilities",Natural Gas,3468223
+2019,1,GA,"Electric Generators, Electric Utilities",Nuclear,3063076
+2019,1,GA,"Electric Generators, Electric Utilities",Other,0
+2019,1,GA,"Electric Generators, Electric Utilities",Petroleum,7324
+2019,1,GA,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,19016
+2019,1,HI,Total Electric Power Industry,Total,795454
+2019,1,HI,Total Electric Power Industry,Coal,94043
+2019,1,HI,Total Electric Power Industry,Geothermal,27223
+2019,1,HI,Total Electric Power Industry,Hydroelectric Conventional,4518
+2019,1,HI,Total Electric Power Industry,Other Gases,626
+2019,1,HI,Total Electric Power Industry,Other,29245
+2019,1,HI,Total Electric Power Industry,Petroleum,557057
+2019,1,HI,Total Electric Power Industry,Solar Thermal and Photovoltaic,13403
+2019,1,HI,Total Electric Power Industry,Other Biomass,26415
+2019,1,HI,Total Electric Power Industry,Wind,42925
+2019,1,HI,"Combined Heat and Power, Industrial Power",Total,21012
+2019,1,HI,"Combined Heat and Power, Industrial Power",Hydroelectric Conventional,2915
+2019,1,HI,"Combined Heat and Power, Industrial Power",Other Gases,626
+2019,1,HI,"Combined Heat and Power, Industrial Power",Petroleum,17471
+2019,1,HI,"Combined Heat and Power, Commercial Power",Total,32345
+2019,1,HI,"Combined Heat and Power, Commercial Power",Other,15698
+2019,1,HI,"Combined Heat and Power, Commercial Power",Petroleum,310
+2019,1,HI,"Combined Heat and Power, Commercial Power",Other Biomass,16338
+2019,1,HI,"Combined Heat and Power, Electric Power",Total,156285
+2019,1,HI,"Combined Heat and Power, Electric Power",Coal,94043
+2019,1,HI,"Combined Heat and Power, Electric Power",Other,0
+2019,1,HI,"Combined Heat and Power, Electric Power",Petroleum,62242
+2019,1,HI,"Combined Heat and Power, Electric Power",Other Biomass,0
+2019,1,HI,"Electric Generators, Independent Power Producers",Total,125737
+2019,1,HI,"Electric Generators, Independent Power Producers",Geothermal,27223
+2019,1,HI,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,579
+2019,1,HI,"Electric Generators, Independent Power Producers",Other,0
+2019,1,HI,"Electric Generators, Independent Power Producers",Petroleum,40026
+2019,1,HI,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,10572
+2019,1,HI,"Electric Generators, Independent Power Producers",Other Biomass,4412
+2019,1,HI,"Electric Generators, Independent Power Producers",Wind,42925
+2019,1,HI,"Electric Generators, Electric Utilities",Total,460076
+2019,1,HI,"Electric Generators, Electric Utilities",Hydroelectric Conventional,1024
+2019,1,HI,"Electric Generators, Electric Utilities",Other,13547
+2019,1,HI,"Electric Generators, Electric Utilities",Petroleum,437008
+2019,1,HI,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,2831
+2019,1,HI,"Electric Generators, Electric Utilities",Other Biomass,5665
+2019,1,IA,Total Electric Power Industry,Total,5930204
+2019,1,IA,Total Electric Power Industry,Coal,2475452
+2019,1,IA,Total Electric Power Industry,Hydroelectric Conventional,81885
+2019,1,IA,Total Electric Power Industry,Natural Gas,582017
+2019,1,IA,Total Electric Power Industry,Nuclear,448846
+2019,1,IA,Total Electric Power Industry,Other,0
+2019,1,IA,Total Electric Power Industry,Petroleum,8530
+2019,1,IA,Total Electric Power Industry,Solar Thermal and Photovoltaic,982
+2019,1,IA,Total Electric Power Industry,Other Biomass,18578
+2019,1,IA,Total Electric Power Industry,Wind,2312419
+2019,1,IA,Total Electric Power Industry,Wood and Wood Derived Fuels,1495
+2019,1,IA,"Combined Heat and Power, Industrial Power",Total,189416
+2019,1,IA,"Combined Heat and Power, Industrial Power",Coal,123793
+2019,1,IA,"Combined Heat and Power, Industrial Power",Natural Gas,62200
+2019,1,IA,"Combined Heat and Power, Industrial Power",Other,0
+2019,1,IA,"Combined Heat and Power, Industrial Power",Petroleum,0
+2019,1,IA,"Combined Heat and Power, Industrial Power",Other Biomass,3422
+2019,1,IA,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,0
+2019,1,IA,"Combined Heat and Power, Commercial Power",Total,20292
+2019,1,IA,"Combined Heat and Power, Commercial Power",Coal,6408
+2019,1,IA,"Combined Heat and Power, Commercial Power",Natural Gas,8268
+2019,1,IA,"Combined Heat and Power, Commercial Power",Petroleum,1325
+2019,1,IA,"Combined Heat and Power, Commercial Power",Other Biomass,2381
+2019,1,IA,"Combined Heat and Power, Commercial Power",Wind,416
+2019,1,IA,"Combined Heat and Power, Commercial Power",Wood and Wood Derived Fuels,1495
+2019,1,IA,"Combined Heat and Power, Electric Power",Total,582
+2019,1,IA,"Combined Heat and Power, Electric Power",Natural Gas,0
+2019,1,IA,"Combined Heat and Power, Electric Power",Other Biomass,582
+2019,1,IA,"Electric Generators, Independent Power Producers",Total,1231381
+2019,1,IA,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,750
+2019,1,IA,"Electric Generators, Independent Power Producers",Natural Gas,0
+2019,1,IA,"Electric Generators, Independent Power Producers",Nuclear,448846
+2019,1,IA,"Electric Generators, Independent Power Producers",Petroleum,46
+2019,1,IA,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,318
+2019,1,IA,"Electric Generators, Independent Power Producers",Other Biomass,10144
+2019,1,IA,"Electric Generators, Independent Power Producers",Wind,771276
+2019,1,IA,"Electric Generators, Electric Utilities",Total,4488534
+2019,1,IA,"Electric Generators, Electric Utilities",Coal,2345251
+2019,1,IA,"Electric Generators, Electric Utilities",Hydroelectric Conventional,81135
+2019,1,IA,"Electric Generators, Electric Utilities",Natural Gas,511549
+2019,1,IA,"Electric Generators, Electric Utilities",Petroleum,7159
+2019,1,IA,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,664
+2019,1,IA,"Electric Generators, Electric Utilities",Other Biomass,2049
+2019,1,IA,"Electric Generators, Electric Utilities",Wind,1540727
+2019,1,IA,"Electric Generators, Electric Utilities",Wood and Wood Derived Fuels,0
+2019,1,ID,Total Electric Power Industry,Total,1482426
+2019,1,ID,Total Electric Power Industry,Coal,1864
+2019,1,ID,Total Electric Power Industry,Geothermal,6667
+2019,1,ID,Total Electric Power Industry,Hydroelectric Conventional,791716
+2019,1,ID,Total Electric Power Industry,Natural Gas,391863
+2019,1,ID,Total Electric Power Industry,Other,6415
+2019,1,ID,Total Electric Power Industry,Petroleum,0
+2019,1,ID,Total Electric Power Industry,Solar Thermal and Photovoltaic,25248
+2019,1,ID,Total Electric Power Industry,Other Biomass,10226
+2019,1,ID,Total Electric Power Industry,Wind,214631
+2019,1,ID,Total Electric Power Industry,Wood and Wood Derived Fuels,33796
+2019,1,ID,"Combined Heat and Power, Industrial Power",Total,52896
+2019,1,ID,"Combined Heat and Power, Industrial Power",Coal,1864
+2019,1,ID,"Combined Heat and Power, Industrial Power",Natural Gas,15249
+2019,1,ID,"Combined Heat and Power, Industrial Power",Other,6415
+2019,1,ID,"Combined Heat and Power, Industrial Power",Petroleum,0
+2019,1,ID,"Combined Heat and Power, Industrial Power",Other Biomass,884
+2019,1,ID,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,28484
+2019,1,ID,"Combined Heat and Power, Commercial Power",Total,4185
+2019,1,ID,"Combined Heat and Power, Commercial Power",Natural Gas,3220
+2019,1,ID,"Combined Heat and Power, Commercial Power",Petroleum,0
+2019,1,ID,"Combined Heat and Power, Commercial Power",Other Biomass,965
+2019,1,ID,"Combined Heat and Power, Electric Power",Total,9087
+2019,1,ID,"Combined Heat and Power, Electric Power",Other Biomass,3775
+2019,1,ID,"Combined Heat and Power, Electric Power",Wood and Wood Derived Fuels,5312
+2019,1,ID,"Electric Generators, Independent Power Producers",Total,472135
+2019,1,ID,"Electric Generators, Independent Power Producers",Geothermal,6667
+2019,1,ID,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,75328
+2019,1,ID,"Electric Generators, Independent Power Producers",Natural Gas,162171
+2019,1,ID,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,25248
+2019,1,ID,"Electric Generators, Independent Power Producers",Other Biomass,3479
+2019,1,ID,"Electric Generators, Independent Power Producers",Wind,199241
+2019,1,ID,"Electric Generators, Electric Utilities",Total,944123
+2019,1,ID,"Electric Generators, Electric Utilities",Hydroelectric Conventional,716388
+2019,1,ID,"Electric Generators, Electric Utilities",Natural Gas,211223
+2019,1,ID,"Electric Generators, Electric Utilities",Petroleum,0
+2019,1,ID,"Electric Generators, Electric Utilities",Other Biomass,1122
+2019,1,ID,"Electric Generators, Electric Utilities",Wind,15390
+2019,1,IL,Total Electric Power Industry,Total,17248290
+2019,1,IL,Total Electric Power Industry,Coal,5875239
+2019,1,IL,Total Electric Power Industry,Hydroelectric Conventional,12574
+2019,1,IL,Total Electric Power Industry,Natural Gas,1071303
+2019,1,IL,Total Electric Power Industry,Nuclear,8794772
+2019,1,IL,Total Electric Power Industry,Other Gases,22757
+2019,1,IL,Total Electric Power Industry,Other,23604
+2019,1,IL,Total Electric Power Industry,Petroleum,3824
+2019,1,IL,Total Electric Power Industry,Solar Thermal and Photovoltaic,2879
+2019,1,IL,Total Electric Power Industry,Other Biomass,35654
+2019,1,IL,Total Electric Power Industry,Wind,1405683
+2019,1,IL,Total Electric Power Industry,Wood and Wood Derived Fuels,0
+2019,1,IL,"Combined Heat and Power, Industrial Power",Total,261987
+2019,1,IL,"Combined Heat and Power, Industrial Power",Coal,152757
+2019,1,IL,"Combined Heat and Power, Industrial Power",Natural Gas,62161
+2019,1,IL,"Combined Heat and Power, Industrial Power",Other Gases,22757
+2019,1,IL,"Combined Heat and Power, Industrial Power",Other,24312
+2019,1,IL,"Combined Heat and Power, Industrial Power",Petroleum,0
+2019,1,IL,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,0
+2019,1,IL,"Combined Heat and Power, Commercial Power",Total,44726
+2019,1,IL,"Combined Heat and Power, Commercial Power",Coal,5204
+2019,1,IL,"Combined Heat and Power, Commercial Power",Hydroelectric Conventional,243
+2019,1,IL,"Combined Heat and Power, Commercial Power",Natural Gas,38609
+2019,1,IL,"Combined Heat and Power, Commercial Power",Petroleum,1
+2019,1,IL,"Combined Heat and Power, Commercial Power",Solar Thermal and Photovoltaic,227
+2019,1,IL,"Combined Heat and Power, Commercial Power",Other Biomass,0
+2019,1,IL,"Combined Heat and Power, Commercial Power",Wind,441
+2019,1,IL,"Combined Heat and Power, Electric Power",Total,63802
+2019,1,IL,"Combined Heat and Power, Electric Power",Natural Gas,62715
+2019,1,IL,"Combined Heat and Power, Electric Power",Other Gases,0
+2019,1,IL,"Combined Heat and Power, Electric Power",Other Biomass,1087
+2019,1,IL,"Electric Generators, Independent Power Producers",Total,16434943
+2019,1,IL,"Electric Generators, Independent Power Producers",Coal,5325191
+2019,1,IL,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,6858
+2019,1,IL,"Electric Generators, Independent Power Producers",Natural Gas,867613
+2019,1,IL,"Electric Generators, Independent Power Producers",Nuclear,8794772
+2019,1,IL,"Electric Generators, Independent Power Producers",Other,-708
+2019,1,IL,"Electric Generators, Independent Power Producers",Petroleum,3278
+2019,1,IL,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,2578
+2019,1,IL,"Electric Generators, Independent Power Producers",Other Biomass,31375
+2019,1,IL,"Electric Generators, Independent Power Producers",Wind,1403986
+2019,1,IL,"Electric Generators, Electric Utilities",Total,442833
+2019,1,IL,"Electric Generators, Electric Utilities",Coal,392088
+2019,1,IL,"Electric Generators, Electric Utilities",Hydroelectric Conventional,5473
+2019,1,IL,"Electric Generators, Electric Utilities",Natural Gas,40205
+2019,1,IL,"Electric Generators, Electric Utilities",Other,0
+2019,1,IL,"Electric Generators, Electric Utilities",Petroleum,545
+2019,1,IL,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,73
+2019,1,IL,"Electric Generators, Electric Utilities",Other Biomass,3192
+2019,1,IL,"Electric Generators, Electric Utilities",Wind,1257
+2019,1,IN,Total Electric Power Industry,Total,9861011
+2019,1,IN,Total Electric Power Industry,Coal,6445470
+2019,1,IN,Total Electric Power Industry,Hydroelectric Conventional,37404
+2019,1,IN,Total Electric Power Industry,Natural Gas,2497576
+2019,1,IN,Total Electric Power Industry,Other Gases,170470
+2019,1,IN,Total Electric Power Industry,Other,30382
+2019,1,IN,Total Electric Power Industry,Petroleum,11072
+2019,1,IN,Total Electric Power Industry,Solar Thermal and Photovoltaic,20324
+2019,1,IN,Total Electric Power Industry,Other Biomass,37532
+2019,1,IN,Total Electric Power Industry,Wind,610780
+2019,1,IN,Total Electric Power Industry,Wood and Wood Derived Fuels,0
+2019,1,IN,"Combined Heat and Power, Industrial Power",Total,337746
+2019,1,IN,"Combined Heat and Power, Industrial Power",Coal,0
+2019,1,IN,"Combined Heat and Power, Industrial Power",Natural Gas,131729
+2019,1,IN,"Combined Heat and Power, Industrial Power",Other Gases,170470
+2019,1,IN,"Combined Heat and Power, Industrial Power",Other,28416
+2019,1,IN,"Combined Heat and Power, Industrial Power",Petroleum,1193
+2019,1,IN,"Combined Heat and Power, Industrial Power",Other Biomass,5937
+2019,1,IN,"Combined Heat and Power, Commercial Power",Total,19314
+2019,1,IN,"Combined Heat and Power, Commercial Power",Coal,2120
+2019,1,IN,"Combined Heat and Power, Commercial Power",Natural Gas,13147
+2019,1,IN,"Combined Heat and Power, Commercial Power",Other,1966
+2019,1,IN,"Combined Heat and Power, Commercial Power",Petroleum,35
+2019,1,IN,"Combined Heat and Power, Commercial Power",Other Biomass,2046
+2019,1,IN,"Combined Heat and Power, Commercial Power",Wind,0
+2019,1,IN,"Combined Heat and Power, Electric Power",Total,649421
+2019,1,IN,"Combined Heat and Power, Electric Power",Coal,400926
+2019,1,IN,"Combined Heat and Power, Electric Power",Natural Gas,248495
+2019,1,IN,"Combined Heat and Power, Electric Power",Petroleum,0
+2019,1,IN,"Electric Generators, Independent Power Producers",Total,1850420
+2019,1,IN,"Electric Generators, Independent Power Producers",Coal,0
+2019,1,IN,"Electric Generators, Independent Power Producers",Natural Gas,1224130
+2019,1,IN,"Electric Generators, Independent Power Producers",Petroleum,0
+2019,1,IN,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,11398
+2019,1,IN,"Electric Generators, Independent Power Producers",Other Biomass,4112
+2019,1,IN,"Electric Generators, Independent Power Producers",Wind,610780
+2019,1,IN,"Electric Generators, Independent Power Producers",Wood and Wood Derived Fuels,0
+2019,1,IN,"Electric Generators, Electric Utilities",Total,7004110
+2019,1,IN,"Electric Generators, Electric Utilities",Coal,6042424
+2019,1,IN,"Electric Generators, Electric Utilities",Hydroelectric Conventional,37404
+2019,1,IN,"Electric Generators, Electric Utilities",Natural Gas,880076
+2019,1,IN,"Electric Generators, Electric Utilities",Other,0
+2019,1,IN,"Electric Generators, Electric Utilities",Petroleum,9844
+2019,1,IN,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,8926
+2019,1,IN,"Electric Generators, Electric Utilities",Other Biomass,25436
+2019,1,KS,Total Electric Power Industry,Total,4473078
+2019,1,KS,Total Electric Power Industry,Coal,1666199
+2019,1,KS,Total Electric Power Industry,Hydroelectric Conventional,2578
+2019,1,KS,Total Electric Power Industry,Natural Gas,156627
+2019,1,KS,Total Electric Power Industry,Nuclear,911787
+2019,1,KS,Total Electric Power Industry,Other,416
+2019,1,KS,Total Electric Power Industry,Petroleum,6983
+2019,1,KS,Total Electric Power Industry,Solar Thermal and Photovoltaic,394
+2019,1,KS,Total Electric Power Industry,Other Biomass,4899
+2019,1,KS,Total Electric Power Industry,Wind,1723195
+2019,1,KS,"Combined Heat and Power, Industrial Power",Total,11657
+2019,1,KS,"Combined Heat and Power, Industrial Power",Natural Gas,11241
+2019,1,KS,"Combined Heat and Power, Industrial Power",Other,416
+2019,1,KS,"Combined Heat and Power, Commercial Power",Total,1283
+2019,1,KS,"Combined Heat and Power, Commercial Power",Wind,1283
+2019,1,KS,"Electric Generators, Independent Power Producers",Total,1589746
+2019,1,KS,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,2578
+2019,1,KS,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,280
+2019,1,KS,"Electric Generators, Independent Power Producers",Other Biomass,4899
+2019,1,KS,"Electric Generators, Independent Power Producers",Wind,1581989
+2019,1,KS,"Electric Generators, Electric Utilities",Total,2870392
+2019,1,KS,"Electric Generators, Electric Utilities",Coal,1666199
+2019,1,KS,"Electric Generators, Electric Utilities",Natural Gas,145387
+2019,1,KS,"Electric Generators, Electric Utilities",Nuclear,911787
+2019,1,KS,"Electric Generators, Electric Utilities",Petroleum,6983
+2019,1,KS,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,114
+2019,1,KS,"Electric Generators, Electric Utilities",Wind,139923
+2019,1,KY,Total Electric Power Industry,Total,7206231
+2019,1,KY,Total Electric Power Industry,Coal,5497838
+2019,1,KY,Total Electric Power Industry,Hydroelectric Conventional,429205
+2019,1,KY,Total Electric Power Industry,Natural Gas,1223499
+2019,1,KY,Total Electric Power Industry,Other,4294
+2019,1,KY,Total Electric Power Industry,Petroleum,8864
+2019,1,KY,Total Electric Power Industry,Solar Thermal and Photovoltaic,2598
+2019,1,KY,Total Electric Power Industry,Other Biomass,9326
+2019,1,KY,Total Electric Power Industry,Wood and Wood Derived Fuels,30607
+2019,1,KY,"Combined Heat and Power, Industrial Power",Total,52704
+2019,1,KY,"Combined Heat and Power, Industrial Power",Natural Gas,22097
+2019,1,KY,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,30607
+2019,1,KY,"Electric Generators, Independent Power Producers",Total,46363
+2019,1,KY,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,1060
+2019,1,KY,"Electric Generators, Independent Power Producers",Natural Gas,44474
+2019,1,KY,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,125
+2019,1,KY,"Electric Generators, Independent Power Producers",Other Biomass,704
+2019,1,KY,"Electric Generators, Electric Utilities",Total,7107164
+2019,1,KY,"Electric Generators, Electric Utilities",Coal,5497838
+2019,1,KY,"Electric Generators, Electric Utilities",Hydroelectric Conventional,428145
+2019,1,KY,"Electric Generators, Electric Utilities",Natural Gas,1156928
+2019,1,KY,"Electric Generators, Electric Utilities",Other,4294
+2019,1,KY,"Electric Generators, Electric Utilities",Petroleum,8864
+2019,1,KY,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,2473
+2019,1,KY,"Electric Generators, Electric Utilities",Other Biomass,8623
+2019,1,KY,"Electric Generators, Electric Utilities",Wood and Wood Derived Fuels,0
+2019,1,LA,Total Electric Power Industry,Total,7698724
+2019,1,LA,Total Electric Power Industry,Coal,715339
+2019,1,LA,Total Electric Power Industry,Hydroelectric Conventional,93177
+2019,1,LA,Total Electric Power Industry,Natural Gas,5438073
+2019,1,LA,Total Electric Power Industry,Nuclear,675644
+2019,1,LA,Total Electric Power Industry,Other Gases,134836
+2019,1,LA,Total Electric Power Industry,Other,49310
+2019,1,LA,Total Electric Power Industry,Petroleum,380934
+2019,1,LA,Total Electric Power Industry,Solar Thermal and Photovoltaic,121
+2019,1,LA,Total Electric Power Industry,Other Biomass,7259
+2019,1,LA,Total Electric Power Industry,Wood and Wood Derived Fuels,204031
+2019,1,LA,"Combined Heat and Power, Industrial Power",Total,2806607
+2019,1,LA,"Combined Heat and Power, Industrial Power",Coal,0
+2019,1,LA,"Combined Heat and Power, Industrial Power",Natural Gas,2415791
+2019,1,LA,"Combined Heat and Power, Industrial Power",Other Gases,134836
+2019,1,LA,"Combined Heat and Power, Industrial Power",Other,49310
+2019,1,LA,"Combined Heat and Power, Industrial Power",Petroleum,2640
+2019,1,LA,"Combined Heat and Power, Industrial Power",Other Biomass,0
+2019,1,LA,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,204031
+2019,1,LA,"Combined Heat and Power, Commercial Power",Total,14821
+2019,1,LA,"Combined Heat and Power, Commercial Power",Natural Gas,14821
+2019,1,LA,"Combined Heat and Power, Electric Power",Total,287535
+2019,1,LA,"Combined Heat and Power, Electric Power",Natural Gas,287535
+2019,1,LA,"Electric Generators, Independent Power Producers",Total,364189
+2019,1,LA,"Electric Generators, Independent Power Producers",Coal,246298
+2019,1,LA,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,93177
+2019,1,LA,"Electric Generators, Independent Power Producers",Natural Gas,17455
+2019,1,LA,"Electric Generators, Independent Power Producers",Petroleum,0
+2019,1,LA,"Electric Generators, Independent Power Producers",Other Biomass,7259
+2019,1,LA,"Electric Generators, Electric Utilities",Total,4225572
+2019,1,LA,"Electric Generators, Electric Utilities",Coal,469041
+2019,1,LA,"Electric Generators, Electric Utilities",Natural Gas,2702472
+2019,1,LA,"Electric Generators, Electric Utilities",Nuclear,675644
+2019,1,LA,"Electric Generators, Electric Utilities",Other,0
+2019,1,LA,"Electric Generators, Electric Utilities",Petroleum,378294
+2019,1,LA,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,121
+2019,1,MA,Total Electric Power Industry,Total,2450123
+2019,1,MA,Total Electric Power Industry,Coal,0
+2019,1,MA,Total Electric Power Industry,Pumped Storage,-37687
+2019,1,MA,Total Electric Power Industry,Hydroelectric Conventional,118888
+2019,1,MA,Total Electric Power Industry,Natural Gas,1610570
+2019,1,MA,Total Electric Power Industry,Nuclear,450438
+2019,1,MA,Total Electric Power Industry,Other,74656
+2019,1,MA,Total Electric Power Industry,Petroleum,39948
+2019,1,MA,Total Electric Power Industry,Solar Thermal and Photovoltaic,67254
+2019,1,MA,Total Electric Power Industry,Other Biomass,92209
+2019,1,MA,Total Electric Power Industry,Wind,20646
+2019,1,MA,Total Electric Power Industry,Wood and Wood Derived Fuels,13201
+2019,1,MA,"Combined Heat and Power, Industrial Power",Total,24124
+2019,1,MA,"Combined Heat and Power, Industrial Power",Coal,0
+2019,1,MA,"Combined Heat and Power, Industrial Power",Natural Gas,23271
+2019,1,MA,"Combined Heat and Power, Industrial Power",Other,0
+2019,1,MA,"Combined Heat and Power, Industrial Power",Petroleum,730
+2019,1,MA,"Combined Heat and Power, Industrial Power",Solar Thermal and Photovoltaic,70
+2019,1,MA,"Combined Heat and Power, Industrial Power",Wind,53
+2019,1,MA,"Combined Heat and Power, Commercial Power",Total,49935
+2019,1,MA,"Combined Heat and Power, Commercial Power",Hydroelectric Conventional,463
+2019,1,MA,"Combined Heat and Power, Commercial Power",Natural Gas,42478
+2019,1,MA,"Combined Heat and Power, Commercial Power",Petroleum,1364
+2019,1,MA,"Combined Heat and Power, Commercial Power",Solar Thermal and Photovoltaic,308
+2019,1,MA,"Combined Heat and Power, Commercial Power",Other Biomass,2334
+2019,1,MA,"Combined Heat and Power, Commercial Power",Wind,2986
+2019,1,MA,"Combined Heat and Power, Electric Power",Total,182512
+2019,1,MA,"Combined Heat and Power, Electric Power",Natural Gas,182241
+2019,1,MA,"Combined Heat and Power, Electric Power",Petroleum,271
+2019,1,MA,"Electric Generators, Independent Power Producers",Total,2143676
+2019,1,MA,"Electric Generators, Independent Power Producers",Coal,0
+2019,1,MA,"Electric Generators, Independent Power Producers",Pumped Storage,-37687
+2019,1,MA,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,85477
+2019,1,MA,"Electric Generators, Independent Power Producers",Natural Gas,1357913
+2019,1,MA,"Electric Generators, Independent Power Producers",Nuclear,450438
+2019,1,MA,"Electric Generators, Independent Power Producers",Other,74656
+2019,1,MA,"Electric Generators, Independent Power Producers",Petroleum,35226
+2019,1,MA,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,62318
+2019,1,MA,"Electric Generators, Independent Power Producers",Other Biomass,89875
+2019,1,MA,"Electric Generators, Independent Power Producers",Wind,12259
+2019,1,MA,"Electric Generators, Independent Power Producers",Wood and Wood Derived Fuels,13201
+2019,1,MA,"Electric Generators, Electric Utilities",Total,49875
+2019,1,MA,"Electric Generators, Electric Utilities",Hydroelectric Conventional,32948
+2019,1,MA,"Electric Generators, Electric Utilities",Natural Gas,4667
+2019,1,MA,"Electric Generators, Electric Utilities",Other,0
+2019,1,MA,"Electric Generators, Electric Utilities",Petroleum,2356
+2019,1,MA,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,4557
+2019,1,MA,"Electric Generators, Electric Utilities",Wind,5347
+2019,1,MD,Total Electric Power Industry,Total,3287325
+2019,1,MD,Total Electric Power Industry,Coal,682368
+2019,1,MD,Total Electric Power Industry,Hydroelectric Conventional,297651
+2019,1,MD,Total Electric Power Industry,Natural Gas,808525
+2019,1,MD,Total Electric Power Industry,Nuclear,1352917
+2019,1,MD,Total Electric Power Industry,Other,19145
+2019,1,MD,Total Electric Power Industry,Petroleum,12973
+2019,1,MD,Total Electric Power Industry,Solar Thermal and Photovoltaic,25666
+2019,1,MD,Total Electric Power Industry,Other Biomass,27403
+2019,1,MD,Total Electric Power Industry,Wind,49657
+2019,1,MD,Total Electric Power Industry,Wood and Wood Derived Fuels,11019
+2019,1,MD,"Combined Heat and Power, Industrial Power",Total,24976
+2019,1,MD,"Combined Heat and Power, Industrial Power",Coal,7524
+2019,1,MD,"Combined Heat and Power, Industrial Power",Natural Gas,7057
+2019,1,MD,"Combined Heat and Power, Industrial Power",Petroleum,500
+2019,1,MD,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,9894
+2019,1,MD,"Combined Heat and Power, Commercial Power",Total,85333
+2019,1,MD,"Combined Heat and Power, Commercial Power",Coal,0
+2019,1,MD,"Combined Heat and Power, Commercial Power",Natural Gas,82288
+2019,1,MD,"Combined Heat and Power, Commercial Power",Other,0
+2019,1,MD,"Combined Heat and Power, Commercial Power",Petroleum,128
+2019,1,MD,"Combined Heat and Power, Commercial Power",Solar Thermal and Photovoltaic,750
+2019,1,MD,"Combined Heat and Power, Commercial Power",Other Biomass,1041
+2019,1,MD,"Combined Heat and Power, Commercial Power",Wood and Wood Derived Fuels,1125
+2019,1,MD,"Combined Heat and Power, Electric Power",Total,159368
+2019,1,MD,"Combined Heat and Power, Electric Power",Coal,111657
+2019,1,MD,"Combined Heat and Power, Electric Power",Natural Gas,25357
+2019,1,MD,"Combined Heat and Power, Electric Power",Other,10888
+2019,1,MD,"Combined Heat and Power, Electric Power",Petroleum,135
+2019,1,MD,"Combined Heat and Power, Electric Power",Other Biomass,11331
+2019,1,MD,"Electric Generators, Independent Power Producers",Total,2650214
+2019,1,MD,"Electric Generators, Independent Power Producers",Coal,563187
+2019,1,MD,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,297651
+2019,1,MD,"Electric Generators, Independent Power Producers",Natural Gas,327197
+2019,1,MD,"Electric Generators, Independent Power Producers",Nuclear,1352917
+2019,1,MD,"Electric Generators, Independent Power Producers",Other,8257
+2019,1,MD,"Electric Generators, Independent Power Producers",Petroleum,11885
+2019,1,MD,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,24432
+2019,1,MD,"Electric Generators, Independent Power Producers",Other Biomass,15031
+2019,1,MD,"Electric Generators, Independent Power Producers",Wind,49657
+2019,1,MD,"Electric Generators, Electric Utilities",Total,367434
+2019,1,MD,"Electric Generators, Electric Utilities",Natural Gas,366626
+2019,1,MD,"Electric Generators, Electric Utilities",Petroleum,323
+2019,1,MD,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,484
+2019,1,ME,Total Electric Power Industry,Total,988263
+2019,1,ME,Total Electric Power Industry,Coal,9164
+2019,1,ME,Total Electric Power Industry,Hydroelectric Conventional,347609
+2019,1,ME,Total Electric Power Industry,Natural Gas,156139
+2019,1,ME,Total Electric Power Industry,Other,28072
+2019,1,ME,Total Electric Power Industry,Petroleum,4838
+2019,1,ME,Total Electric Power Industry,Solar Thermal and Photovoltaic,636
+2019,1,ME,Total Electric Power Industry,Other Biomass,12537
+2019,1,ME,Total Electric Power Industry,Wind,213228
+2019,1,ME,Total Electric Power Industry,Wood and Wood Derived Fuels,216040
+2019,1,ME,"Combined Heat and Power, Industrial Power",Total,143205
+2019,1,ME,"Combined Heat and Power, Industrial Power",Coal,1113
+2019,1,ME,"Combined Heat and Power, Industrial Power",Hydroelectric Conventional,12015
+2019,1,ME,"Combined Heat and Power, Industrial Power",Natural Gas,23858
+2019,1,ME,"Combined Heat and Power, Industrial Power",Other,10630
+2019,1,ME,"Combined Heat and Power, Industrial Power",Petroleum,2385
+2019,1,ME,"Combined Heat and Power, Industrial Power",Other Biomass,540
+2019,1,ME,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,92664
+2019,1,ME,"Combined Heat and Power, Commercial Power",Total,14656
+2019,1,ME,"Combined Heat and Power, Commercial Power",Natural Gas,2645
+2019,1,ME,"Combined Heat and Power, Commercial Power",Other,5728
+2019,1,ME,"Combined Heat and Power, Commercial Power",Petroleum,322
+2019,1,ME,"Combined Heat and Power, Commercial Power",Other Biomass,5962
+2019,1,ME,"Combined Heat and Power, Commercial Power",Wood and Wood Derived Fuels,0
+2019,1,ME,"Combined Heat and Power, Electric Power",Total,48748
+2019,1,ME,"Combined Heat and Power, Electric Power",Coal,8051
+2019,1,ME,"Combined Heat and Power, Electric Power",Natural Gas,0
+2019,1,ME,"Combined Heat and Power, Electric Power",Other,8514
+2019,1,ME,"Combined Heat and Power, Electric Power",Petroleum,1772
+2019,1,ME,"Combined Heat and Power, Electric Power",Other Biomass,24
+2019,1,ME,"Combined Heat and Power, Electric Power",Wood and Wood Derived Fuels,30387
+2019,1,ME,"Electric Generators, Independent Power Producers",Total,781654
+2019,1,ME,"Electric Generators, Independent Power Producers",Coal,0
+2019,1,ME,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,335593
+2019,1,ME,"Electric Generators, Independent Power Producers",Natural Gas,129636
+2019,1,ME,"Electric Generators, Independent Power Producers",Other,3201
+2019,1,ME,"Electric Generators, Independent Power Producers",Petroleum,360
+2019,1,ME,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,636
+2019,1,ME,"Electric Generators, Independent Power Producers",Other Biomass,6011
+2019,1,ME,"Electric Generators, Independent Power Producers",Wind,213228
+2019,1,ME,"Electric Generators, Independent Power Producers",Wood and Wood Derived Fuels,92988
+2019,1,ME,"Electric Generators, Electric Utilities",Total,0
+2019,1,ME,"Electric Generators, Electric Utilities",Petroleum,0
+2019,1,MI,Total Electric Power Industry,Total,10463847
+2019,1,MI,Total Electric Power Industry,Coal,3697805
+2019,1,MI,Total Electric Power Industry,Pumped Storage,-29518
+2019,1,MI,Total Electric Power Industry,Hydroelectric Conventional,125947
+2019,1,MI,Total Electric Power Industry,Natural Gas,2641697
+2019,1,MI,Total Electric Power Industry,Nuclear,2998341
+2019,1,MI,Total Electric Power Industry,Other Gases,145780
+2019,1,MI,Total Electric Power Industry,Other,22685
+2019,1,MI,Total Electric Power Industry,Petroleum,124659
+2019,1,MI,Total Electric Power Industry,Solar Thermal and Photovoltaic,8848
+2019,1,MI,Total Electric Power Industry,Other Biomass,81448
+2019,1,MI,Total Electric Power Industry,Wind,501731
+2019,1,MI,Total Electric Power Industry,Wood and Wood Derived Fuels,144425
+2019,1,MI,"Combined Heat and Power, Industrial Power",Total,148119
+2019,1,MI,"Combined Heat and Power, Industrial Power",Coal,6320
+2019,1,MI,"Combined Heat and Power, Industrial Power",Hydroelectric Conventional,998
+2019,1,MI,"Combined Heat and Power, Industrial Power",Natural Gas,67814
+2019,1,MI,"Combined Heat and Power, Industrial Power",Other,2064
+2019,1,MI,"Combined Heat and Power, Industrial Power",Petroleum,10865
+2019,1,MI,"Combined Heat and Power, Industrial Power",Other Biomass,65
+2019,1,MI,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,59993
+2019,1,MI,"Combined Heat and Power, Commercial Power",Total,72353
+2019,1,MI,"Combined Heat and Power, Commercial Power",Coal,0
+2019,1,MI,"Combined Heat and Power, Commercial Power",Natural Gas,53058
+2019,1,MI,"Combined Heat and Power, Commercial Power",Other,9306
+2019,1,MI,"Combined Heat and Power, Commercial Power",Petroleum,303
+2019,1,MI,"Combined Heat and Power, Commercial Power",Other Biomass,9686
+2019,1,MI,"Combined Heat and Power, Commercial Power",Wood and Wood Derived Fuels,0
+2019,1,MI,"Combined Heat and Power, Electric Power",Total,1364606
+2019,1,MI,"Combined Heat and Power, Electric Power",Coal,34202
+2019,1,MI,"Combined Heat and Power, Electric Power",Natural Gas,1192440
+2019,1,MI,"Combined Heat and Power, Electric Power",Other Gases,133356
+2019,1,MI,"Combined Heat and Power, Electric Power",Other,3256
+2019,1,MI,"Combined Heat and Power, Electric Power",Petroleum,0
+2019,1,MI,"Combined Heat and Power, Electric Power",Other Biomass,0
+2019,1,MI,"Combined Heat and Power, Electric Power",Wood and Wood Derived Fuels,1353
+2019,1,MI,"Electric Generators, Independent Power Producers",Total,1616519
+2019,1,MI,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,9416
+2019,1,MI,"Electric Generators, Independent Power Producers",Natural Gas,602861
+2019,1,MI,"Electric Generators, Independent Power Producers",Nuclear,490769
+2019,1,MI,"Electric Generators, Independent Power Producers",Other,8059
+2019,1,MI,"Electric Generators, Independent Power Producers",Petroleum,0
+2019,1,MI,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,4068
+2019,1,MI,"Electric Generators, Independent Power Producers",Other Biomass,71697
+2019,1,MI,"Electric Generators, Independent Power Producers",Wind,346569
+2019,1,MI,"Electric Generators, Independent Power Producers",Wood and Wood Derived Fuels,83079
+2019,1,MI,"Electric Generators, Electric Utilities",Total,7262251
+2019,1,MI,"Electric Generators, Electric Utilities",Coal,3657283
+2019,1,MI,"Electric Generators, Electric Utilities",Pumped Storage,-29518
+2019,1,MI,"Electric Generators, Electric Utilities",Hydroelectric Conventional,115532
+2019,1,MI,"Electric Generators, Electric Utilities",Natural Gas,725525
+2019,1,MI,"Electric Generators, Electric Utilities",Nuclear,2507572
+2019,1,MI,"Electric Generators, Electric Utilities",Other Gases,12424
+2019,1,MI,"Electric Generators, Electric Utilities",Other,0
+2019,1,MI,"Electric Generators, Electric Utilities",Petroleum,113492
+2019,1,MI,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,4780
+2019,1,MI,"Electric Generators, Electric Utilities",Wind,155161
+2019,1,MN,Total Electric Power Industry,Total,5417632
+2019,1,MN,Total Electric Power Industry,Coal,2145253
+2019,1,MN,Total Electric Power Industry,Hydroelectric Conventional,94878
+2019,1,MN,Total Electric Power Industry,Natural Gas,585311
+2019,1,MN,Total Electric Power Industry,Nuclear,1299896
+2019,1,MN,Total Electric Power Industry,Other,33230
+2019,1,MN,Total Electric Power Industry,Petroleum,6500
+2019,1,MN,Total Electric Power Industry,Solar Thermal and Photovoltaic,73832
+2019,1,MN,Total Electric Power Industry,Other Biomass,42829
+2019,1,MN,Total Electric Power Industry,Wind,1047920
+2019,1,MN,Total Electric Power Industry,Wood and Wood Derived Fuels,87983
+2019,1,MN,"Combined Heat and Power, Industrial Power",Total,114385
+2019,1,MN,"Combined Heat and Power, Industrial Power",Coal,33758
+2019,1,MN,"Combined Heat and Power, Industrial Power",Hydroelectric Conventional,6434
+2019,1,MN,"Combined Heat and Power, Industrial Power",Natural Gas,12882
+2019,1,MN,"Combined Heat and Power, Industrial Power",Other,5084
+2019,1,MN,"Combined Heat and Power, Industrial Power",Petroleum,122
+2019,1,MN,"Combined Heat and Power, Industrial Power",Other Biomass,735
+2019,1,MN,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,55370
+2019,1,MN,"Combined Heat and Power, Commercial Power",Total,17378
+2019,1,MN,"Combined Heat and Power, Commercial Power",Coal,35
+2019,1,MN,"Combined Heat and Power, Commercial Power",Natural Gas,11469
+2019,1,MN,"Combined Heat and Power, Commercial Power",Other,1443
+2019,1,MN,"Combined Heat and Power, Commercial Power",Petroleum,363
+2019,1,MN,"Combined Heat and Power, Commercial Power",Other Biomass,1804
+2019,1,MN,"Combined Heat and Power, Commercial Power",Wind,2264
+2019,1,MN,"Combined Heat and Power, Commercial Power",Wood and Wood Derived Fuels,0
+2019,1,MN,"Combined Heat and Power, Electric Power",Total,46671
+2019,1,MN,"Combined Heat and Power, Electric Power",Natural Gas,23183
+2019,1,MN,"Combined Heat and Power, Electric Power",Petroleum,0
+2019,1,MN,"Combined Heat and Power, Electric Power",Other Biomass,7998
+2019,1,MN,"Combined Heat and Power, Electric Power",Wood and Wood Derived Fuels,15490
+2019,1,MN,"Electric Generators, Independent Power Producers",Total,990573
+2019,1,MN,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,18369
+2019,1,MN,"Electric Generators, Independent Power Producers",Natural Gas,56437
+2019,1,MN,"Electric Generators, Independent Power Producers",Other,13434
+2019,1,MN,"Electric Generators, Independent Power Producers",Petroleum,2295
+2019,1,MN,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,73666
+2019,1,MN,"Electric Generators, Independent Power Producers",Other Biomass,15066
+2019,1,MN,"Electric Generators, Independent Power Producers",Wind,811306
+2019,1,MN,"Electric Generators, Electric Utilities",Total,4248626
+2019,1,MN,"Electric Generators, Electric Utilities",Coal,2111461
+2019,1,MN,"Electric Generators, Electric Utilities",Hydroelectric Conventional,70075
+2019,1,MN,"Electric Generators, Electric Utilities",Natural Gas,481340
+2019,1,MN,"Electric Generators, Electric Utilities",Nuclear,1299896
+2019,1,MN,"Electric Generators, Electric Utilities",Other,13269
+2019,1,MN,"Electric Generators, Electric Utilities",Petroleum,3721
+2019,1,MN,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,166
+2019,1,MN,"Electric Generators, Electric Utilities",Other Biomass,17226
+2019,1,MN,"Electric Generators, Electric Utilities",Wind,234351
+2019,1,MN,"Electric Generators, Electric Utilities",Wood and Wood Derived Fuels,17122
+2019,1,MO,Total Electric Power Industry,Total,7928737
+2019,1,MO,Total Electric Power Industry,Coal,6065092
+2019,1,MO,Total Electric Power Industry,Pumped Storage,49469
+2019,1,MO,Total Electric Power Industry,Hydroelectric Conventional,179276
+2019,1,MO,Total Electric Power Industry,Natural Gas,445502
+2019,1,MO,Total Electric Power Industry,Nuclear,911445
+2019,1,MO,Total Electric Power Industry,Other,0
+2019,1,MO,Total Electric Power Industry,Petroleum,8460
+2019,1,MO,Total Electric Power Industry,Solar Thermal and Photovoltaic,5991
+2019,1,MO,Total Electric Power Industry,Other Biomass,7532
+2019,1,MO,Total Electric Power Industry,Wind,250541
+2019,1,MO,Total Electric Power Industry,Wood and Wood Derived Fuels,5429
+2019,1,MO,"Combined Heat and Power, Industrial Power",Total,3816
+2019,1,MO,"Combined Heat and Power, Industrial Power",Coal,0
+2019,1,MO,"Combined Heat and Power, Industrial Power",Natural Gas,3683
+2019,1,MO,"Combined Heat and Power, Industrial Power",Petroleum,0
+2019,1,MO,"Combined Heat and Power, Industrial Power",Other Biomass,133
+2019,1,MO,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,0
+2019,1,MO,"Combined Heat and Power, Commercial Power",Total,13982
+2019,1,MO,"Combined Heat and Power, Commercial Power",Coal,1549
+2019,1,MO,"Combined Heat and Power, Commercial Power",Natural Gas,6951
+2019,1,MO,"Combined Heat and Power, Commercial Power",Petroleum,3
+2019,1,MO,"Combined Heat and Power, Commercial Power",Solar Thermal and Photovoltaic,51
+2019,1,MO,"Combined Heat and Power, Commercial Power",Wood and Wood Derived Fuels,5429
+2019,1,MO,"Combined Heat and Power, Electric Power",Total,8481
+2019,1,MO,"Combined Heat and Power, Electric Power",Coal,0
+2019,1,MO,"Combined Heat and Power, Electric Power",Natural Gas,8481
+2019,1,MO,"Combined Heat and Power, Electric Power",Petroleum,0
+2019,1,MO,"Electric Generators, Independent Power Producers",Total,425337
+2019,1,MO,"Electric Generators, Independent Power Producers",Coal,0
+2019,1,MO,"Electric Generators, Independent Power Producers",Natural Gas,166044
+2019,1,MO,"Electric Generators, Independent Power Producers",Petroleum,0
+2019,1,MO,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,5760
+2019,1,MO,"Electric Generators, Independent Power Producers",Other Biomass,2992
+2019,1,MO,"Electric Generators, Independent Power Producers",Wind,250541
+2019,1,MO,"Electric Generators, Electric Utilities",Total,7477120
+2019,1,MO,"Electric Generators, Electric Utilities",Coal,6063543
+2019,1,MO,"Electric Generators, Electric Utilities",Pumped Storage,49469
+2019,1,MO,"Electric Generators, Electric Utilities",Hydroelectric Conventional,179276
+2019,1,MO,"Electric Generators, Electric Utilities",Natural Gas,260344
+2019,1,MO,"Electric Generators, Electric Utilities",Nuclear,911445
+2019,1,MO,"Electric Generators, Electric Utilities",Other,0
+2019,1,MO,"Electric Generators, Electric Utilities",Petroleum,8457
+2019,1,MO,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,180
+2019,1,MO,"Electric Generators, Electric Utilities",Other Biomass,4407
+2019,1,MO,"Electric Generators, Electric Utilities",Wood and Wood Derived Fuels,0
+2019,1,MS,Total Electric Power Industry,Total,5104853
+2019,1,MS,Total Electric Power Industry,Coal,392662
+2019,1,MS,Total Electric Power Industry,Natural Gas,3527801
+2019,1,MS,Total Electric Power Industry,Nuclear,1050888
+2019,1,MS,Total Electric Power Industry,Other,0
+2019,1,MS,Total Electric Power Industry,Petroleum,1273
+2019,1,MS,Total Electric Power Industry,Solar Thermal and Photovoltaic,19457
+2019,1,MS,Total Electric Power Industry,Other Biomass,1320
+2019,1,MS,Total Electric Power Industry,Wood and Wood Derived Fuels,111451
+2019,1,MS,"Combined Heat and Power, Industrial Power",Total,157476
+2019,1,MS,"Combined Heat and Power, Industrial Power",Coal,0
+2019,1,MS,"Combined Heat and Power, Industrial Power",Natural Gas,45430
+2019,1,MS,"Combined Heat and Power, Industrial Power",Other,0
+2019,1,MS,"Combined Heat and Power, Industrial Power",Petroleum,234
+2019,1,MS,"Combined Heat and Power, Industrial Power",Other Biomass,361
+2019,1,MS,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,111451
+2019,1,MS,"Combined Heat and Power, Commercial Power",Total,0
+2019,1,MS,"Combined Heat and Power, Commercial Power",Natural Gas,0
+2019,1,MS,"Electric Generators, Independent Power Producers",Total,846463
+2019,1,MS,"Electric Generators, Independent Power Producers",Coal,250789
+2019,1,MS,"Electric Generators, Independent Power Producers",Natural Gas,575257
+2019,1,MS,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,19457
+2019,1,MS,"Electric Generators, Independent Power Producers",Other Biomass,959
+2019,1,MS,"Electric Generators, Electric Utilities",Total,4100914
+2019,1,MS,"Electric Generators, Electric Utilities",Coal,141873
+2019,1,MS,"Electric Generators, Electric Utilities",Natural Gas,2907114
+2019,1,MS,"Electric Generators, Electric Utilities",Nuclear,1050888
+2019,1,MS,"Electric Generators, Electric Utilities",Petroleum,1039
+2019,1,MT,Total Electric Power Industry,Total,2630172
+2019,1,MT,Total Electric Power Industry,Coal,1463907
+2019,1,MT,Total Electric Power Industry,Hydroelectric Conventional,811016
+2019,1,MT,Total Electric Power Industry,Natural Gas,44901
+2019,1,MT,Total Electric Power Industry,Other Gases,993
+2019,1,MT,Total Electric Power Industry,Other,27136
+2019,1,MT,Total Electric Power Industry,Petroleum,44458
+2019,1,MT,Total Electric Power Industry,Solar Thermal and Photovoltaic,1932
+2019,1,MT,Total Electric Power Industry,Wind,233984
+2019,1,MT,Total Electric Power Industry,Wood and Wood Derived Fuels,1845
+2019,1,MT,"Combined Heat and Power, Industrial Power",Total,3671
+2019,1,MT,"Combined Heat and Power, Industrial Power",Coal,914
+2019,1,MT,"Combined Heat and Power, Industrial Power",Natural Gas,912
+2019,1,MT,"Combined Heat and Power, Industrial Power",Other Gases,0
+2019,1,MT,"Combined Heat and Power, Industrial Power",Petroleum,0
+2019,1,MT,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,1845
+2019,1,MT,"Combined Heat and Power, Electric Power",Total,44412
+2019,1,MT,"Combined Heat and Power, Electric Power",Other Gases,993
+2019,1,MT,"Combined Heat and Power, Electric Power",Petroleum,43419
+2019,1,MT,"Electric Generators, Independent Power Producers",Total,1716040
+2019,1,MT,"Electric Generators, Independent Power Producers",Coal,1436356
+2019,1,MT,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,11600
+2019,1,MT,"Electric Generators, Independent Power Producers",Natural Gas,23938
+2019,1,MT,"Electric Generators, Independent Power Producers",Other,27136
+2019,1,MT,"Electric Generators, Independent Power Producers",Petroleum,1010
+2019,1,MT,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,1932
+2019,1,MT,"Electric Generators, Independent Power Producers",Wind,214069
+2019,1,MT,"Electric Generators, Electric Utilities",Total,866049
+2019,1,MT,"Electric Generators, Electric Utilities",Coal,26637
+2019,1,MT,"Electric Generators, Electric Utilities",Hydroelectric Conventional,799416
+2019,1,MT,"Electric Generators, Electric Utilities",Natural Gas,20052
+2019,1,MT,"Electric Generators, Electric Utilities",Petroleum,29
+2019,1,MT,"Electric Generators, Electric Utilities",Wind,19915
+2019,1,NC,Total Electric Power Industry,Total,11152457
+2019,1,NC,Total Electric Power Industry,Coal,2354262
+2019,1,NC,Total Electric Power Industry,Pumped Storage,0
+2019,1,NC,Total Electric Power Industry,Hydroelectric Conventional,695213
+2019,1,NC,Total Electric Power Industry,Natural Gas,3459815
+2019,1,NC,Total Electric Power Industry,Nuclear,3882434
+2019,1,NC,Total Electric Power Industry,Other,45213
+2019,1,NC,Total Electric Power Industry,Petroleum,38115
+2019,1,NC,Total Electric Power Industry,Solar Thermal and Photovoltaic,404887
+2019,1,NC,Total Electric Power Industry,Other Biomass,51020
+2019,1,NC,Total Electric Power Industry,Wind,53806
+2019,1,NC,Total Electric Power Industry,Wood and Wood Derived Fuels,167693
+2019,1,NC,"Combined Heat and Power, Industrial Power",Total,153209
+2019,1,NC,"Combined Heat and Power, Industrial Power",Coal,12950
+2019,1,NC,"Combined Heat and Power, Industrial Power",Hydroelectric Conventional,808
+2019,1,NC,"Combined Heat and Power, Industrial Power",Natural Gas,13772
+2019,1,NC,"Combined Heat and Power, Industrial Power",Other,20534
+2019,1,NC,"Combined Heat and Power, Industrial Power",Petroleum,912
+2019,1,NC,"Combined Heat and Power, Industrial Power",Other Biomass,0
+2019,1,NC,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,104233
+2019,1,NC,"Combined Heat and Power, Commercial Power",Total,24430
+2019,1,NC,"Combined Heat and Power, Commercial Power",Coal,6747
+2019,1,NC,"Combined Heat and Power, Commercial Power",Hydroelectric Conventional,1578
+2019,1,NC,"Combined Heat and Power, Commercial Power",Natural Gas,8935
+2019,1,NC,"Combined Heat and Power, Commercial Power",Petroleum,131
+2019,1,NC,"Combined Heat and Power, Commercial Power",Solar Thermal and Photovoltaic,6073
+2019,1,NC,"Combined Heat and Power, Commercial Power",Other Biomass,965
+2019,1,NC,"Combined Heat and Power, Electric Power",Total,53515
+2019,1,NC,"Combined Heat and Power, Electric Power",Coal,3381
+2019,1,NC,"Combined Heat and Power, Electric Power",Other,16108
+2019,1,NC,"Combined Heat and Power, Electric Power",Petroleum,28
+2019,1,NC,"Combined Heat and Power, Electric Power",Other Biomass,6754
+2019,1,NC,"Combined Heat and Power, Electric Power",Wood and Wood Derived Fuels,27244
+2019,1,NC,"Electric Generators, Independent Power Producers",Total,1223228
+2019,1,NC,"Electric Generators, Independent Power Producers",Coal,2644
+2019,1,NC,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,6318
+2019,1,NC,"Electric Generators, Independent Power Producers",Natural Gas,696068
+2019,1,NC,"Electric Generators, Independent Power Producers",Other,8571
+2019,1,NC,"Electric Generators, Independent Power Producers",Petroleum,976
+2019,1,NC,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,375329
+2019,1,NC,"Electric Generators, Independent Power Producers",Other Biomass,43300
+2019,1,NC,"Electric Generators, Independent Power Producers",Wind,53806
+2019,1,NC,"Electric Generators, Independent Power Producers",Wood and Wood Derived Fuels,36217
+2019,1,NC,"Electric Generators, Electric Utilities",Total,9698076
+2019,1,NC,"Electric Generators, Electric Utilities",Coal,2328540
+2019,1,NC,"Electric Generators, Electric Utilities",Pumped Storage,0
+2019,1,NC,"Electric Generators, Electric Utilities",Hydroelectric Conventional,686509
+2019,1,NC,"Electric Generators, Electric Utilities",Natural Gas,2741040
+2019,1,NC,"Electric Generators, Electric Utilities",Nuclear,3882434
+2019,1,NC,"Electric Generators, Electric Utilities",Other,0
+2019,1,NC,"Electric Generators, Electric Utilities",Petroleum,36069
+2019,1,NC,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,23485
+2019,1,ND,Total Electric Power Industry,Total,3850029
+2019,1,ND,Total Electric Power Industry,Coal,2531635
+2019,1,ND,Total Electric Power Industry,Hydroelectric Conventional,191302
+2019,1,ND,Total Electric Power Industry,Natural Gas,51731
+2019,1,ND,Total Electric Power Industry,Other Gases,4595
+2019,1,ND,Total Electric Power Industry,Other,3873
+2019,1,ND,Total Electric Power Industry,Petroleum,4558
+2019,1,ND,Total Electric Power Industry,Other Biomass,647
+2019,1,ND,Total Electric Power Industry,Wind,1061688
+2019,1,ND,"Combined Heat and Power, Industrial Power",Total,15813
+2019,1,ND,"Combined Heat and Power, Industrial Power",Coal,9742
+2019,1,ND,"Combined Heat and Power, Industrial Power",Natural Gas,829
+2019,1,ND,"Combined Heat and Power, Industrial Power",Other Gases,4595
+2019,1,ND,"Combined Heat and Power, Industrial Power",Petroleum,0
+2019,1,ND,"Combined Heat and Power, Industrial Power",Other Biomass,647
+2019,1,ND,"Combined Heat and Power, Commercial Power",Total,20
+2019,1,ND,"Combined Heat and Power, Commercial Power",Petroleum,20
+2019,1,ND,"Electric Generators, Independent Power Producers",Total,656543
+2019,1,ND,"Electric Generators, Independent Power Producers",Wind,656543
+2019,1,ND,"Electric Generators, Electric Utilities",Total,3177653
+2019,1,ND,"Electric Generators, Electric Utilities",Coal,2521893
+2019,1,ND,"Electric Generators, Electric Utilities",Hydroelectric Conventional,191302
+2019,1,ND,"Electric Generators, Electric Utilities",Natural Gas,50901
+2019,1,ND,"Electric Generators, Electric Utilities",Other,3873
+2019,1,ND,"Electric Generators, Electric Utilities",Petroleum,4538
+2019,1,ND,"Electric Generators, Electric Utilities",Wind,405145
+2019,1,NE,Total Electric Power Industry,Total,3335236
+2019,1,NE,Total Electric Power Industry,Coal,2018675
+2019,1,NE,Total Electric Power Industry,Hydroelectric Conventional,113857
+2019,1,NE,Total Electric Power Industry,Natural Gas,26059
+2019,1,NE,Total Electric Power Industry,Nuclear,599741
+2019,1,NE,Total Electric Power Industry,Other,0
+2019,1,NE,Total Electric Power Industry,Petroleum,1742
+2019,1,NE,Total Electric Power Industry,Solar Thermal and Photovoltaic,1775
+2019,1,NE,Total Electric Power Industry,Other Biomass,7920
+2019,1,NE,Total Electric Power Industry,Wind,565464
+2019,1,NE,Total Electric Power Industry,Wood and Wood Derived Fuels,0
+2019,1,NE,"Combined Heat and Power, Industrial Power",Total,38586
+2019,1,NE,"Combined Heat and Power, Industrial Power",Coal,38586
+2019,1,NE,"Combined Heat and Power, Industrial Power",Natural Gas,0
+2019,1,NE,"Combined Heat and Power, Industrial Power",Other,0
+2019,1,NE,"Combined Heat and Power, Industrial Power",Other Biomass,0
+2019,1,NE,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,0
+2019,1,NE,"Combined Heat and Power, Commercial Power",Total,1794
+2019,1,NE,"Combined Heat and Power, Commercial Power",Natural Gas,182
+2019,1,NE,"Combined Heat and Power, Commercial Power",Other Biomass,1612
+2019,1,NE,"Electric Generators, Independent Power Producers",Total,541883
+2019,1,NE,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,1514
+2019,1,NE,"Electric Generators, Independent Power Producers",Wind,540369
+2019,1,NE,"Electric Generators, Electric Utilities",Total,2752972
+2019,1,NE,"Electric Generators, Electric Utilities",Coal,1980090
+2019,1,NE,"Electric Generators, Electric Utilities",Hydroelectric Conventional,113857
+2019,1,NE,"Electric Generators, Electric Utilities",Natural Gas,25877
+2019,1,NE,"Electric Generators, Electric Utilities",Nuclear,599741
+2019,1,NE,"Electric Generators, Electric Utilities",Petroleum,1742
+2019,1,NE,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,261
+2019,1,NE,"Electric Generators, Electric Utilities",Other Biomass,6309
+2019,1,NE,"Electric Generators, Electric Utilities",Wind,25095
+2019,1,NH,Total Electric Power Industry,Total,1612000
+2019,1,NH,Total Electric Power Industry,Coal,120824
+2019,1,NH,Total Electric Power Industry,Hydroelectric Conventional,191909
+2019,1,NH,Total Electric Power Industry,Natural Gas,172446
+2019,1,NH,Total Electric Power Industry,Nuclear,927928
+2019,1,NH,Total Electric Power Industry,Other,4411
+2019,1,NH,Total Electric Power Industry,Petroleum,3697
+2019,1,NH,Total Electric Power Industry,Other Biomass,13082
+2019,1,NH,Total Electric Power Industry,Wind,32594
+2019,1,NH,Total Electric Power Industry,Wood and Wood Derived Fuels,145108
+2019,1,NH,"Combined Heat and Power, Industrial Power",Total,2433
+2019,1,NH,"Combined Heat and Power, Industrial Power",Natural Gas,2433
+2019,1,NH,"Combined Heat and Power, Industrial Power",Petroleum,0
+2019,1,NH,"Combined Heat and Power, Commercial Power",Total,7439
+2019,1,NH,"Combined Heat and Power, Commercial Power",Natural Gas,1081
+2019,1,NH,"Combined Heat and Power, Commercial Power",Petroleum,2042
+2019,1,NH,"Combined Heat and Power, Commercial Power",Other Biomass,4315
+2019,1,NH,"Electric Generators, Independent Power Producers",Total,1417914
+2019,1,NH,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,158096
+2019,1,NH,"Electric Generators, Independent Power Producers",Natural Gas,168892
+2019,1,NH,"Electric Generators, Independent Power Producers",Nuclear,927928
+2019,1,NH,"Electric Generators, Independent Power Producers",Other,4411
+2019,1,NH,"Electric Generators, Independent Power Producers",Petroleum,1269
+2019,1,NH,"Electric Generators, Independent Power Producers",Other Biomass,8767
+2019,1,NH,"Electric Generators, Independent Power Producers",Wind,32594
+2019,1,NH,"Electric Generators, Independent Power Producers",Wood and Wood Derived Fuels,115957
+2019,1,NH,"Electric Generators, Electric Utilities",Total,184215
+2019,1,NH,"Electric Generators, Electric Utilities",Coal,120824
+2019,1,NH,"Electric Generators, Electric Utilities",Hydroelectric Conventional,33813
+2019,1,NH,"Electric Generators, Electric Utilities",Natural Gas,39
+2019,1,NH,"Electric Generators, Electric Utilities",Petroleum,387
+2019,1,NH,"Electric Generators, Electric Utilities",Other Biomass,0
+2019,1,NH,"Electric Generators, Electric Utilities",Wood and Wood Derived Fuels,29152
+2019,1,NJ,Total Electric Power Industry,Total,6044016
+2019,1,NJ,Total Electric Power Industry,Coal,107286
+2019,1,NJ,Total Electric Power Industry,Pumped Storage,-2180
+2019,1,NJ,Total Electric Power Industry,Hydroelectric Conventional,3383
+2019,1,NJ,Total Electric Power Industry,Natural Gas,3040086
+2019,1,NJ,Total Electric Power Industry,Nuclear,2630613
+2019,1,NJ,Total Electric Power Industry,Other Gases,19710
+2019,1,NJ,Total Electric Power Industry,Other,52591
+2019,1,NJ,Total Electric Power Industry,Petroleum,41668
+2019,1,NJ,Total Electric Power Industry,Solar Thermal and Photovoltaic,65070
+2019,1,NJ,Total Electric Power Industry,Other Biomass,83949
+2019,1,NJ,Total Electric Power Industry,Wind,1840
+2019,1,NJ,"Combined Heat and Power, Industrial Power",Total,65997
+2019,1,NJ,"Combined Heat and Power, Industrial Power",Natural Gas,33039
+2019,1,NJ,"Combined Heat and Power, Industrial Power",Other Gases,19710
+2019,1,NJ,"Combined Heat and Power, Industrial Power",Other,5953
+2019,1,NJ,"Combined Heat and Power, Industrial Power",Petroleum,6934
+2019,1,NJ,"Combined Heat and Power, Industrial Power",Solar Thermal and Photovoltaic,361
+2019,1,NJ,"Combined Heat and Power, Commercial Power",Total,45409
+2019,1,NJ,"Combined Heat and Power, Commercial Power",Natural Gas,8235
+2019,1,NJ,"Combined Heat and Power, Commercial Power",Other,13463
+2019,1,NJ,"Combined Heat and Power, Commercial Power",Petroleum,291
+2019,1,NJ,"Combined Heat and Power, Commercial Power",Solar Thermal and Photovoltaic,7976
+2019,1,NJ,"Combined Heat and Power, Commercial Power",Other Biomass,15444
+2019,1,NJ,"Combined Heat and Power, Electric Power",Total,633316
+2019,1,NJ,"Combined Heat and Power, Electric Power",Coal,107286
+2019,1,NJ,"Combined Heat and Power, Electric Power",Natural Gas,504328
+2019,1,NJ,"Combined Heat and Power, Electric Power",Petroleum,13243
+2019,1,NJ,"Combined Heat and Power, Electric Power",Other Biomass,8460
+2019,1,NJ,"Electric Generators, Independent Power Producers",Total,5287971
+2019,1,NJ,"Electric Generators, Independent Power Producers",Coal,0
+2019,1,NJ,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,3383
+2019,1,NJ,"Electric Generators, Independent Power Producers",Natural Gas,2486835
+2019,1,NJ,"Electric Generators, Independent Power Producers",Nuclear,2630613
+2019,1,NJ,"Electric Generators, Independent Power Producers",Other,33176
+2019,1,NJ,"Electric Generators, Independent Power Producers",Petroleum,19921
+2019,1,NJ,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,52158
+2019,1,NJ,"Electric Generators, Independent Power Producers",Other Biomass,60045
+2019,1,NJ,"Electric Generators, Independent Power Producers",Wind,1840
+2019,1,NJ,"Electric Generators, Electric Utilities",Total,11323
+2019,1,NJ,"Electric Generators, Electric Utilities",Coal,0
+2019,1,NJ,"Electric Generators, Electric Utilities",Pumped Storage,-2180
+2019,1,NJ,"Electric Generators, Electric Utilities",Natural Gas,7649
+2019,1,NJ,"Electric Generators, Electric Utilities",Other,0
+2019,1,NJ,"Electric Generators, Electric Utilities",Petroleum,1279
+2019,1,NJ,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,4575
+2019,1,NM,Total Electric Power Industry,Total,2923744
+2019,1,NM,Total Electric Power Industry,Coal,1392343
+2019,1,NM,Total Electric Power Industry,Geothermal,5075
+2019,1,NM,Total Electric Power Industry,Hydroelectric Conventional,12843
+2019,1,NM,Total Electric Power Industry,Natural Gas,895941
+2019,1,NM,Total Electric Power Industry,Other,44
+2019,1,NM,Total Electric Power Industry,Petroleum,4643
+2019,1,NM,Total Electric Power Industry,Solar Thermal and Photovoltaic,65649
+2019,1,NM,Total Electric Power Industry,Other Biomass,1875
+2019,1,NM,Total Electric Power Industry,Wind,545330
+2019,1,NM,"Combined Heat and Power, Industrial Power",Total,0
+2019,1,NM,"Combined Heat and Power, Industrial Power",Natural Gas,0
+2019,1,NM,"Combined Heat and Power, Industrial Power",Petroleum,0
+2019,1,NM,"Combined Heat and Power, Commercial Power",Total,9708
+2019,1,NM,"Combined Heat and Power, Commercial Power",Natural Gas,9497
+2019,1,NM,"Combined Heat and Power, Commercial Power",Wind,211
+2019,1,NM,"Combined Heat and Power, Electric Power",Total,3060
+2019,1,NM,"Combined Heat and Power, Electric Power",Natural Gas,1525
+2019,1,NM,"Combined Heat and Power, Electric Power",Other Biomass,1535
+2019,1,NM,"Electric Generators, Independent Power Producers",Total,996927
+2019,1,NM,"Electric Generators, Independent Power Producers",Geothermal,5075
+2019,1,NM,"Electric Generators, Independent Power Producers",Natural Gas,393656
+2019,1,NM,"Electric Generators, Independent Power Producers",Other,-10
+2019,1,NM,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,52747
+2019,1,NM,"Electric Generators, Independent Power Producers",Other Biomass,340
+2019,1,NM,"Electric Generators, Independent Power Producers",Wind,545119
+2019,1,NM,"Electric Generators, Electric Utilities",Total,1914049
+2019,1,NM,"Electric Generators, Electric Utilities",Coal,1392343
+2019,1,NM,"Electric Generators, Electric Utilities",Hydroelectric Conventional,12843
+2019,1,NM,"Electric Generators, Electric Utilities",Natural Gas,491264
+2019,1,NM,"Electric Generators, Electric Utilities",Other,54
+2019,1,NM,"Electric Generators, Electric Utilities",Petroleum,4643
+2019,1,NM,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,12902
+2019,1,NV,Total Electric Power Industry,Total,3106298
+2019,1,NV,Total Electric Power Industry,Coal,380795
+2019,1,NV,Total Electric Power Industry,Geothermal,356247
+2019,1,NV,Total Electric Power Industry,Hydroelectric Conventional,151932
+2019,1,NV,Total Electric Power Industry,Natural Gas,1945037
+2019,1,NV,Total Electric Power Industry,Other Gases,0
+2019,1,NV,Total Electric Power Industry,Other,14
+2019,1,NV,Total Electric Power Industry,Petroleum,915
+2019,1,NV,Total Electric Power Industry,Solar Thermal and Photovoltaic,237095
+2019,1,NV,Total Electric Power Industry,Other Biomass,5724
+2019,1,NV,Total Electric Power Industry,Wind,28538
+2019,1,NV,"Combined Heat and Power, Industrial Power",Total,12607
+2019,1,NV,"Combined Heat and Power, Industrial Power",Natural Gas,12474
+2019,1,NV,"Combined Heat and Power, Industrial Power",Solar Thermal and Photovoltaic,133
+2019,1,NV,"Combined Heat and Power, Commercial Power",Total,50881
+2019,1,NV,"Combined Heat and Power, Commercial Power",Geothermal,42047
+2019,1,NV,"Combined Heat and Power, Commercial Power",Natural Gas,5372
+2019,1,NV,"Combined Heat and Power, Commercial Power",Solar Thermal and Photovoltaic,3462
+2019,1,NV,"Combined Heat and Power, Electric Power",Total,190680
+2019,1,NV,"Combined Heat and Power, Electric Power",Natural Gas,190680
+2019,1,NV,"Combined Heat and Power, Electric Power",Other Gases,0
+2019,1,NV,"Combined Heat and Power, Electric Power",Petroleum,0
+2019,1,NV,"Electric Generators, Independent Power Producers",Total,685819
+2019,1,NV,"Electric Generators, Independent Power Producers",Coal,100835
+2019,1,NV,"Electric Generators, Independent Power Producers",Geothermal,314200
+2019,1,NV,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,4542
+2019,1,NV,"Electric Generators, Independent Power Producers",Natural Gas,13
+2019,1,NV,"Electric Generators, Independent Power Producers",Petroleum,320
+2019,1,NV,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,231647
+2019,1,NV,"Electric Generators, Independent Power Producers",Other Biomass,5724
+2019,1,NV,"Electric Generators, Independent Power Producers",Wind,28538
+2019,1,NV,"Electric Generators, Electric Utilities",Total,2166311
+2019,1,NV,"Electric Generators, Electric Utilities",Coal,279960
+2019,1,NV,"Electric Generators, Electric Utilities",Hydroelectric Conventional,147390
+2019,1,NV,"Electric Generators, Electric Utilities",Natural Gas,1736498
+2019,1,NV,"Electric Generators, Electric Utilities",Other,14
+2019,1,NV,"Electric Generators, Electric Utilities",Petroleum,595
+2019,1,NV,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,1854
+2019,1,NY,Total Electric Power Industry,Total,11572238
+2019,1,NY,Total Electric Power Industry,Coal,212174
+2019,1,NY,Total Electric Power Industry,Pumped Storage,-28909
+2019,1,NY,Total Electric Power Industry,Hydroelectric Conventional,2684044
+2019,1,NY,Total Electric Power Industry,Natural Gas,3740992
+2019,1,NY,Total Electric Power Industry,Nuclear,4031172
+2019,1,NY,Total Electric Power Industry,Other Gases,0
+2019,1,NY,Total Electric Power Industry,Other,70139
+2019,1,NY,Total Electric Power Industry,Petroleum,253660
+2019,1,NY,Total Electric Power Industry,Solar Thermal and Photovoltaic,25137
+2019,1,NY,Total Electric Power Industry,Other Biomass,132258
+2019,1,NY,Total Electric Power Industry,Wind,401822
+2019,1,NY,Total Electric Power Industry,Wood and Wood Derived Fuels,49749
+2019,1,NY,"Combined Heat and Power, Industrial Power",Total,80574
+2019,1,NY,"Combined Heat and Power, Industrial Power",Coal,0
+2019,1,NY,"Combined Heat and Power, Industrial Power",Hydroelectric Conventional,6146
+2019,1,NY,"Combined Heat and Power, Industrial Power",Natural Gas,54288
+2019,1,NY,"Combined Heat and Power, Industrial Power",Other Gases,0
+2019,1,NY,"Combined Heat and Power, Industrial Power",Other,0
+2019,1,NY,"Combined Heat and Power, Industrial Power",Petroleum,4320
+2019,1,NY,"Combined Heat and Power, Industrial Power",Wind,49
+2019,1,NY,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,15772
+2019,1,NY,"Combined Heat and Power, Commercial Power",Total,111259
+2019,1,NY,"Combined Heat and Power, Commercial Power",Coal,0
+2019,1,NY,"Combined Heat and Power, Commercial Power",Hydroelectric Conventional,927
+2019,1,NY,"Combined Heat and Power, Commercial Power",Natural Gas,74523
+2019,1,NY,"Combined Heat and Power, Commercial Power",Other,16412
+2019,1,NY,"Combined Heat and Power, Commercial Power",Petroleum,1290
+2019,1,NY,"Combined Heat and Power, Commercial Power",Solar Thermal and Photovoltaic,220
+2019,1,NY,"Combined Heat and Power, Commercial Power",Other Biomass,17475
+2019,1,NY,"Combined Heat and Power, Commercial Power",Wind,412
+2019,1,NY,"Combined Heat and Power, Electric Power",Total,1050459
+2019,1,NY,"Combined Heat and Power, Electric Power",Natural Gas,1016363
+2019,1,NY,"Combined Heat and Power, Electric Power",Other,5713
+2019,1,NY,"Combined Heat and Power, Electric Power",Petroleum,13843
+2019,1,NY,"Combined Heat and Power, Electric Power",Other Biomass,5947
+2019,1,NY,"Combined Heat and Power, Electric Power",Wood and Wood Derived Fuels,8592
+2019,1,NY,"Electric Generators, Independent Power Producers",Total,7325659
+2019,1,NY,"Electric Generators, Independent Power Producers",Coal,212174
+2019,1,NY,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,535996
+2019,1,NY,"Electric Generators, Independent Power Producers",Natural Gas,1822474
+2019,1,NY,"Electric Generators, Independent Power Producers",Nuclear,4031172
+2019,1,NY,"Electric Generators, Independent Power Producers",Other,48013
+2019,1,NY,"Electric Generators, Independent Power Producers",Petroleum,115330
+2019,1,NY,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,24917
+2019,1,NY,"Electric Generators, Independent Power Producers",Other Biomass,108836
+2019,1,NY,"Electric Generators, Independent Power Producers",Wind,401361
+2019,1,NY,"Electric Generators, Independent Power Producers",Wood and Wood Derived Fuels,25385
+2019,1,NY,"Electric Generators, Electric Utilities",Total,3004287
+2019,1,NY,"Electric Generators, Electric Utilities",Coal,0
+2019,1,NY,"Electric Generators, Electric Utilities",Pumped Storage,-28909
+2019,1,NY,"Electric Generators, Electric Utilities",Hydroelectric Conventional,2140975
+2019,1,NY,"Electric Generators, Electric Utilities",Natural Gas,773345
+2019,1,NY,"Electric Generators, Electric Utilities",Petroleum,118876
+2019,1,OH,Total Electric Power Industry,Total,11316865
+2019,1,OH,Total Electric Power Industry,Coal,5367544
+2019,1,OH,Total Electric Power Industry,Hydroelectric Conventional,57407
+2019,1,OH,Total Electric Power Industry,Natural Gas,4000209
+2019,1,OH,Total Electric Power Industry,Nuclear,1427976
+2019,1,OH,Total Electric Power Industry,Other Gases,62052
+2019,1,OH,Total Electric Power Industry,Other,210
+2019,1,OH,Total Electric Power Industry,Petroleum,100112
+2019,1,OH,Total Electric Power Industry,Solar Thermal and Photovoltaic,7922
+2019,1,OH,Total Electric Power Industry,Other Biomass,39012
+2019,1,OH,Total Electric Power Industry,Wind,234366
+2019,1,OH,Total Electric Power Industry,Wood and Wood Derived Fuels,20057
+2019,1,OH,"Combined Heat and Power, Industrial Power",Total,64071
+2019,1,OH,"Combined Heat and Power, Industrial Power",Coal,607
+2019,1,OH,"Combined Heat and Power, Industrial Power",Natural Gas,24102
+2019,1,OH,"Combined Heat and Power, Industrial Power",Other Gases,12845
+2019,1,OH,"Combined Heat and Power, Industrial Power",Other,210
+2019,1,OH,"Combined Heat and Power, Industrial Power",Petroleum,738
+2019,1,OH,"Combined Heat and Power, Industrial Power",Solar Thermal and Photovoltaic,67
+2019,1,OH,"Combined Heat and Power, Industrial Power",Other Biomass,766
+2019,1,OH,"Combined Heat and Power, Industrial Power",Wind,7044
+2019,1,OH,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,17692
+2019,1,OH,"Combined Heat and Power, Commercial Power",Total,20013
+2019,1,OH,"Combined Heat and Power, Commercial Power",Coal,0
+2019,1,OH,"Combined Heat and Power, Commercial Power",Natural Gas,18648
+2019,1,OH,"Combined Heat and Power, Commercial Power",Petroleum,17
+2019,1,OH,"Combined Heat and Power, Commercial Power",Solar Thermal and Photovoltaic,172
+2019,1,OH,"Combined Heat and Power, Commercial Power",Other Biomass,741
+2019,1,OH,"Combined Heat and Power, Commercial Power",Wind,435
+2019,1,OH,"Combined Heat and Power, Electric Power",Total,71796
+2019,1,OH,"Combined Heat and Power, Electric Power",Coal,0
+2019,1,OH,"Combined Heat and Power, Electric Power",Natural Gas,20225
+2019,1,OH,"Combined Heat and Power, Electric Power",Other Gases,49206
+2019,1,OH,"Combined Heat and Power, Electric Power",Wood and Wood Derived Fuels,2365
+2019,1,OH,"Electric Generators, Independent Power Producers",Total,9844568
+2019,1,OH,"Electric Generators, Independent Power Producers",Coal,4776143
+2019,1,OH,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,23930
+2019,1,OH,"Electric Generators, Independent Power Producers",Natural Gas,3248968
+2019,1,OH,"Electric Generators, Independent Power Producers",Nuclear,1427976
+2019,1,OH,"Electric Generators, Independent Power Producers",Other,0
+2019,1,OH,"Electric Generators, Independent Power Producers",Petroleum,98080
+2019,1,OH,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,7165
+2019,1,OH,"Electric Generators, Independent Power Producers",Other Biomass,36267
+2019,1,OH,"Electric Generators, Independent Power Producers",Wind,226040
+2019,1,OH,"Electric Generators, Electric Utilities",Total,1316418
+2019,1,OH,"Electric Generators, Electric Utilities",Coal,590794
+2019,1,OH,"Electric Generators, Electric Utilities",Hydroelectric Conventional,33477
+2019,1,OH,"Electric Generators, Electric Utilities",Natural Gas,688266
+2019,1,OH,"Electric Generators, Electric Utilities",Other,0
+2019,1,OH,"Electric Generators, Electric Utilities",Petroleum,1277
+2019,1,OH,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,518
+2019,1,OH,"Electric Generators, Electric Utilities",Other Biomass,1238
+2019,1,OH,"Electric Generators, Electric Utilities",Wind,848
+2019,1,OK,Total Electric Power Industry,Total,7172739
+2019,1,OK,Total Electric Power Industry,Coal,1088082
+2019,1,OK,Total Electric Power Industry,Pumped Storage,-8938
+2019,1,OK,Total Electric Power Industry,Hydroelectric Conventional,290289
+2019,1,OK,Total Electric Power Industry,Natural Gas,3333395
+2019,1,OK,Total Electric Power Industry,Other,852
+2019,1,OK,Total Electric Power Industry,Petroleum,1653
+2019,1,OK,Total Electric Power Industry,Solar Thermal and Photovoltaic,3385
+2019,1,OK,Total Electric Power Industry,Other Biomass,6803
+2019,1,OK,Total Electric Power Industry,Wind,2436705
+2019,1,OK,Total Electric Power Industry,Wood and Wood Derived Fuels,20514
+2019,1,OK,"Combined Heat and Power, Industrial Power",Total,74173
+2019,1,OK,"Combined Heat and Power, Industrial Power",Coal,12759
+2019,1,OK,"Combined Heat and Power, Industrial Power",Natural Gas,35518
+2019,1,OK,"Combined Heat and Power, Industrial Power",Other,33
+2019,1,OK,"Combined Heat and Power, Industrial Power",Petroleum,112
+2019,1,OK,"Combined Heat and Power, Industrial Power",Other Biomass,5237
+2019,1,OK,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,20514
+2019,1,OK,"Combined Heat and Power, Commercial Power",Total,0
+2019,1,OK,"Combined Heat and Power, Commercial Power",Natural Gas,0
+2019,1,OK,"Combined Heat and Power, Commercial Power",Petroleum,0
+2019,1,OK,"Combined Heat and Power, Electric Power",Total,61362
+2019,1,OK,"Combined Heat and Power, Electric Power",Coal,56537
+2019,1,OK,"Combined Heat and Power, Electric Power",Natural Gas,4007
+2019,1,OK,"Combined Heat and Power, Electric Power",Other,818
+2019,1,OK,"Combined Heat and Power, Electric Power",Wood and Wood Derived Fuels,0
+2019,1,OK,"Electric Generators, Independent Power Producers",Total,3652392
+2019,1,OK,"Electric Generators, Independent Power Producers",Natural Gas,1330195
+2019,1,OK,"Electric Generators, Independent Power Producers",Other Biomass,1566
+2019,1,OK,"Electric Generators, Independent Power Producers",Wind,2320631
+2019,1,OK,"Electric Generators, Electric Utilities",Total,3384813
+2019,1,OK,"Electric Generators, Electric Utilities",Coal,1018786
+2019,1,OK,"Electric Generators, Electric Utilities",Pumped Storage,-8938
+2019,1,OK,"Electric Generators, Electric Utilities",Hydroelectric Conventional,290289
+2019,1,OK,"Electric Generators, Electric Utilities",Natural Gas,1963675
+2019,1,OK,"Electric Generators, Electric Utilities",Petroleum,1541
+2019,1,OK,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,3385
+2019,1,OK,"Electric Generators, Electric Utilities",Wind,116075
+2019,1,OR,Total Electric Power Industry,Total,5879306
+2019,1,OR,Total Electric Power Industry,Coal,392834
+2019,1,OR,Total Electric Power Industry,Geothermal,15902
+2019,1,OR,Total Electric Power Industry,Hydroelectric Conventional,2957173
+2019,1,OR,Total Electric Power Industry,Natural Gas,2020269
+2019,1,OR,Total Electric Power Industry,Other,-31
+2019,1,OR,Total Electric Power Industry,Petroleum,533
+2019,1,OR,Total Electric Power Industry,Solar Thermal and Photovoltaic,33575
+2019,1,OR,Total Electric Power Industry,Other Biomass,28141
+2019,1,OR,Total Electric Power Industry,Wind,372784
+2019,1,OR,Total Electric Power Industry,Wood and Wood Derived Fuels,58125
+2019,1,OR,"Combined Heat and Power, Industrial Power",Total,57385
+2019,1,OR,"Combined Heat and Power, Industrial Power",Natural Gas,8942
+2019,1,OR,"Combined Heat and Power, Industrial Power",Petroleum,0
+2019,1,OR,"Combined Heat and Power, Industrial Power",Other Biomass,2535
+2019,1,OR,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,45908
+2019,1,OR,"Combined Heat and Power, Commercial Power",Total,6662
+2019,1,OR,"Combined Heat and Power, Commercial Power",Natural Gas,3847
+2019,1,OR,"Combined Heat and Power, Commercial Power",Petroleum,7
+2019,1,OR,"Combined Heat and Power, Commercial Power",Other Biomass,2808
+2019,1,OR,"Combined Heat and Power, Electric Power",Total,597842
+2019,1,OR,"Combined Heat and Power, Electric Power",Natural Gas,594955
+2019,1,OR,"Combined Heat and Power, Electric Power",Other Biomass,2888
+2019,1,OR,"Combined Heat and Power, Electric Power",Wood and Wood Derived Fuels,0
+2019,1,OR,"Electric Generators, Independent Power Producers",Total,880219
+2019,1,OR,"Electric Generators, Independent Power Producers",Geothermal,15902
+2019,1,OR,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,23353
+2019,1,OR,"Electric Generators, Independent Power Producers",Natural Gas,445605
+2019,1,OR,"Electric Generators, Independent Power Producers",Other,0
+2019,1,OR,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,33245
+2019,1,OR,"Electric Generators, Independent Power Producers",Other Biomass,14844
+2019,1,OR,"Electric Generators, Independent Power Producers",Wind,335052
+2019,1,OR,"Electric Generators, Independent Power Producers",Wood and Wood Derived Fuels,12217
+2019,1,OR,"Electric Generators, Electric Utilities",Total,4337197
+2019,1,OR,"Electric Generators, Electric Utilities",Coal,392834
+2019,1,OR,"Electric Generators, Electric Utilities",Geothermal,0
+2019,1,OR,"Electric Generators, Electric Utilities",Hydroelectric Conventional,2933819
+2019,1,OR,"Electric Generators, Electric Utilities",Natural Gas,966920
+2019,1,OR,"Electric Generators, Electric Utilities",Other,-31
+2019,1,OR,"Electric Generators, Electric Utilities",Petroleum,526
+2019,1,OR,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,330
+2019,1,OR,"Electric Generators, Electric Utilities",Other Biomass,5066
+2019,1,OR,"Electric Generators, Electric Utilities",Wind,37733
+2019,1,PA,Total Electric Power Industry,Total,21145643
+2019,1,PA,Total Electric Power Industry,Coal,4816190
+2019,1,PA,Total Electric Power Industry,Pumped Storage,-47647
+2019,1,PA,Total Electric Power Industry,Hydroelectric Conventional,382062
+2019,1,PA,Total Electric Power Industry,Natural Gas,7662351
+2019,1,PA,Total Electric Power Industry,Nuclear,7662847
+2019,1,PA,Total Electric Power Industry,Other Gases,36557
+2019,1,PA,Total Electric Power Industry,Other,82395
+2019,1,PA,Total Electric Power Industry,Petroleum,41319
+2019,1,PA,Total Electric Power Industry,Solar Thermal and Photovoltaic,5158
+2019,1,PA,Total Electric Power Industry,Other Biomass,160805
+2019,1,PA,Total Electric Power Industry,Wind,307893
+2019,1,PA,Total Electric Power Industry,Wood and Wood Derived Fuels,35714
+2019,1,PA,"Combined Heat and Power, Industrial Power",Total,240956
+2019,1,PA,"Combined Heat and Power, Industrial Power",Coal,14757
+2019,1,PA,"Combined Heat and Power, Industrial Power",Natural Gas,138193
+2019,1,PA,"Combined Heat and Power, Industrial Power",Other Gases,36557
+2019,1,PA,"Combined Heat and Power, Industrial Power",Petroleum,11154
+2019,1,PA,"Combined Heat and Power, Industrial Power",Solar Thermal and Photovoltaic,472
+2019,1,PA,"Combined Heat and Power, Industrial Power",Other Biomass,4117
+2019,1,PA,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,35705
+2019,1,PA,"Combined Heat and Power, Commercial Power",Total,37379
+2019,1,PA,"Combined Heat and Power, Commercial Power",Coal,0
+2019,1,PA,"Combined Heat and Power, Commercial Power",Natural Gas,13503
+2019,1,PA,"Combined Heat and Power, Commercial Power",Other,9143
+2019,1,PA,"Combined Heat and Power, Commercial Power",Petroleum,263
+2019,1,PA,"Combined Heat and Power, Commercial Power",Solar Thermal and Photovoltaic,441
+2019,1,PA,"Combined Heat and Power, Commercial Power",Other Biomass,14030
+2019,1,PA,"Combined Heat and Power, Electric Power",Total,762711
+2019,1,PA,"Combined Heat and Power, Electric Power",Coal,300323
+2019,1,PA,"Combined Heat and Power, Electric Power",Natural Gas,438295
+2019,1,PA,"Combined Heat and Power, Electric Power",Other Gases,0
+2019,1,PA,"Combined Heat and Power, Electric Power",Other,15525
+2019,1,PA,"Combined Heat and Power, Electric Power",Petroleum,2678
+2019,1,PA,"Combined Heat and Power, Electric Power",Other Biomass,5881
+2019,1,PA,"Combined Heat and Power, Electric Power",Wood and Wood Derived Fuels,10
+2019,1,PA,"Electric Generators, Independent Power Producers",Total,20089954
+2019,1,PA,"Electric Generators, Independent Power Producers",Coal,4501110
+2019,1,PA,"Electric Generators, Independent Power Producers",Pumped Storage,-47647
+2019,1,PA,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,367749
+2019,1,PA,"Electric Generators, Independent Power Producers",Natural Gas,7072069
+2019,1,PA,"Electric Generators, Independent Power Producers",Nuclear,7662847
+2019,1,PA,"Electric Generators, Independent Power Producers",Other Gases,0
+2019,1,PA,"Electric Generators, Independent Power Producers",Other,57727
+2019,1,PA,"Electric Generators, Independent Power Producers",Petroleum,27184
+2019,1,PA,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,4245
+2019,1,PA,"Electric Generators, Independent Power Producers",Other Biomass,136777
+2019,1,PA,"Electric Generators, Independent Power Producers",Wind,307893
+2019,1,PA,"Electric Generators, Electric Utilities",Total,14643
+2019,1,PA,"Electric Generators, Electric Utilities",Coal,0
+2019,1,PA,"Electric Generators, Electric Utilities",Hydroelectric Conventional,14313
+2019,1,PA,"Electric Generators, Electric Utilities",Natural Gas,289
+2019,1,PA,"Electric Generators, Electric Utilities",Petroleum,41
+2019,1,RI,Total Electric Power Industry,Total,447257
+2019,1,RI,Total Electric Power Industry,Coal,0
+2019,1,RI,Total Electric Power Industry,Hydroelectric Conventional,448
+2019,1,RI,Total Electric Power Industry,Natural Gas,402223
+2019,1,RI,Total Electric Power Industry,Petroleum,3229
+2019,1,RI,Total Electric Power Industry,Solar Thermal and Photovoltaic,2825
+2019,1,RI,Total Electric Power Industry,Other Biomass,15202
+2019,1,RI,Total Electric Power Industry,Wind,23331
+2019,1,RI,"Combined Heat and Power, Industrial Power",Total,12864
+2019,1,RI,"Combined Heat and Power, Industrial Power",Natural Gas,12864
+2019,1,RI,"Combined Heat and Power, Industrial Power",Petroleum,0
+2019,1,RI,"Combined Heat and Power, Commercial Power",Total,4448
+2019,1,RI,"Combined Heat and Power, Commercial Power",Natural Gas,2843
+2019,1,RI,"Combined Heat and Power, Commercial Power",Petroleum,749
+2019,1,RI,"Combined Heat and Power, Commercial Power",Wind,856
+2019,1,RI,"Electric Generators, Independent Power Producers",Total,429944
+2019,1,RI,"Electric Generators, Independent Power Producers",Coal,0
+2019,1,RI,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,448
+2019,1,RI,"Electric Generators, Independent Power Producers",Natural Gas,386516
+2019,1,RI,"Electric Generators, Independent Power Producers",Petroleum,2479
+2019,1,RI,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,2825
+2019,1,RI,"Electric Generators, Independent Power Producers",Other Biomass,15202
+2019,1,RI,"Electric Generators, Independent Power Producers",Wind,22475
+2019,1,RI,"Electric Generators, Electric Utilities",Total,1
+2019,1,RI,"Electric Generators, Electric Utilities",Petroleum,1
+2019,1,SC,Total Electric Power Industry,Total,8984622
+2019,1,SC,Total Electric Power Industry,Coal,1623168
+2019,1,SC,Total Electric Power Industry,Pumped Storage,-41007
+2019,1,SC,Total Electric Power Industry,Hydroelectric Conventional,379728
+2019,1,SC,Total Electric Power Industry,Natural Gas,1738368
+2019,1,SC,Total Electric Power Industry,Nuclear,5009020
+2019,1,SC,Total Electric Power Industry,Other,4683
+2019,1,SC,Total Electric Power Industry,Petroleum,10220
+2019,1,SC,Total Electric Power Industry,Solar Thermal and Photovoltaic,41796
+2019,1,SC,Total Electric Power Industry,Other Biomass,16453
+2019,1,SC,Total Electric Power Industry,Wood and Wood Derived Fuels,202192
+2019,1,SC,"Combined Heat and Power, Industrial Power",Total,161996
+2019,1,SC,"Combined Heat and Power, Industrial Power",Coal,2248
+2019,1,SC,"Combined Heat and Power, Industrial Power",Natural Gas,11254
+2019,1,SC,"Combined Heat and Power, Industrial Power",Other,4244
+2019,1,SC,"Combined Heat and Power, Industrial Power",Petroleum,330
+2019,1,SC,"Combined Heat and Power, Industrial Power",Other Biomass,4636
+2019,1,SC,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,139284
+2019,1,SC,"Combined Heat and Power, Commercial Power",Total,364
+2019,1,SC,"Combined Heat and Power, Commercial Power",Hydroelectric Conventional,362
+2019,1,SC,"Combined Heat and Power, Commercial Power",Natural Gas,0
+2019,1,SC,"Combined Heat and Power, Commercial Power",Petroleum,1
+2019,1,SC,"Combined Heat and Power, Electric Power",Total,263331
+2019,1,SC,"Combined Heat and Power, Electric Power",Natural Gas,256255
+2019,1,SC,"Combined Heat and Power, Electric Power",Other,439
+2019,1,SC,"Combined Heat and Power, Electric Power",Petroleum,690
+2019,1,SC,"Combined Heat and Power, Electric Power",Wood and Wood Derived Fuels,5947
+2019,1,SC,"Electric Generators, Independent Power Producers",Total,94250
+2019,1,SC,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,7411
+2019,1,SC,"Electric Generators, Independent Power Producers",Natural Gas,12482
+2019,1,SC,"Electric Generators, Independent Power Producers",Other,0
+2019,1,SC,"Electric Generators, Independent Power Producers",Petroleum,1103
+2019,1,SC,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,41614
+2019,1,SC,"Electric Generators, Independent Power Producers",Other Biomass,1207
+2019,1,SC,"Electric Generators, Independent Power Producers",Wood and Wood Derived Fuels,30433
+2019,1,SC,"Electric Generators, Electric Utilities",Total,8464681
+2019,1,SC,"Electric Generators, Electric Utilities",Coal,1620920
+2019,1,SC,"Electric Generators, Electric Utilities",Pumped Storage,-41007
+2019,1,SC,"Electric Generators, Electric Utilities",Hydroelectric Conventional,371955
+2019,1,SC,"Electric Generators, Electric Utilities",Natural Gas,1458377
+2019,1,SC,"Electric Generators, Electric Utilities",Nuclear,5009020
+2019,1,SC,"Electric Generators, Electric Utilities",Petroleum,8096
+2019,1,SC,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,182
+2019,1,SC,"Electric Generators, Electric Utilities",Other Biomass,10609
+2019,1,SC,"Electric Generators, Electric Utilities",Wood and Wood Derived Fuels,26529
+2019,1,SD,Total Electric Power Industry,Total,971862
+2019,1,SD,Total Electric Power Industry,Coal,259789
+2019,1,SD,Total Electric Power Industry,Hydroelectric Conventional,374031
+2019,1,SD,Total Electric Power Industry,Natural Gas,60100
+2019,1,SD,Total Electric Power Industry,Other,0
+2019,1,SD,Total Electric Power Industry,Petroleum,190
+2019,1,SD,Total Electric Power Industry,Solar Thermal and Photovoltaic,105
+2019,1,SD,Total Electric Power Industry,Other Biomass,0
+2019,1,SD,Total Electric Power Industry,Wind,277647
+2019,1,SD,"Combined Heat and Power, Commercial Power",Total,0
+2019,1,SD,"Combined Heat and Power, Commercial Power",Petroleum,0
+2019,1,SD,"Electric Generators, Independent Power Producers",Total,195449
+2019,1,SD,"Electric Generators, Independent Power Producers",Other,0
+2019,1,SD,"Electric Generators, Independent Power Producers",Petroleum,0
+2019,1,SD,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,105
+2019,1,SD,"Electric Generators, Independent Power Producers",Wind,195344
+2019,1,SD,"Electric Generators, Electric Utilities",Total,776413
+2019,1,SD,"Electric Generators, Electric Utilities",Coal,259789
+2019,1,SD,"Electric Generators, Electric Utilities",Hydroelectric Conventional,374031
+2019,1,SD,"Electric Generators, Electric Utilities",Natural Gas,60100
+2019,1,SD,"Electric Generators, Electric Utilities",Petroleum,190
+2019,1,SD,"Electric Generators, Electric Utilities",Other Biomass,0
+2019,1,SD,"Electric Generators, Electric Utilities",Wind,82303
+2019,1,TN,Total Electric Power Industry,Total,7286009
+2019,1,TN,Total Electric Power Industry,Coal,1425859
+2019,1,TN,Total Electric Power Industry,Pumped Storage,-49155
+2019,1,TN,Total Electric Power Industry,Hydroelectric Conventional,1009685
+2019,1,TN,Total Electric Power Industry,Natural Gas,1283284
+2019,1,TN,Total Electric Power Industry,Nuclear,3497363
+2019,1,TN,Total Electric Power Industry,Other Gases,1032
+2019,1,TN,Total Electric Power Industry,Other,632
+2019,1,TN,Total Electric Power Industry,Petroleum,24784
+2019,1,TN,Total Electric Power Industry,Solar Thermal and Photovoltaic,10201
+2019,1,TN,Total Electric Power Industry,Other Biomass,7991
+2019,1,TN,Total Electric Power Industry,Wind,2971
+2019,1,TN,Total Electric Power Industry,Wood and Wood Derived Fuels,71363
+2019,1,TN,"Combined Heat and Power, Industrial Power",Total,185510
+2019,1,TN,"Combined Heat and Power, Industrial Power",Coal,39933
+2019,1,TN,"Combined Heat and Power, Industrial Power",Natural Gas,69964
+2019,1,TN,"Combined Heat and Power, Industrial Power",Other Gases,1032
+2019,1,TN,"Combined Heat and Power, Industrial Power",Other,632
+2019,1,TN,"Combined Heat and Power, Industrial Power",Petroleum,990
+2019,1,TN,"Combined Heat and Power, Industrial Power",Solar Thermal and Photovoltaic,341
+2019,1,TN,"Combined Heat and Power, Industrial Power",Other Biomass,1256
+2019,1,TN,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,71363
+2019,1,TN,"Combined Heat and Power, Commercial Power",Total,16020
+2019,1,TN,"Combined Heat and Power, Commercial Power",Coal,0
+2019,1,TN,"Combined Heat and Power, Commercial Power",Natural Gas,15756
+2019,1,TN,"Combined Heat and Power, Commercial Power",Petroleum,0
+2019,1,TN,"Combined Heat and Power, Commercial Power",Solar Thermal and Photovoltaic,263
+2019,1,TN,"Electric Generators, Independent Power Producers",Total,20917
+2019,1,TN,"Electric Generators, Independent Power Producers",Natural Gas,1751
+2019,1,TN,"Electric Generators, Independent Power Producers",Petroleum,45
+2019,1,TN,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,9415
+2019,1,TN,"Electric Generators, Independent Power Producers",Other Biomass,6735
+2019,1,TN,"Electric Generators, Independent Power Producers",Wind,2971
+2019,1,TN,"Electric Generators, Electric Utilities",Total,7063562
+2019,1,TN,"Electric Generators, Electric Utilities",Coal,1385927
+2019,1,TN,"Electric Generators, Electric Utilities",Pumped Storage,-49155
+2019,1,TN,"Electric Generators, Electric Utilities",Hydroelectric Conventional,1009685
+2019,1,TN,"Electric Generators, Electric Utilities",Natural Gas,1195812
+2019,1,TN,"Electric Generators, Electric Utilities",Nuclear,3497363
+2019,1,TN,"Electric Generators, Electric Utilities",Petroleum,23749
+2019,1,TN,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,182
+2019,1,TN,"Electric Generators, Electric Utilities",Other Biomass,0
+2019,1,TN,"Electric Generators, Electric Utilities",Wind,0
+2019,1,TX,Total Electric Power Industry,Total,38146731
+2019,1,TX,Total Electric Power Industry,Coal,8375738
+2019,1,TX,Total Electric Power Industry,Hydroelectric Conventional,213294
+2019,1,TX,Total Electric Power Industry,Natural Gas,18841744
+2019,1,TX,Total Electric Power Industry,Nuclear,3228623
+2019,1,TX,Total Electric Power Industry,Other Gases,229835
+2019,1,TX,Total Electric Power Industry,Other,52065
+2019,1,TX,Total Electric Power Industry,Petroleum,7431
+2019,1,TX,Total Electric Power Industry,Solar Thermal and Photovoltaic,238444
+2019,1,TX,Total Electric Power Industry,Other Biomass,52614
+2019,1,TX,Total Electric Power Industry,Wind,6842265
+2019,1,TX,Total Electric Power Industry,Wood and Wood Derived Fuels,64677
+2019,1,TX,"Combined Heat and Power, Industrial Power",Total,3839524
+2019,1,TX,"Combined Heat and Power, Industrial Power",Natural Gas,3642853
+2019,1,TX,"Combined Heat and Power, Industrial Power",Other Gases,73900
+2019,1,TX,"Combined Heat and Power, Industrial Power",Other,43613
+2019,1,TX,"Combined Heat and Power, Industrial Power",Petroleum,5137
+2019,1,TX,"Combined Heat and Power, Industrial Power",Other Biomass,8278
+2019,1,TX,"Combined Heat and Power, Industrial Power",Wind,601
+2019,1,TX,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,65142
+2019,1,TX,"Combined Heat and Power, Commercial Power",Total,77882
+2019,1,TX,"Combined Heat and Power, Commercial Power",Hydroelectric Conventional,368
+2019,1,TX,"Combined Heat and Power, Commercial Power",Natural Gas,68919
+2019,1,TX,"Combined Heat and Power, Commercial Power",Petroleum,44
+2019,1,TX,"Combined Heat and Power, Commercial Power",Solar Thermal and Photovoltaic,119
+2019,1,TX,"Combined Heat and Power, Commercial Power",Other Biomass,3379
+2019,1,TX,"Combined Heat and Power, Commercial Power",Wind,5052
+2019,1,TX,"Combined Heat and Power, Electric Power",Total,3585072
+2019,1,TX,"Combined Heat and Power, Electric Power",Natural Gas,3420772
+2019,1,TX,"Combined Heat and Power, Electric Power",Other Gases,155935
+2019,1,TX,"Combined Heat and Power, Electric Power",Other,8365
+2019,1,TX,"Electric Generators, Independent Power Producers",Total,23680266
+2019,1,TX,"Electric Generators, Independent Power Producers",Coal,4643862
+2019,1,TX,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,4087
+2019,1,TX,"Electric Generators, Independent Power Producers",Natural Gas,8704212
+2019,1,TX,"Electric Generators, Independent Power Producers",Nuclear,3228623
+2019,1,TX,"Electric Generators, Independent Power Producers",Other,87
+2019,1,TX,"Electric Generators, Independent Power Producers",Petroleum,750
+2019,1,TX,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,237984
+2019,1,TX,"Electric Generators, Independent Power Producers",Other Biomass,40957
+2019,1,TX,"Electric Generators, Independent Power Producers",Wind,6820169
+2019,1,TX,"Electric Generators, Independent Power Producers",Wood and Wood Derived Fuels,-465
+2019,1,TX,"Electric Generators, Electric Utilities",Total,6963987
+2019,1,TX,"Electric Generators, Electric Utilities",Coal,3731876
+2019,1,TX,"Electric Generators, Electric Utilities",Hydroelectric Conventional,208839
+2019,1,TX,"Electric Generators, Electric Utilities",Natural Gas,3004989
+2019,1,TX,"Electric Generators, Electric Utilities",Other,0
+2019,1,TX,"Electric Generators, Electric Utilities",Petroleum,1499
+2019,1,TX,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,341
+2019,1,TX,"Electric Generators, Electric Utilities",Wind,16442
+2019,1,TX,"Electric Generators, Electric Utilities",Wood and Wood Derived Fuels,0
+2019,1,US-Total,Total Electric Power Industry,Total,357690215
+2019,1,US-Total,Total Electric Power Industry,Coal,101018852
+2019,1,US-Total,Total Electric Power Industry,Geothermal,1455980
+2019,1,US-Total,Total Electric Power Industry,Pumped Storage,-323009
+2019,1,US-Total,Total Electric Power Industry,Hydroelectric Conventional,24543517
+2019,1,US-Total,Total Electric Power Industry,Natural Gas,118934833
+2019,1,US-Total,Total Electric Power Industry,Nuclear,73700844
+2019,1,US-Total,Total Electric Power Industry,Other Gases,994029
+2019,1,US-Total,Total Electric Power Industry,Other,1128812
+2019,1,US-Total,Total Electric Power Industry,Petroleum,2135863
+2019,1,US-Total,Total Electric Power Industry,Solar Thermal and Photovoltaic,3651972
+2019,1,US-Total,Total Electric Power Industry,Other Biomass,1754721
+2019,1,US-Total,Total Electric Power Industry,Wind,25164535
+2019,1,US-Total,Total Electric Power Industry,Wood and Wood Derived Fuels,3529266
+2019,1,US-Total,"Combined Heat and Power, Industrial Power",Total,12841651
+2019,1,US-Total,"Combined Heat and Power, Industrial Power",Coal,619804
+2019,1,US-Total,"Combined Heat and Power, Industrial Power",Hydroelectric Conventional,95023
+2019,1,US-Total,"Combined Heat and Power, Industrial Power",Natural Gas,8586840
+2019,1,US-Total,"Combined Heat and Power, Industrial Power",Other Gases,616993
+2019,1,US-Total,"Combined Heat and Power, Industrial Power",Other,428632
+2019,1,US-Total,"Combined Heat and Power, Industrial Power",Petroleum,100468
+2019,1,US-Total,"Combined Heat and Power, Industrial Power",Solar Thermal and Photovoltaic,4810
+2019,1,US-Total,"Combined Heat and Power, Industrial Power",Other Biomass,84079
+2019,1,US-Total,"Combined Heat and Power, Industrial Power",Wind,8975
+2019,1,US-Total,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,2296027
+2019,1,US-Total,"Combined Heat and Power, Commercial Power",Total,1169414
+2019,1,US-Total,"Combined Heat and Power, Commercial Power",Coal,34795
+2019,1,US-Total,"Combined Heat and Power, Commercial Power",Geothermal,42047
+2019,1,US-Total,"Combined Heat and Power, Commercial Power",Pumped Storage,0
+2019,1,US-Total,"Combined Heat and Power, Commercial Power",Hydroelectric Conventional,20068
+2019,1,US-Total,"Combined Heat and Power, Commercial Power",Natural Gas,717374
+2019,1,US-Total,"Combined Heat and Power, Commercial Power",Other,84707
+2019,1,US-Total,"Combined Heat and Power, Commercial Power",Petroleum,14833
+2019,1,US-Total,"Combined Heat and Power, Commercial Power",Solar Thermal and Photovoltaic,30670
+2019,1,US-Total,"Combined Heat and Power, Commercial Power",Other Biomass,198361
+2019,1,US-Total,"Combined Heat and Power, Commercial Power",Wind,18298
+2019,1,US-Total,"Combined Heat and Power, Commercial Power",Wood and Wood Derived Fuels,8260
+2019,1,US-Total,"Combined Heat and Power, Electric Power",Total,12234241
+2019,1,US-Total,"Combined Heat and Power, Electric Power",Coal,1164607
+2019,1,US-Total,"Combined Heat and Power, Electric Power",Natural Gas,10219136
+2019,1,US-Total,"Combined Heat and Power, Electric Power",Other Gases,364612
+2019,1,US-Total,"Combined Heat and Power, Electric Power",Other,77071
+2019,1,US-Total,"Combined Heat and Power, Electric Power",Petroleum,142247
+2019,1,US-Total,"Combined Heat and Power, Electric Power",Solar Thermal and Photovoltaic,350
+2019,1,US-Total,"Combined Heat and Power, Electric Power",Other Biomass,94450
+2019,1,US-Total,"Combined Heat and Power, Electric Power",Wood and Wood Derived Fuels,171768
+2019,1,US-Total,"Electric Generators, Independent Power Producers",Total,132411982
+2019,1,US-Total,"Electric Generators, Independent Power Producers",Coal,24146353
+2019,1,US-Total,"Electric Generators, Independent Power Producers",Geothermal,1323608
+2019,1,US-Total,"Electric Generators, Independent Power Producers",Pumped Storage,-75560
+2019,1,US-Total,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,2412769
+2019,1,US-Total,"Electric Generators, Independent Power Producers",Natural Gas,42989998
+2019,1,US-Total,"Electric Generators, Independent Power Producers",Nuclear,33895333
+2019,1,US-Total,"Electric Generators, Independent Power Producers",Other Gases,0
+2019,1,US-Total,"Electric Generators, Independent Power Producers",Other,496956
+2019,1,US-Total,"Electric Generators, Independent Power Producers",Petroleum,407289
+2019,1,US-Total,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,3243155
+2019,1,US-Total,"Electric Generators, Independent Power Producers",Other Biomass,1278271
+2019,1,US-Total,"Electric Generators, Independent Power Producers",Wind,21577179
+2019,1,US-Total,"Electric Generators, Independent Power Producers",Wood and Wood Derived Fuels,716630
+2019,1,US-Total,"Electric Generators, Electric Utilities",Total,199032927
+2019,1,US-Total,"Electric Generators, Electric Utilities",Coal,75053293
+2019,1,US-Total,"Electric Generators, Electric Utilities",Geothermal,90325
+2019,1,US-Total,"Electric Generators, Electric Utilities",Pumped Storage,-247449
+2019,1,US-Total,"Electric Generators, Electric Utilities",Hydroelectric Conventional,22015656
+2019,1,US-Total,"Electric Generators, Electric Utilities",Natural Gas,56421485
+2019,1,US-Total,"Electric Generators, Electric Utilities",Nuclear,39805511
+2019,1,US-Total,"Electric Generators, Electric Utilities",Other Gases,12424
+2019,1,US-Total,"Electric Generators, Electric Utilities",Other,41446
+2019,1,US-Total,"Electric Generators, Electric Utilities",Petroleum,1471025
+2019,1,US-Total,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,372986
+2019,1,US-Total,"Electric Generators, Electric Utilities",Other Biomass,99559
+2019,1,US-Total,"Electric Generators, Electric Utilities",Wind,3560083
+2019,1,US-Total,"Electric Generators, Electric Utilities",Wood and Wood Derived Fuels,336581
+2019,1,UT,Total Electric Power Industry,Total,3797369
+2019,1,UT,Total Electric Power Industry,Coal,2641959
+2019,1,UT,Total Electric Power Industry,Geothermal,39607
+2019,1,UT,Total Electric Power Industry,Hydroelectric Conventional,99465
+2019,1,UT,Total Electric Power Industry,Natural Gas,816066
+2019,1,UT,Total Electric Power Industry,Other Gases,711
+2019,1,UT,Total Electric Power Industry,Other,12308
+2019,1,UT,Total Electric Power Industry,Petroleum,2641
+2019,1,UT,Total Electric Power Industry,Solar Thermal and Photovoltaic,105231
+2019,1,UT,Total Electric Power Industry,Other Biomass,6817
+2019,1,UT,Total Electric Power Industry,Wind,72563
+2019,1,UT,"Combined Heat and Power, Industrial Power",Total,46709
+2019,1,UT,"Combined Heat and Power, Industrial Power",Coal,0
+2019,1,UT,"Combined Heat and Power, Industrial Power",Natural Gas,38602
+2019,1,UT,"Combined Heat and Power, Industrial Power",Other Gases,711
+2019,1,UT,"Combined Heat and Power, Industrial Power",Other,7396
+2019,1,UT,"Combined Heat and Power, Industrial Power",Petroleum,0
+2019,1,UT,"Combined Heat and Power, Commercial Power",Total,9195
+2019,1,UT,"Combined Heat and Power, Commercial Power",Natural Gas,7960
+2019,1,UT,"Combined Heat and Power, Commercial Power",Petroleum,0
+2019,1,UT,"Combined Heat and Power, Commercial Power",Other Biomass,1235
+2019,1,UT,"Electric Generators, Independent Power Producers",Total,246631
+2019,1,UT,"Electric Generators, Independent Power Producers",Coal,38615
+2019,1,UT,"Electric Generators, Independent Power Producers",Geothermal,17041
+2019,1,UT,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,1231
+2019,1,UT,"Electric Generators, Independent Power Producers",Natural Gas,6343
+2019,1,UT,"Electric Generators, Independent Power Producers",Petroleum,25
+2019,1,UT,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,105231
+2019,1,UT,"Electric Generators, Independent Power Producers",Other Biomass,5582
+2019,1,UT,"Electric Generators, Independent Power Producers",Wind,72563
+2019,1,UT,"Electric Generators, Electric Utilities",Total,3494834
+2019,1,UT,"Electric Generators, Electric Utilities",Coal,2603343
+2019,1,UT,"Electric Generators, Electric Utilities",Geothermal,22566
+2019,1,UT,"Electric Generators, Electric Utilities",Hydroelectric Conventional,98234
+2019,1,UT,"Electric Generators, Electric Utilities",Natural Gas,763161
+2019,1,UT,"Electric Generators, Electric Utilities",Other,4912
+2019,1,UT,"Electric Generators, Electric Utilities",Petroleum,2617
+2019,1,VA,Total Electric Power Industry,Total,8808764
+2019,1,VA,Total Electric Power Industry,Coal,405900
+2019,1,VA,Total Electric Power Industry,Pumped Storage,-46159
+2019,1,VA,Total Electric Power Industry,Hydroelectric Conventional,185100
+2019,1,VA,Total Electric Power Industry,Natural Gas,5058791
+2019,1,VA,Total Electric Power Industry,Nuclear,2700212
+2019,1,VA,Total Electric Power Industry,Other,42007
+2019,1,VA,Total Electric Power Industry,Petroleum,51870
+2019,1,VA,Total Electric Power Industry,Solar Thermal and Photovoltaic,49138
+2019,1,VA,Total Electric Power Industry,Other Biomass,102975
+2019,1,VA,Total Electric Power Industry,Wood and Wood Derived Fuels,258931
+2019,1,VA,"Combined Heat and Power, Industrial Power",Total,217517
+2019,1,VA,"Combined Heat and Power, Industrial Power",Coal,19868
+2019,1,VA,"Combined Heat and Power, Industrial Power",Hydroelectric Conventional,1
+2019,1,VA,"Combined Heat and Power, Industrial Power",Natural Gas,63507
+2019,1,VA,"Combined Heat and Power, Industrial Power",Petroleum,553
+2019,1,VA,"Combined Heat and Power, Industrial Power",Other Biomass,1564
+2019,1,VA,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,132026
+2019,1,VA,"Combined Heat and Power, Commercial Power",Total,29955
+2019,1,VA,"Combined Heat and Power, Commercial Power",Coal,1335
+2019,1,VA,"Combined Heat and Power, Commercial Power",Natural Gas,1380
+2019,1,VA,"Combined Heat and Power, Commercial Power",Other,11532
+2019,1,VA,"Combined Heat and Power, Commercial Power",Petroleum,2741
+2019,1,VA,"Combined Heat and Power, Commercial Power",Other Biomass,12967
+2019,1,VA,"Combined Heat and Power, Commercial Power",Wood and Wood Derived Fuels,0
+2019,1,VA,"Combined Heat and Power, Electric Power",Total,2072
+2019,1,VA,"Combined Heat and Power, Electric Power",Coal,2072
+2019,1,VA,"Combined Heat and Power, Electric Power",Natural Gas,0
+2019,1,VA,"Combined Heat and Power, Electric Power",Petroleum,0
+2019,1,VA,"Electric Generators, Independent Power Producers",Total,1466359
+2019,1,VA,"Electric Generators, Independent Power Producers",Coal,18722
+2019,1,VA,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,6382
+2019,1,VA,"Electric Generators, Independent Power Producers",Natural Gas,1247129
+2019,1,VA,"Electric Generators, Independent Power Producers",Other,30475
+2019,1,VA,"Electric Generators, Independent Power Producers",Petroleum,17413
+2019,1,VA,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,37548
+2019,1,VA,"Electric Generators, Independent Power Producers",Other Biomass,88096
+2019,1,VA,"Electric Generators, Independent Power Producers",Wood and Wood Derived Fuels,20594
+2019,1,VA,"Electric Generators, Electric Utilities",Total,7092861
+2019,1,VA,"Electric Generators, Electric Utilities",Coal,363903
+2019,1,VA,"Electric Generators, Electric Utilities",Pumped Storage,-46159
+2019,1,VA,"Electric Generators, Electric Utilities",Hydroelectric Conventional,178717
+2019,1,VA,"Electric Generators, Electric Utilities",Natural Gas,3746775
+2019,1,VA,"Electric Generators, Electric Utilities",Nuclear,2700212
+2019,1,VA,"Electric Generators, Electric Utilities",Petroleum,31164
+2019,1,VA,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,11590
+2019,1,VA,"Electric Generators, Electric Utilities",Other Biomass,348
+2019,1,VA,"Electric Generators, Electric Utilities",Wood and Wood Derived Fuels,106311
+2019,1,VT,Total Electric Power Industry,Total,234752
+2019,1,VT,Total Electric Power Industry,Hydroelectric Conventional,144954
+2019,1,VT,Total Electric Power Industry,Natural Gas,281
+2019,1,VT,Total Electric Power Industry,Other,0
+2019,1,VT,Total Electric Power Industry,Petroleum,218
+2019,1,VT,Total Electric Power Industry,Solar Thermal and Photovoltaic,9602
+2019,1,VT,Total Electric Power Industry,Other Biomass,982
+2019,1,VT,Total Electric Power Industry,Wind,33795
+2019,1,VT,Total Electric Power Industry,Wood and Wood Derived Fuels,44921
+2019,1,VT,"Combined Heat and Power, Commercial Power",Total,417
+2019,1,VT,"Combined Heat and Power, Commercial Power",Natural Gas,206
+2019,1,VT,"Combined Heat and Power, Commercial Power",Petroleum,0
+2019,1,VT,"Combined Heat and Power, Commercial Power",Wood and Wood Derived Fuels,212
+2019,1,VT,"Electric Generators, Independent Power Producers",Total,136242
+2019,1,VT,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,92225
+2019,1,VT,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,7372
+2019,1,VT,"Electric Generators, Independent Power Producers",Other Biomass,982
+2019,1,VT,"Electric Generators, Independent Power Producers",Wind,19131
+2019,1,VT,"Electric Generators, Independent Power Producers",Wood and Wood Derived Fuels,16532
+2019,1,VT,"Electric Generators, Electric Utilities",Total,98093
+2019,1,VT,"Electric Generators, Electric Utilities",Hydroelectric Conventional,52728
+2019,1,VT,"Electric Generators, Electric Utilities",Natural Gas,75
+2019,1,VT,"Electric Generators, Electric Utilities",Other,0
+2019,1,VT,"Electric Generators, Electric Utilities",Petroleum,218
+2019,1,VT,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,2230
+2019,1,VT,"Electric Generators, Electric Utilities",Wind,14665
+2019,1,VT,"Electric Generators, Electric Utilities",Wood and Wood Derived Fuels,28177
+2019,1,WA,Total Electric Power Industry,Total,9425762
+2019,1,WA,Total Electric Power Industry,Coal,683348
+2019,1,WA,Total Electric Power Industry,Pumped Storage,1130
+2019,1,WA,Total Electric Power Industry,Hydroelectric Conventional,5958447
+2019,1,WA,Total Electric Power Industry,Natural Gas,1213435
+2019,1,WA,Total Electric Power Industry,Nuclear,849557
+2019,1,WA,Total Electric Power Industry,Other Gases,25122
+2019,1,WA,Total Electric Power Industry,Other,5749
+2019,1,WA,Total Electric Power Industry,Petroleum,1721
+2019,1,WA,Total Electric Power Industry,Solar Thermal and Photovoltaic,2198
+2019,1,WA,Total Electric Power Industry,Other Biomass,13128
+2019,1,WA,Total Electric Power Industry,Wind,538274
+2019,1,WA,Total Electric Power Industry,Wood and Wood Derived Fuels,133653
+2019,1,WA,"Combined Heat and Power, Industrial Power",Total,117773
+2019,1,WA,"Combined Heat and Power, Industrial Power",Coal,2632
+2019,1,WA,"Combined Heat and Power, Industrial Power",Natural Gas,7567
+2019,1,WA,"Combined Heat and Power, Industrial Power",Petroleum,626
+2019,1,WA,"Combined Heat and Power, Industrial Power",Other Biomass,1115
+2019,1,WA,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,105832
+2019,1,WA,"Combined Heat and Power, Commercial Power",Total,2765
+2019,1,WA,"Combined Heat and Power, Commercial Power",Natural Gas,1720
+2019,1,WA,"Combined Heat and Power, Commercial Power",Petroleum,43
+2019,1,WA,"Combined Heat and Power, Commercial Power",Other Biomass,1001
+2019,1,WA,"Combined Heat and Power, Electric Power",Total,82340
+2019,1,WA,"Combined Heat and Power, Electric Power",Natural Gas,57219
+2019,1,WA,"Combined Heat and Power, Electric Power",Other Gases,25122
+2019,1,WA,"Combined Heat and Power, Electric Power",Petroleum,0
+2019,1,WA,"Electric Generators, Independent Power Producers",Total,1446898
+2019,1,WA,"Electric Generators, Independent Power Producers",Coal,680716
+2019,1,WA,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,30847
+2019,1,WA,"Electric Generators, Independent Power Producers",Natural Gas,457317
+2019,1,WA,"Electric Generators, Independent Power Producers",Other,5762
+2019,1,WA,"Electric Generators, Independent Power Producers",Petroleum,928
+2019,1,WA,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,2182
+2019,1,WA,"Electric Generators, Independent Power Producers",Other Biomass,11012
+2019,1,WA,"Electric Generators, Independent Power Producers",Wind,258134
+2019,1,WA,"Electric Generators, Electric Utilities",Total,7775986
+2019,1,WA,"Electric Generators, Electric Utilities",Pumped Storage,1130
+2019,1,WA,"Electric Generators, Electric Utilities",Hydroelectric Conventional,5927600
+2019,1,WA,"Electric Generators, Electric Utilities",Natural Gas,689612
+2019,1,WA,"Electric Generators, Electric Utilities",Nuclear,849557
+2019,1,WA,"Electric Generators, Electric Utilities",Other,-13
+2019,1,WA,"Electric Generators, Electric Utilities",Petroleum,123
+2019,1,WA,"Electric Generators, Electric Utilities",Solar Thermal and Photovoltaic,16
+2019,1,WA,"Electric Generators, Electric Utilities",Other Biomass,0
+2019,1,WA,"Electric Generators, Electric Utilities",Wind,280141
+2019,1,WA,"Electric Generators, Electric Utilities",Wood and Wood Derived Fuels,27821
+2019,1,WI,Total Electric Power Industry,Total,5838369
+2019,1,WI,Total Electric Power Industry,Coal,2799999
+2019,1,WI,Total Electric Power Industry,Hydroelectric Conventional,202059
+2019,1,WI,Total Electric Power Industry,Natural Gas,1625489
+2019,1,WI,Total Electric Power Industry,Nuclear,891565
+2019,1,WI,Total Electric Power Industry,Other,3402
+2019,1,WI,Total Electric Power Industry,Petroleum,15587
+2019,1,WI,Total Electric Power Industry,Solar Thermal and Photovoltaic,2415
+2019,1,WI,Total Electric Power Industry,Other Biomass,49749
+2019,1,WI,Total Electric Power Industry,Wind,163986
+2019,1,WI,Total Electric Power Industry,Wood and Wood Derived Fuels,84116
+2019,1,WI,"Combined Heat and Power, Industrial Power",Total,156926
+2019,1,WI,"Combined Heat and Power, Industrial Power",Coal,43632
+2019,1,WI,"Combined Heat and Power, Industrial Power",Hydroelectric Conventional,10637
+2019,1,WI,"Combined Heat and Power, Industrial Power",Natural Gas,48674
+2019,1,WI,"Combined Heat and Power, Industrial Power",Other,1530
+2019,1,WI,"Combined Heat and Power, Industrial Power",Petroleum,49
+2019,1,WI,"Combined Heat and Power, Industrial Power",Other Biomass,2652
+2019,1,WI,"Combined Heat and Power, Industrial Power",Wind,794
+2019,1,WI,"Combined Heat and Power, Industrial Power",Wood and Wood Derived Fuels,48957
+2019,1,WI,"Combined Heat and Power, Commercial Power",Total,12109
+2019,1,WI,"Combined Heat and Power, Commercial Power",Coal,0
+2019,1,WI,"Combined Heat and Power, Commercial Power",Natural Gas,3095
+2019,1,WI,"Combined Heat and Power, Commercial Power",Petroleum,0
+2019,1,WI,"Combined Heat and Power, Commercial Power",Solar Thermal and Photovoltaic,136
+2019,1,WI,"Combined Heat and Power, Commercial Power",Other Biomass,6158
+2019,1,WI,"Combined Heat and Power, Commercial Power",Wind,2720
+2019,1,WI,"Combined Heat and Power, Commercial Power",Wood and Wood Derived Fuels,0
+2019,1,WI,"Combined Heat and Power, Electric Power",Total,52825
+2019,1,WI,"Combined Heat and Power, Electric Power",Natural Gas,39983
+2019,1,WI,"Combined Heat and Power, Electric Power",Petroleum,3485
+2019,1,WI,"Combined Heat and Power, Electric Power",Other Biomass,9358
+2019,1,WI,"Electric Generators, Independent Power Producers",Total,1022160
+2019,1,WI,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,11815
+2019,1,WI,"Electric Generators, Independent Power Producers",Natural Gas,5424
+2019,1,WI,"Electric Generators, Independent Power Producers",Nuclear,891565
+2019,1,WI,"Electric Generators, Independent Power Producers",Petroleum,9
+2019,1,WI,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,2279
+2019,1,WI,"Electric Generators, Independent Power Producers",Other Biomass,30563
+2019,1,WI,"Electric Generators, Independent Power Producers",Wind,80505
+2019,1,WI,"Electric Generators, Electric Utilities",Total,4594348
+2019,1,WI,"Electric Generators, Electric Utilities",Coal,2756367
+2019,1,WI,"Electric Generators, Electric Utilities",Hydroelectric Conventional,179607
+2019,1,WI,"Electric Generators, Electric Utilities",Natural Gas,1528313
+2019,1,WI,"Electric Generators, Electric Utilities",Other,1872
+2019,1,WI,"Electric Generators, Electric Utilities",Petroleum,12044
+2019,1,WI,"Electric Generators, Electric Utilities",Other Biomass,1020
+2019,1,WI,"Electric Generators, Electric Utilities",Wind,79967
+2019,1,WI,"Electric Generators, Electric Utilities",Wood and Wood Derived Fuels,35159
+2019,1,WV,Total Electric Power Industry,Total,6730942
+2019,1,WV,Total Electric Power Industry,Coal,6313449
+2019,1,WV,Total Electric Power Industry,Hydroelectric Conventional,175941
+2019,1,WV,Total Electric Power Industry,Natural Gas,72522
+2019,1,WV,Total Electric Power Industry,Other Gases,1948
+2019,1,WV,Total Electric Power Industry,Other,-596
+2019,1,WV,Total Electric Power Industry,Petroleum,7956
+2019,1,WV,Total Electric Power Industry,Wind,159722
+2019,1,WV,"Combined Heat and Power, Industrial Power",Total,92683
+2019,1,WV,"Combined Heat and Power, Industrial Power",Hydroelectric Conventional,54467
+2019,1,WV,"Combined Heat and Power, Industrial Power",Natural Gas,36268
+2019,1,WV,"Combined Heat and Power, Industrial Power",Other Gases,1948
+2019,1,WV,"Combined Heat and Power, Electric Power",Total,30091
+2019,1,WV,"Combined Heat and Power, Electric Power",Coal,29970
+2019,1,WV,"Combined Heat and Power, Electric Power",Natural Gas,121
+2019,1,WV,"Electric Generators, Independent Power Producers",Total,1204022
+2019,1,WV,"Electric Generators, Independent Power Producers",Coal,974971
+2019,1,WV,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,48480
+2019,1,WV,"Electric Generators, Independent Power Producers",Natural Gas,21282
+2019,1,WV,"Electric Generators, Independent Power Producers",Other,-596
+2019,1,WV,"Electric Generators, Independent Power Producers",Petroleum,163
+2019,1,WV,"Electric Generators, Independent Power Producers",Wind,159722
+2019,1,WV,"Electric Generators, Electric Utilities",Total,5404145
+2019,1,WV,"Electric Generators, Electric Utilities",Coal,5308507
+2019,1,WV,"Electric Generators, Electric Utilities",Hydroelectric Conventional,72994
+2019,1,WV,"Electric Generators, Electric Utilities",Natural Gas,14851
+2019,1,WV,"Electric Generators, Electric Utilities",Other,0
+2019,1,WV,"Electric Generators, Electric Utilities",Petroleum,7793
+2019,1,WY,Total Electric Power Industry,Total,4159339
+2019,1,WY,Total Electric Power Industry,Coal,3580193
+2019,1,WY,Total Electric Power Industry,Hydroelectric Conventional,81780
+2019,1,WY,Total Electric Power Industry,Natural Gas,76980
+2019,1,WY,Total Electric Power Industry,Other Gases,33261
+2019,1,WY,Total Electric Power Industry,Other,7238
+2019,1,WY,Total Electric Power Industry,Petroleum,2667
+2019,1,WY,Total Electric Power Industry,Solar Thermal and Photovoltaic,6850
+2019,1,WY,Total Electric Power Industry,Wind,370371
+2019,1,WY,"Combined Heat and Power, Industrial Power",Total,132425
+2019,1,WY,"Combined Heat and Power, Industrial Power",Coal,30346
+2019,1,WY,"Combined Heat and Power, Industrial Power",Natural Gas,61564
+2019,1,WY,"Combined Heat and Power, Industrial Power",Other Gases,33261
+2019,1,WY,"Combined Heat and Power, Industrial Power",Other,7238
+2019,1,WY,"Combined Heat and Power, Industrial Power",Petroleum,16
+2019,1,WY,"Electric Generators, Independent Power Producers",Total,276475
+2019,1,WY,"Electric Generators, Independent Power Producers",Coal,57083
+2019,1,WY,"Electric Generators, Independent Power Producers",Hydroelectric Conventional,0
+2019,1,WY,"Electric Generators, Independent Power Producers",Natural Gas,285
+2019,1,WY,"Electric Generators, Independent Power Producers",Solar Thermal and Photovoltaic,6850
+2019,1,WY,"Electric Generators, Independent Power Producers",Wind,212257
+2019,1,WY,"Electric Generators, Electric Utilities",Total,3750439
+2019,1,WY,"Electric Generators, Electric Utilities",Coal,3492763
+2019,1,WY,"Electric Generators, Electric Utilities",Hydroelectric Conventional,81780
+2019,1,WY,"Electric Generators, Electric Utilities",Natural Gas,15131
+2019,1,WY,"Electric Generators, Electric Utilities",Petroleum,2651
+2019,1,WY,"Electric Generators, Electric Utilities",Wind,158114

@@ -45,12 +45,19 @@ ui <- navbarPage('probability distributions', id = 'nav', # specifies panels at 
                           sidebarLayout(
                             sidebarPanel(
                               sliderInput('pn',
-                                          'sample size'),
+                                          'sample size',
+                                          min = 0,
+                                          max = 500,
+                                          value = 100),
                               sliderInput('lambda',
-                                          '$$\\lambda$$'),
+                                          withMathJax('$$\\lambda$$'),
+                                          min = 0,
+                                          max = 10,
+                                          value = 1,
+                                          step = 0.1),
                               checkboxInput('phist', label = 'histogram', value = TRUE), 
                               checkboxInput('pdens', label = 'density', value = TRUE),
-                              colourInput('pcol', label = 'select a color')
+                              colourInput('pcol', label = 'select a color', value = '#6600CC')
                             ),
                             mainPanel(
                               tabsetPanel(position = 'below',
@@ -76,7 +83,10 @@ ui <- navbarPage('probability distributions', id = 'nav', # specifies panels at 
                                           max = 20,
                                           value = 10),
                               sliderInput('bprob',
-                                          'probability'),
+                                          'probability',
+                                          min = 0,
+                                          max= 1,
+                                          value = 0.05),
                               checkboxInput('bhist', label = 'histogram', value = TRUE), 
                               checkboxInput('bdens', label = 'density', value = TRUE),
                               colourInput('bcol', label = 'select a color', value = '#FF6666')
@@ -190,7 +200,8 @@ server <- function(input, output) {
     x <- rpois(input$pn, input$lambda) 
     
     p <- ggplot() + scale_x_continuous(limits = c(0, 20))
-
+    if(input$Phist) p <- p + geom_histogram(aes(x, y = ..density..), bins = bins, colour = 'black', fill = 'white') 
+    if(input$Pdens) p <- p + geom_density(aes(x), alpha = 0.2, fill = input$ncol) 
     p + theme_minimal()
   })
     # qq plot
